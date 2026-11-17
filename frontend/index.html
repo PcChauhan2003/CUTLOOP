@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CUTLOOP — AI-Powered Industrial Waste-to-Value Marketplace</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Top Navigation Bar -->
+  <header class="navbar">
+    <div class="brand-container" onclick="showView('landing')">
+      <div class="brand-logo-badge">CL</div>
+      <div>
+        <div class="brand-title">CUTLOOP</div>
+        <div class="brand-tagline">One factory's leftover is another creator's raw material.</div>
+      </div>
+    </div>
+
+    <ul class="nav-links">
+      <li><a class="nav-link active" id="nav-landing" onclick="showView('landing')">Home</a></li>
+      <li><a class="nav-link" id="nav-marketplace" onclick="showView('marketplace')">Marketplace</a></li>
+      <li><a class="nav-link" id="nav-scanner" onclick="showView('scanner')">AI Scanner <span class="nav-badge-pill">DL 1 & 2</span></a></li>
+      <li><a class="nav-link" id="nav-inventory" onclick="showView('inventory')">Seller Hub</a></li>
+      <li><a class="nav-link" id="nav-analytics" onclick="showView('analytics')">Impact & Demand</a></li>
+      <li><a class="nav-link" id="nav-admin" onclick="showView('admin')">Admin</a></li>
+    </ul>
+
+    <div class="nav-actions">
+      <button class="btn btn-mint btn-sm" onclick="showView('scanner')">+ Scan Leftover</button>
+      <button class="btn btn-outline-white btn-sm" onclick="openCartModal()">
+        🛒 Cart (<span id="cart-count-badge">0</span>)
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Content Body -->
+  <main class="main-content">
+
+    <!-- ==================== VIEW 1: LANDING PAGE ==================== -->
+    <section id="view-landing" class="view-section active">
+      <div class="hero-card">
+        <div class="hero-pill">🌿 Circular Economy · B2B Industrial Textile Upcycling</div>
+        <h1 class="hero-title">Give Industrial Leftovers a Second Life.</h1>
+        <p class="hero-subtitle">
+          Discover, exchange, and transform unused factory cut-offs, surplus rolls, and deadstock into high-value raw material with AI-driven fabric vision and predictive pricing.
+        </p>
+        <div class="hero-buttons">
+          <button class="btn btn-mint" onclick="showView('marketplace')">Explore Marketplace</button>
+          <button class="btn btn-outline-white" onclick="showView('scanner')">AI Material Scanner</button>
+          <button class="btn btn-outline-white" onclick="showView('inventory')">Seller Inventory Portal</button>
+        </div>
+      </div>
+
+      <!-- Sustainability Impact Banner -->
+      <div class="stats-banner">
+        <div class="stat-card">
+          <div class="stat-number" id="landing-stat-recovered">650 kg</div>
+          <div class="stat-label">Material Recovered</div>
+          <div class="stat-subtext">Traded through verified marketplace</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number" id="landing-stat-co2">1,202 kg</div>
+          <div class="stat-label">CO₂ Emissions Avoided</div>
+          <div class="stat-subtext">~1.85 kg CO₂ saved per kg reused textile</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">94.2%</div>
+          <div class="stat-label">Fabric Classification Confidence</div>
+          <div class="stat-subtext">MobileNetV2 Deep Learning model</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">5 Factory Hubs</div>
+          <div class="stat-label">Active Industrial Clusters</div>
+          <div class="stat-subtext">Ahmedabad · Surat · Tirupur · Ludhiana</div>
+        </div>
+      </div>
+
+      <!-- How It Works -->
+      <div class="section-header">
+        <h2 class="section-title">How CUTLOOP Works</h2>
+        <p class="section-desc">Streamlining the industrial supply chain in three intelligent steps</p>
+      </div>
+
+      <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-bottom: 3rem;">
+        <div class="stat-card">
+          <div style="font-size:2rem; margin-bottom:0.5rem;">📸</div>
+          <h3 style="font-size:1.1rem; margin-bottom:0.4rem; color:var(--forest-green);">1. Snap & Scan Surplus</h3>
+          <p style="font-size:0.88rem; color:var(--muted-text);">
+            Textile factories upload sample photographs of cutting leftovers, remnant rolls, or deadstock fabric.
+          </p>
+        </div>
+        <div class="stat-card">
+          <div style="font-size:2rem; margin-bottom:0.5rem;">🧠</div>
+          <h3 style="font-size:1.1rem; margin-bottom:0.4rem; color:var(--forest-green);">2. AI Analyzes & Prices</h3>
+          <p style="font-size:0.88rem; color:var(--muted-text);">
+            Dual deep learning models classify weave, detect visible defects with YOLO, and suggest optimal resale pricing.
+          </p>
+        </div>
+        <div class="stat-card">
+          <div style="font-size:2rem; margin-bottom:0.5rem;">🤝</div>
+          <h3 style="font-size:1.1rem; margin-bottom:0.4rem; color:var(--forest-green);">3. Creators Purchase Direct</h3>
+          <p style="font-size:0.88rem; color:var(--muted-text);">
+            Upcycling brands, craft studios, and fashion designers buy batch quantities at 40–60% off virgin market cost.
+          </p>
+        </div>
+      </div>
+
+      <!-- Categories -->
+      <div class="section-header">
+        <h2 class="section-title">Material Categories</h2>
+        <p class="section-desc">Standardized textile classes supported by our AI vision scanner</p>
+      </div>
+
+      <div class="category-grid">
+        <div class="category-chip" onclick="showView('marketplace')">
+          <div class="category-icon">🌿</div>
+          <div class="category-name">Cotton</div>
+          <div class="category-count">120 kg listed</div>
+        </div>
+        <div class="category-chip" onclick="showView('marketplace')">
+          <div class="category-icon">👖</div>
+          <div class="category-name">Denim</div>
+          <div class="category-count">85 kg listed</div>
+        </div>
+        <div class="category-chip" onclick="showView('marketplace')">
+          <div class="category-icon">✨</div>
+          <div class="category-name">Silk</div>
+          <div class="category-count">35 kg listed</div>
+        </div>
+        <div class="category-chip" onclick="showView('marketplace')">
+          <div class="category-icon">🌾</div>
+          <div class="category-name">Linen</div>
+          <div class="category-count">60 kg listed</div>
+        </div>
+        <div class="category-chip" onclick="showView('marketplace')">
+          <div class="category-icon">🧵</div>
+          <div class="category-name">Polyester</div>
+          <div class="category-count">150 kg listed</div>
+        </div>
+        <div class="category-chip" onclick="showView('marketplace')">
+          <div class="category-icon">🐑</div>
+          <div class="category-name">Wool</div>
+          <div class="category-count">40 kg listed</div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ==================== VIEW 2: MARKETPLACE ==================== -->
+    <section id="view-marketplace" class="view-section">
+      <div class="section-header" style="display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:1rem;">
+        <div>
+          <h2 class="section-title">Industrial Material Marketplace</h2>
+          <p class="section-desc">Search, filter, and match surplus fabric lots across industrial clusters</p>
+        </div>
+        <button class="btn btn-primary btn-sm" onclick="showView('scanner')">+ List New Material</button>
+      </div>
+
+      <!-- AI Material Matching Box (Section 7.4) -->
+      <div style="background:#F0FDF4; border:1px solid #BBF7D0; border-radius:var(--radius-md); padding:1.25rem; margin-bottom:1.5rem;">
+        <div style="display:flex; align-items:center; gap:0.5rem; margin-bottom:0.5rem;">
+          <span style="font-size:1.2rem;">✨</span>
+          <strong style="color:#166534; font-size:0.95rem;">AI Material Requirement Matcher</strong>
+          <span class="nav-badge-pill">Weighted Algorithm</span>
+        </div>
+        <p style="font-size:0.82rem; color:#14532D; margin-bottom:0.75rem;">
+          Enter what you need. Our algorithm scores listings using: <code>Score = 0.35M + 0.25P + 0.20Q + 0.10C + 0.10L</code>
+        </p>
+        <div style="display:grid; grid-template-columns: 2fr 1fr 1fr 1.2fr auto; gap:0.75rem;">
+          <input type="text" id="ai-match-query" placeholder="e.g. Cotton fabric for bags" value="Cotton" style="padding:0.55rem; border:1px solid #CBD5E1; border-radius:var(--radius-sm);">
+          <input type="number" id="ai-match-budget" placeholder="Budget ₹/kg" value="50" style="padding:0.55rem; border:1px solid #CBD5E1; border-radius:var(--radius-sm);">
+          <input type="number" id="ai-match-qty" placeholder="Need kg" value="20" style="padding:0.55rem; border:1px solid #CBD5E1; border-radius:var(--radius-sm);">
+          <input type="text" id="ai-match-loc" placeholder="Location" value="Ahmedabad" style="padding:0.55rem; border:1px solid #CBD5E1; border-radius:var(--radius-sm);">
+          <button class="btn btn-mint btn-sm" onclick="triggerAIMaterialMatch()">Rank Matches</button>
+        </div>
+      </div>
+
+      <!-- Products Grid -->
+      <div id="marketplace-grid" class="products-grid">
+        <!-- Rendered dynamically by app.js -->
+      </div>
+    </section>
+
+
+    <!-- ==================== VIEW 3: AI SCANNER STUDIO ==================== -->
+    <section id="view-scanner" class="view-section">
+      <div class="section-header">
+        <h2 class="section-title">AI Material Scanner & Defect Inspector</h2>
+        <p class="section-desc">MobileNetV2 fabric classification · YOLO visual defect detection · Grad-CAM explainability · Random Forest price estimation</p>
+      </div>
+
+      <div class="scanner-layout">
+        <!-- Left: Image Upload & Preview -->
+        <div>
+          <div id="scanner-dropzone" class="upload-card" onclick="document.getElementById('scanner-file-input').click()">
+            <div style="font-size:3rem; margin-bottom:1rem;">📷</div>
+            <h3 style="font-size:1.15rem; margin-bottom:0.5rem; color:var(--forest-green);">Click or Drag Fabric Photograph Here</h3>
+            <p style="font-size:0.85rem; color:var(--muted-text); margin-bottom:1rem;">
+              Supports JPEG/PNG · Recommended 224 × 224 or higher
+            </p>
+            <button class="btn btn-outline btn-sm">Select Sample Image</button>
+            <input type="file" id="scanner-file-input" style="display:none;" accept="image/*" onchange="handleScannerFileSelect(this)">
+          </div>
+
+          <div id="scanner-preview-box" style="display:none; margin-top:1rem;">
+            <div class="preview-container">
+              <img id="scanner-img-preview" src="" alt="Uploaded Fabric">
+              <div id="gradcam-overlay" class="gradcam-overlay" style="display:none;"></div>
+              <div id="yolo-defect-box" class="yolo-box" style="display:none;">
+                <span class="yolo-box-label">Hole (91% conf)</span>
+              </div>
+            </div>
+
+            <div style="display:flex; gap:0.75rem; margin-top:1rem;">
+              <button id="btn-run-ai" class="btn btn-primary" style="flex:1;" onclick="runAIScannerPipeline()">
+                ⚡ Run AI Vision Pipeline
+              </button>
+              <button id="btn-toggle-gradcam" class="btn btn-outline btn-sm" onclick="toggleGradCam()">
+                Show Grad-CAM Heatmap
+              </button>
+              <button class="btn btn-outline btn-sm" onclick="document.getElementById('scanner-file-input').click()">
+                Change
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: AI Results Panel -->
+        <div>
+          <div id="scanner-results-container" class="ai-results-card" style="display:none;">
+            <div class="ai-prediction-header">
+              <div>
+                <div style="font-size:0.78rem; text-transform:uppercase; color:var(--muted-text); font-weight:700;">
+                  Primary Material Classification
+                </div>
+                <div class="classified-title" id="res-material-class">Cotton</div>
+              </div>
+              <div class="confidence-chip" id="res-confidence">94.2%</div>
+            </div>
+
+            <!-- Grad-CAM Explainability Banner -->
+            <div style="background:#F1F5F9; border-radius:var(--radius-sm); padding:0.75rem; font-size:0.8rem; margin-bottom:1rem;">
+              <strong style="color:var(--forest-green);">🧠 Explainability Insight (Grad-CAM):</strong>
+              <div style="color:var(--muted-text); margin-top:0.2rem;">
+                Classification influenced by salient warp-and-weft weave patterns, matte fiber reflectivity, and yarn twist density at the final Conv_1 feature map.
+              </div>
+            </div>
+
+            <!-- Defect Detection Box -->
+            <div style="border:1px solid #E2E8F0; border-radius:var(--radius-sm); padding:0.85rem; margin-bottom:1rem;">
+              <div style="font-size:0.75rem; font-weight:700; text-transform:uppercase; color:var(--muted-text); margin-bottom:0.2rem;">
+                Visual Defect Inspection (Ultralytics YOLO)
+              </div>
+              <div id="defect-status-text">
+                <!-- Dynamically populated -->
+              </div>
+            </div>
+
+            <!-- Price Recommendation -->
+            <div class="price-estimate-box">
+              <div style="font-size:0.8rem; color:#166534; font-weight:700; text-transform:uppercase;">
+                AI Suggested Resale Price Range
+              </div>
+              <div class="price-range-val" id="res-price-range">₹42 – ₹48 / kg</div>
+              <div style="font-size:0.75rem; color:#15803D;">
+                Calculated by Random Forest Regressor from 1,500 observed industrial transactions.
+              </div>
+            </div>
+
+            <!-- Other Predictions -->
+            <div style="margin-bottom:1.5rem;">
+              <div style="font-size:0.75rem; font-weight:700; text-transform:uppercase; color:var(--muted-text); margin-bottom:0.5rem;">
+                Class Probability Distribution
+              </div>
+              <div id="secondary-probs-list">
+                <!-- Filled dynamically -->
+              </div>
+            </div>
+
+            <!-- Publish Listing Button -->
+            <button class="btn btn-mint" style="width:100%; font-size:1rem; padding:0.8rem;" onclick="publishScannedListing()">
+              ✓ Publish as Marketplace Listing
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ==================== VIEW 4: SELLER INVENTORY ==================== -->
+    <section id="view-inventory" class="view-section">
+      <div class="section-header" style="display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:1rem;">
+        <div>
+          <h2 class="section-title">Seller Hub & Inventory Management</h2>
+          <p class="section-desc">Manage warehouse leftover stock, track listings, and sync via CSV</p>
+        </div>
+        <div style="display:flex; gap:0.5rem;">
+          <button class="btn btn-outline btn-sm" onclick="exportInventoryCSV()">📥 Export Inventory CSV</button>
+          <button class="btn btn-outline btn-sm" onclick="document.getElementById('inventory-csv-input').click()">📤 Import Inventory CSV</button>
+          <input type="file" id="inventory-csv-input" style="display:none;" accept=".csv" onchange="handleInventoryCSVUpload(this)">
+          <button class="btn btn-primary btn-sm" onclick="showView('scanner')">+ New Scan Listing</button>
+        </div>
+      </div>
+
+      <div style="background:var(--bg-card); border:1px solid var(--border-color); border-radius:var(--radius-md); overflow:hidden; box-shadow:var(--shadow-sm);">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Material Description</th>
+              <th>Category</th>
+              <th>Available Stock</th>
+              <th>Price</th>
+              <th>Location</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody id="inventory-table-body">
+            <!-- Populated dynamically -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+
+    <!-- ==================== VIEW 5: IMPACT & DEMAND ANALYTICS ==================== -->
+    <section id="view-analytics" class="view-section">
+      <div class="section-header">
+        <h2 class="section-title">Platform Impact & AI Demand Forecasting</h2>
+        <p class="section-desc">Real-time circular economy metrics and machine learning demand predictions</p>
+      </div>
+
+      <div class="stats-banner">
+        <div class="stat-card">
+          <div class="stat-number" id="val-recovered-kg">650 kg</div>
+          <div class="stat-label">Material Recovered</div>
+          <div class="stat-subtext">Verified volume diverted from waste</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number" id="val-co2-saved">1,202.5 kg</div>
+          <div class="stat-label">CO₂ Footprint Saved</div>
+          <div class="stat-subtext">Carbon reduction multiplier</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number" id="val-total-orders">18</div>
+          <div class="stat-label">Completed Transactions</div>
+          <div class="stat-subtext">Atomic orders processed</div>
+        </div>
+      </div>
+
+      <!-- Demand Forecasting Table (Module 6) -->
+      <div class="section-header" style="margin-top:2rem;">
+        <h3 style="font-size:1.25rem; font-weight:700;">Forecasted Material Demand (Next 30 Days)</h3>
+        <p class="section-desc">Machine Learning Model 2 (Random Forest with Chronological Validation)</p>
+      </div>
+
+      <div style="background:var(--bg-card); border:1px solid var(--border-color); border-radius:var(--radius-md); overflow:hidden; box-shadow:var(--shadow-sm);">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Material Type</th>
+              <th>Forecasted Monthly Orders</th>
+              <th>Projected Growth</th>
+              <th>Supply vs Demand</th>
+              <th>AI Inventory Advice</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="font-weight:700;">Cotton</td>
+              <td>142 orders</td>
+              <td><span style="color:#059669; font-weight:700;">+18% ↗</span></td>
+              <td>High Demand / Low Surplus</td>
+              <td>Release surplus inventory early; peak demand approaching.</td>
+            </tr>
+            <tr>
+              <td style="font-weight:700;">Denim</td>
+              <td>98 orders</td>
+              <td><span style="color:#059669; font-weight:700;">+12% ↗</span></td>
+              <td>Strong Demand</td>
+              <td>Steady buyer activity for 10–14oz offcuts.</td>
+            </tr>
+            <tr>
+              <td style="font-weight:700;">Linen</td>
+              <td>64 orders</td>
+              <td><span style="color:#059669; font-weight:700;">+22% ↗</span></td>
+              <td>Surging Seasonally</td>
+              <td>Summer overruns command top tier resale prices.</td>
+            </tr>
+            <tr>
+              <td style="font-weight:700;">Polyester</td>
+              <td>72 orders</td>
+              <td><span style="color:#64748B; font-weight:700;">+5% →</span></td>
+              <td>Balanced Supply</td>
+              <td>Bundle smaller remnant lots for faster turnover.</td>
+            </tr>
+            <tr>
+              <td style="font-weight:700;">Silk</td>
+              <td>38 orders</td>
+              <td><span style="color:#059669; font-weight:700;">+8% ↗</span></td>
+              <td>Premium Niche</td>
+              <td>High margin artisan demand for sari border trims.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+
+    <!-- ==================== VIEW 6: ADMIN MODERATION ==================== -->
+    <section id="view-admin" class="view-section">
+      <div class="section-header">
+        <h2 class="section-title">Admin Moderation & Security Panel</h2>
+        <p class="section-desc">Manage registered suppliers, buyers, listing integrity, and audit trails</p>
+      </div>
+
+      <div style="background:var(--bg-card); border:1px solid var(--border-color); border-radius:var(--radius-md); overflow:hidden; box-shadow:var(--shadow-sm);">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>User ID</th>
+              <th>Name / Organization</th>
+              <th>Email</th>
+              <th>Platform Role</th>
+              <th>Account Status</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="admin-users-table">
+            <!-- Rendered by app.js -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ==================== MODAL: SHOPPING CART & CHECKOUT ==================== -->
+  <div id="cart-modal" class="modal-backdrop" style="display:none;" onclick="if(event.target===this) closeCartModal()">
+    <div class="modal-dialog">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1.25rem;">
+        <h3 style="font-size:1.3rem; font-weight:800; color:var(--forest-green);">Industrial Shopping Cart</h3>
+        <button onclick="closeCartModal()" style="background:none; border:none; font-size:1.2rem; cursor:pointer;">✕</button>
+      </div>
+
+      <div id="cart-items-container">
+        <!-- Rendered dynamically -->
+      </div>
+
+      <div style="margin-top:1.5rem; padding-top:1rem; border-top:2px dashed #E2E8F0;">
+        <div style="display:flex; justify-content:space-between; font-size:0.9rem; margin-bottom:0.4rem;">
+          <span>Material Subtotal:</span>
+          <strong id="cart-subtotal">₹0.00</strong>
+        </div>
+        <div style="display:flex; justify-content:space-between; font-size:0.9rem; margin-bottom:0.4rem;">
+          <span>Industrial Logistics & Handling:</span>
+          <span>₹150.00</span>
+        </div>
+        <div style="display:flex; justify-content:space-between; font-size:1.2rem; font-weight:800; color:var(--forest-green); margin-top:0.75rem;">
+          <span>Total Payable:</span>
+          <span id="cart-total">₹0.00</span>
+        </div>
+      </div>
+
+      <div style="background:#FEF3C7; border:1px solid #FCD34D; border-radius:var(--radius-sm); padding:0.65rem; font-size:0.78rem; color:#92400E; margin:1.25rem 0;">
+        ℹ️ Sandbox Test Environment: Payment gateway is running in simulated test mode. No real payment will be charged.
+      </div>
+
+      <div style="display:flex; gap:0.75rem;">
+        <button class="btn btn-outline" style="flex:1;" onclick="closeCartModal()">Continue Browsing</button>
+        <button id="btn-checkout-pay" class="btn btn-mint" style="flex:1;" onclick="proceedToSimulatedPayment()">
+          Pay with Test Gateway
+        </button>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div>
+        <strong style="color:#FFFFFF; font-size:1.05rem;">CUTLOOP</strong> — Industrial Leftover AI Marketplace
+        <div style="font-size:0.78rem; margin-top:0.25rem;">Module 3 (DL 1) · Module 4 (DL 2) · Module 5 (DS 1) · Module 6 (DS 2) · Spring Boot & FastAPI Core</div>
+      </div>
+      <div>
+        <span>Ahmedabad · Surat · Tirupur · Bengaluru</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

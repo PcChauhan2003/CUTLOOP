@@ -1,0 +1,1501 @@
+material_type,condition,quantity_kg,width_inches,colour,location,reference_price,selling_price
+Polyester,New,27.0,44.0,Natural Beige,Ahmedabad,66.84,37.43
+Denim,New,88.7,54.0,Red,Ahmedabad,124.15,65.24
+Polyester,Good,147.6,36.0,Yellow,Tirupur,64.31,29.16
+Cotton,Good,53.2,60.0,Grey,Ahmedabad,100.28,47.78
+Polyester,Fair,304.3,64.0,Yellow,Surat,57.59,18.3
+Linen,Good,18.8,54.0,Red,Ludhiana,166.99,81.94
+Linen,Fair,63.3,60.0,Black,Surat,143.8,46.38
+Polyester,Good,30.0,54.0,Black,Tirupur,58.42,28.35
+Denim,Poor,163.0,36.0,Red,Tirupur,109.06,26.06
+Cotton,Good,70.3,72.0,Grey,Ahmedabad,89.57,40.78
+Cotton,Fair,59.8,64.0,Natural Beige,Ludhiana,92.9,34.04
+Denim,Fair,28.9,64.0,Black,Ahmedabad,121.85,42.61
+Denim,Good,298.5,36.0,Yellow,Surat,117.29,55.11
+Silk,Fair,60.6,72.0,Grey,Ahmedabad,322.18,126.01
+Silk,Fair,24.0,58.0,White,Surat,350.68,115.74
+Denim,New,68.6,44.0,Blue,Tirupur,121.83,66.89
+Wool,Fair,37.0,44.0,Natural Beige,Ahmedabad,224.09,75.9
+Silk,Fair,249.8,48.0,White,Tirupur,320.0,105.6
+Wool,Good,127.6,54.0,Red,Jaipur,248.18,99.38
+Denim,Fair,35.4,60.0,Yellow,Ahmedabad,110.8,41.72
+Polyester,Good,94.8,54.0,Blue,Ahmedabad,60.5,28.0
+Denim,Good,26.4,72.0,Yellow,Ahmedabad,115.07,52.39
+Denim,Good,60.1,64.0,Black,Ahmedabad,118.29,54.01
+Polyester,Good,48.2,44.0,Blue,Surat,59.27,26.22
+Cotton,Good,64.7,44.0,Green,Ahmedabad,94.14,44.66
+Cotton,Poor,223.7,54.0,Blue,Bengaluru,94.42,16.79
+Denim,Good,29.4,36.0,Green,Jaipur,129.32,57.55
+Denim,Good,43.2,36.0,Yellow,Ahmedabad,121.52,61.04
+Polyester,Fair,66.8,48.0,Blue,Ahmedabad,60.39,17.6
+Cotton,New,242.2,54.0,Red,Surat,91.39,46.99
+Cotton,New,33.3,60.0,Grey,Jaipur,91.03,46.83
+Cotton,Good,92.7,44.0,Black,Ahmedabad,88.51,41.05
+Cotton,Good,184.1,60.0,Grey,Jaipur,91.73,36.85
+Denim,Poor,79.7,44.0,Blue,Tirupur,122.01,28.58
+Cotton,New,28.5,58.0,Black,Ludhiana,96.59,52.73
+Polyester,Good,206.0,36.0,Yellow,Ahmedabad,60.76,24.5
+Denim,Good,26.2,58.0,Blue,Surat,107.83,43.8
+Polyester,New,158.9,48.0,White,Surat,61.06,33.6
+Cotton,Good,33.9,54.0,Blue,Jaipur,97.54,41.62
+Wool,Poor,36.6,48.0,White,Jaipur,258.29,64.72
+Wool,Fair,221.7,64.0,Blue,Ahmedabad,251.61,91.83
+Cotton,Fair,18.2,72.0,Black,Surat,86.24,26.62
+Wool,Good,179.0,54.0,Natural Beige,Mumbai,232.79,103.79
+Wool,Poor,72.0,60.0,Natural Beige,Surat,244.02,59.8
+Cotton,Poor,343.6,36.0,White,Tirupur,84.6,15.0
+Denim,Good,83.8,58.0,Black,Surat,105.69,48.18
+Denim,Good,20.8,60.0,Red,Surat,116.25,51.38
+Linen,Good,110.6,48.0,Green,Surat,144.51,61.16
+Polyester,Good,43.6,36.0,White,Tirupur,59.81,27.69
+Polyester,Good,34.2,72.0,Yellow,Surat,64.65,32.39
+Linen,Fair,102.2,60.0,Black,Ahmedabad,149.59,53.92
+Denim,Fair,37.5,72.0,White,Ahmedabad,122.14,41.95
+Silk,Good,53.8,64.0,Red,Ludhiana,335.66,150.46
+Silk,Fair,34.8,72.0,Black,Ludhiana,324.81,112.83
+Cotton,Fair,65.0,60.0,Yellow,Ahmedabad,101.84,38.91
+Polyester,Good,123.9,72.0,Yellow,Jaipur,64.48,26.47
+Silk,Fair,73.9,54.0,Natural Beige,Ludhiana,337.38,125.42
+Cotton,Good,36.0,48.0,Black,Ahmedabad,98.14,45.29
+Cotton,Good,33.5,64.0,Yellow,Surat,88.65,40.69
+Cotton,Fair,243.8,58.0,Green,Surat,93.91,24.14
+Wool,Poor,121.1,54.0,Green,Surat,227.57,47.43
+Denim,Good,161.9,48.0,Green,Ludhiana,129.23,60.83
+Polyester,Fair,59.8,72.0,Blue,Ahmedabad,61.69,21.49
+Denim,Good,256.6,64.0,Green,Ahmedabad,115.24,51.82
+Cotton,New,49.5,44.0,Blue,Bengaluru,104.24,54.3
+Linen,New,36.8,72.0,Blue,Tirupur,156.12,79.47
+Polyester,Good,29.7,44.0,Natural Beige,Ludhiana,67.89,31.46
+Polyester,Poor,115.4,44.0,Green,Surat,62.66,15.0
+Wool,Good,88.4,44.0,Natural Beige,Mumbai,263.94,113.11
+Polyester,Good,48.4,64.0,Black,Surat,64.93,28.99
+Cotton,Poor,60.7,58.0,Yellow,Ludhiana,96.76,25.67
+Denim,Fair,37.5,44.0,Natural Beige,Surat,109.97,35.73
+Denim,Fair,69.5,60.0,Green,Surat,108.2,39.24
+Denim,Fair,73.2,54.0,Natural Beige,Tirupur,106.44,42.8
+Silk,Good,98.1,72.0,Red,Tirupur,329.74,152.14
+Denim,Good,75.6,64.0,Grey,Surat,123.06,55.71
+Polyester,Good,38.2,44.0,Yellow,Ahmedabad,67.3,28.95
+Linen,Good,68.0,58.0,Red,Ahmedabad,172.3,85.34
+Wool,Good,16.1,48.0,Grey,Ahmedabad,231.33,112.8
+Polyester,New,16.0,58.0,Yellow,Ahmedabad,64.68,35.18
+Denim,New,173.3,44.0,Blue,Ahmedabad,126.18,66.11
+Polyester,New,253.3,44.0,White,Mumbai,73.64,38.58
+Cotton,Fair,53.3,72.0,Red,Ludhiana,91.92,29.69
+Polyester,New,33.6,54.0,Black,Bengaluru,65.68,35.02
+Cotton,Good,57.0,72.0,Black,Ahmedabad,91.83,41.82
+Polyester,Good,139.0,54.0,Red,Jaipur,64.22,31.03
+Polyester,Good,20.9,48.0,Natural Beige,Mumbai,71.45,28.85
+Linen,Good,111.2,58.0,Yellow,Tirupur,152.01,61.57
+Denim,New,121.1,58.0,Blue,Jaipur,110.9,59.82
+Wool,Good,104.2,58.0,Blue,Bengaluru,255.07,122.7
+Silk,New,31.0,64.0,Yellow,Jaipur,357.55,191.97
+Denim,Good,47.0,72.0,Black,Mumbai,121.73,54.86
+Linen,Fair,45.2,60.0,Blue,Surat,142.66,51.14
+Wool,New,31.6,60.0,Yellow,Surat,232.47,114.04
+Denim,Good,78.7,58.0,Blue,Ahmedabad,118.81,52.89
+Linen,Good,44.8,36.0,Red,Ludhiana,161.34,70.27
+Cotton,Poor,25.0,48.0,Black,Surat,90.23,19.18
+Cotton,Fair,79.1,64.0,Yellow,Ahmedabad,90.3,28.45
+Polyester,Fair,40.9,64.0,White,Mumbai,66.5,23.64
+Cotton,Fair,62.3,72.0,Yellow,Mumbai,97.28,31.81
+Polyester,Good,178.0,54.0,Yellow,Jaipur,65.75,29.05
+Cotton,Fair,102.2,48.0,Green,Surat,90.18,35.27
+Cotton,Good,180.8,72.0,Grey,Mumbai,93.36,41.17
+Cotton,Fair,136.7,58.0,White,Ahmedabad,92.55,31.16
+Polyester,Good,171.9,64.0,Grey,Mumbai,73.21,28.75
+Denim,Good,107.3,58.0,Black,Ahmedabad,129.55,50.74
+Silk,Good,112.4,44.0,Black,Ludhiana,346.85,143.65
+Cotton,Fair,60.1,54.0,Natural Beige,Surat,90.7,26.22
+Polyester,Fair,90.2,64.0,White,Ahmedabad,66.24,22.74
+Cotton,Good,102.9,72.0,Natural Beige,Surat,96.04,48.28
+Polyester,New,366.5,58.0,Yellow,Bengaluru,69.77,34.66
+Wool,New,24.0,64.0,Green,Mumbai,254.9,142.85
+Polyester,Poor,156.8,64.0,Natural Beige,Ahmedabad,62.65,15.0
+Silk,New,201.6,54.0,Yellow,Mumbai,373.8,186.39
+Denim,Good,117.1,48.0,Natural Beige,Tirupur,116.34,54.92
+Denim,Good,22.6,58.0,Grey,Ludhiana,116.67,49.62
+Denim,Good,210.8,48.0,Grey,Surat,109.57,48.05
+Wool,Fair,65.5,44.0,Grey,Mumbai,237.52,75.84
+Linen,Fair,145.6,60.0,Green,Bengaluru,156.99,50.39
+Cotton,Good,153.3,60.0,Natural Beige,Tirupur,84.59,38.15
+Cotton,New,35.0,44.0,Grey,Jaipur,97.06,48.97
+Polyester,New,44.0,72.0,Blue,Bengaluru,64.06,35.9
+Cotton,Good,103.8,64.0,Green,Surat,91.51,39.11
+Polyester,Fair,41.3,60.0,Green,Jaipur,62.06,17.89
+Denim,Good,107.6,60.0,Grey,Ahmedabad,111.56,47.27
+Linen,Fair,97.1,36.0,Black,Tirupur,141.07,58.86
+Denim,Poor,130.9,54.0,Red,Ahmedabad,121.66,26.99
+Silk,Fair,346.0,48.0,Blue,Ahmedabad,352.25,108.79
+Silk,New,50.5,54.0,Blue,Ahmedabad,354.98,203.56
+Cotton,Good,66.7,60.0,Black,Ludhiana,95.2,43.06
+Cotton,Good,206.5,58.0,Blue,Ludhiana,94.36,40.89
+Denim,Good,207.4,44.0,Black,Surat,121.28,51.01
+Denim,New,95.2,60.0,White,Ahmedabad,117.71,60.38
+Denim,Good,99.2,54.0,Black,Mumbai,124.59,52.59
+Linen,Good,119.6,60.0,Yellow,Surat,150.22,63.35
+Cotton,Poor,22.1,64.0,Black,Ahmedabad,88.87,17.33
+Silk,Fair,81.0,60.0,Blue,Tirupur,341.54,98.3
+Linen,Good,88.4,60.0,Blue,Bengaluru,157.34,73.78
+Denim,New,24.2,60.0,Yellow,Ahmedabad,112.61,61.5
+Denim,Good,100.8,58.0,Blue,Tirupur,105.41,48.24
+Cotton,Fair,31.0,48.0,Grey,Surat,91.21,30.69
+Polyester,New,63.4,48.0,Red,Surat,60.47,33.84
+Silk,Fair,28.5,36.0,Black,Jaipur,359.74,123.71
+Denim,Good,72.5,60.0,Natural Beige,Ahmedabad,118.65,58.58
+Cotton,Good,44.5,54.0,Yellow,Surat,88.74,39.66
+Denim,Good,42.3,44.0,White,Ludhiana,110.55,49.51
+Silk,New,35.9,60.0,Green,Surat,309.73,172.12
+Cotton,Poor,83.2,64.0,Grey,Tirupur,87.21,18.02
+Denim,Poor,92.0,60.0,White,Mumbai,117.7,26.59
+Polyester,Good,124.6,54.0,Green,Mumbai,66.43,27.76
+Cotton,Good,32.2,60.0,Black,Surat,88.1,43.32
+Cotton,New,88.8,44.0,Natural Beige,Ahmedabad,90.09,47.05
+Silk,Good,186.0,60.0,Yellow,Tirupur,351.88,149.39
+Cotton,Good,86.6,60.0,Natural Beige,Ludhiana,95.11,40.35
+Denim,Good,42.1,44.0,Blue,Surat,116.1,48.37
+Polyester,Fair,147.8,54.0,Blue,Surat,59.99,20.28
+Denim,New,148.3,60.0,Blue,Surat,122.8,70.1
+Cotton,Fair,90.3,60.0,Yellow,Surat,88.41,31.95
+Cotton,Good,19.3,60.0,Grey,Tirupur,83.98,40.94
+Cotton,Fair,84.9,48.0,White,Surat,96.27,35.12
+Denim,Good,113.7,44.0,Green,Ahmedabad,116.34,46.37
+Wool,Good,59.0,60.0,Black,Tirupur,210.43,102.52
+Denim,Poor,68.3,54.0,Grey,Bengaluru,136.08,31.86
+Silk,Good,182.3,48.0,Blue,Tirupur,337.67,154.41
+Cotton,New,18.6,60.0,White,Ludhiana,97.68,53.97
+Cotton,Fair,36.9,72.0,Yellow,Ahmedabad,101.14,38.68
+Cotton,Good,41.5,64.0,Yellow,Surat,90.29,39.23
+Cotton,Good,67.4,60.0,Natural Beige,Ahmedabad,95.83,43.96
+Cotton,Fair,130.2,58.0,Black,Ahmedabad,94.23,26.68
+Cotton,Fair,228.3,64.0,Yellow,Jaipur,88.21,28.6
+Denim,Good,17.3,44.0,Black,Surat,120.19,50.33
+Cotton,Good,27.0,72.0,Yellow,Tirupur,89.51,36.43
+Cotton,New,28.0,64.0,Natural Beige,Ahmedabad,89.09,48.46
+Cotton,Good,160.0,72.0,Yellow,Ahmedabad,96.47,44.49
+Cotton,Good,42.5,36.0,Red,Ludhiana,96.75,43.72
+Polyester,New,74.7,36.0,Grey,Ahmedabad,63.86,37.11
+Denim,Good,16.3,44.0,Grey,Ahmedabad,117.02,52.13
+Silk,Fair,49.7,60.0,Grey,Ahmedabad,367.56,113.22
+Cotton,Fair,67.1,48.0,Yellow,Bengaluru,104.72,41.67
+Denim,Good,188.6,60.0,Blue,Ludhiana,128.32,58.58
+Denim,Poor,127.0,54.0,Yellow,Ahmedabad,115.89,25.44
+Polyester,Good,55.9,72.0,Grey,Surat,65.65,29.07
+Denim,Poor,51.6,58.0,Yellow,Tirupur,119.49,26.08
+Polyester,Fair,21.7,58.0,Natural Beige,Surat,59.84,20.22
+Polyester,Good,18.5,60.0,Yellow,Surat,62.88,25.82
+Silk,New,144.2,48.0,Green,Surat,356.59,196.31
+Cotton,Good,20.6,60.0,Yellow,Ahmedabad,92.9,42.48
+Cotton,Good,130.2,48.0,Grey,Surat,90.68,39.36
+Denim,Good,17.1,48.0,Red,Bengaluru,125.98,53.01
+Cotton,Good,90.7,72.0,Yellow,Ahmedabad,90.44,41.75
+Cotton,New,62.1,44.0,White,Jaipur,99.72,63.45
+Polyester,Fair,167.5,48.0,Natural Beige,Jaipur,68.05,21.89
+Denim,New,36.6,72.0,Red,Ludhiana,110.9,57.98
+Wool,Good,55.6,72.0,Black,Ahmedabad,240.99,106.14
+Silk,Fair,45.5,44.0,Black,Ahmedabad,347.2,117.45
+Wool,Fair,26.1,36.0,White,Ludhiana,252.73,82.15
+Denim,Good,113.8,60.0,White,Surat,122.16,50.35
+Cotton,New,43.9,44.0,Natural Beige,Ahmedabad,95.04,52.0
+Cotton,Poor,93.4,60.0,White,Ahmedabad,100.21,16.21
+Cotton,New,131.5,64.0,Natural Beige,Tirupur,91.96,47.06
+Cotton,Fair,43.8,54.0,Natural Beige,Tirupur,94.65,32.18
+Cotton,New,65.0,60.0,Yellow,Surat,91.79,48.36
+Denim,Fair,26.2,60.0,Grey,Bengaluru,126.3,46.42
+Cotton,Good,42.4,64.0,White,Ahmedabad,100.54,46.63
+Denim,Poor,232.1,60.0,White,Mumbai,119.75,31.2
+Denim,Fair,247.4,72.0,Yellow,Ahmedabad,128.96,53.25
+Cotton,Good,87.8,72.0,Blue,Ahmedabad,91.74,41.36
+Cotton,Good,51.4,64.0,Grey,Ludhiana,88.18,39.75
+Polyester,Good,71.1,58.0,Natural Beige,Ahmedabad,68.38,28.76
+Cotton,New,48.1,60.0,Grey,Ludhiana,98.88,51.53
+Cotton,Good,26.8,60.0,Blue,Ahmedabad,99.62,43.14
+Linen,New,388.5,58.0,Grey,Ahmedabad,162.4,83.63
+Denim,Good,43.5,36.0,Yellow,Ludhiana,117.47,48.32
+Polyester,Fair,39.7,54.0,Blue,Tirupur,63.94,17.62
+Polyester,New,106.3,36.0,Green,Ahmedabad,65.75,34.69
+Denim,Good,57.3,72.0,Green,Tirupur,120.8,52.11
+Silk,New,80.8,72.0,White,Surat,333.86,175.71
+Linen,Good,176.8,58.0,Grey,Tirupur,154.68,70.15
+Cotton,Good,303.7,58.0,Natural Beige,Ahmedabad,99.12,40.65
+Denim,Good,83.2,64.0,Natural Beige,Ahmedabad,127.6,50.07
+Denim,Good,42.1,44.0,White,Ahmedabad,117.05,50.14
+Denim,Good,110.3,48.0,Natural Beige,Jaipur,112.5,50.03
+Silk,Good,75.6,54.0,Blue,Tirupur,308.69,126.32
+Cotton,Fair,320.0,48.0,Blue,Bengaluru,98.26,34.76
+Linen,Fair,127.8,58.0,Yellow,Tirupur,147.65,44.24
+Cotton,Good,30.4,48.0,Blue,Jaipur,101.6,40.44
+Cotton,Fair,125.6,58.0,Yellow,Ahmedabad,100.73,38.11
+Cotton,Poor,97.0,72.0,Natural Beige,Surat,95.87,20.68
+Cotton,Good,24.6,48.0,Natural Beige,Ahmedabad,98.51,41.52
+Cotton,Good,128.3,48.0,Natural Beige,Tirupur,91.85,36.57
+Polyester,Good,22.3,44.0,Green,Surat,58.64,27.37
+Cotton,Good,39.8,60.0,Red,Surat,87.39,41.12
+Silk,New,20.1,44.0,Grey,Tirupur,330.66,189.98
+Linen,Fair,96.4,58.0,Natural Beige,Tirupur,148.78,56.24
+Cotton,Poor,125.2,60.0,Yellow,Ahmedabad,93.72,16.98
+Polyester,Good,106.2,44.0,Red,Ludhiana,65.27,27.82
+Polyester,Good,78.5,54.0,Black,Ahmedabad,65.76,30.63
+Polyester,New,68.7,72.0,Red,Ludhiana,68.21,38.99
+Denim,Good,80.5,58.0,Yellow,Tirupur,118.07,46.36
+Silk,Good,111.4,36.0,Blue,Surat,355.62,167.18
+Cotton,Poor,30.9,48.0,Blue,Ahmedabad,99.04,26.03
+Denim,Poor,214.2,64.0,Green,Surat,111.73,22.45
+Polyester,Good,49.2,48.0,White,Tirupur,66.62,29.16
+Linen,Fair,64.7,64.0,Blue,Bengaluru,168.86,60.75
+Wool,Good,31.7,44.0,Grey,Ahmedabad,222.04,95.0
+Linen,Fair,23.5,36.0,Red,Ahmedabad,158.63,49.97
+Polyester,Fair,56.2,54.0,Red,Ludhiana,65.41,22.99
+Cotton,Poor,120.2,60.0,Red,Mumbai,100.99,16.31
+Silk,Fair,27.4,54.0,Red,Surat,327.9,112.79
+Polyester,Fair,59.6,72.0,White,Tirupur,57.27,22.21
+Denim,Good,45.7,64.0,Green,Ludhiana,118.24,52.51
+Polyester,Good,113.4,72.0,Red,Surat,65.85,29.94
+Polyester,Poor,38.5,60.0,White,Surat,63.2,17.15
+Cotton,Fair,52.9,36.0,Red,Ahmedabad,100.68,32.49
+Cotton,Fair,177.9,60.0,Red,Surat,87.41,31.2
+Cotton,Fair,110.2,54.0,Yellow,Jaipur,93.43,30.67
+Cotton,Good,76.0,60.0,Natural Beige,Surat,87.48,35.91
+Denim,Fair,45.9,54.0,Yellow,Ludhiana,117.52,46.77
+Denim,Good,16.3,64.0,Red,Ludhiana,116.07,53.07
+Polyester,Good,152.9,72.0,Grey,Ahmedabad,64.59,29.52
+Silk,Good,68.6,36.0,White,Ludhiana,351.34,160.3
+Wool,New,162.9,54.0,Blue,Surat,212.24,111.11
+Cotton,Good,92.0,72.0,Yellow,Surat,92.55,43.8
+Denim,New,42.0,64.0,Natural Beige,Surat,119.58,66.21
+Linen,New,37.1,58.0,Black,Surat,159.67,87.3
+Denim,Good,35.5,44.0,Red,Bengaluru,129.1,61.97
+Wool,Fair,52.9,72.0,Black,Surat,211.81,78.02
+Denim,Good,171.1,44.0,Grey,Tirupur,121.2,53.04
+Linen,Good,221.3,58.0,Yellow,Ahmedabad,170.22,70.79
+Linen,Good,126.6,64.0,Red,Tirupur,162.43,70.41
+Cotton,Good,77.2,64.0,Green,Tirupur,93.94,47.64
+Silk,Good,61.0,44.0,Grey,Ahmedabad,341.07,177.03
+Silk,Poor,46.6,58.0,Green,Bengaluru,384.17,76.62
+Polyester,Good,101.5,44.0,White,Tirupur,64.44,28.55
+Cotton,Good,28.4,48.0,Black,Ahmedabad,98.64,43.82
+Cotton,Good,23.6,44.0,Grey,Ludhiana,90.25,41.79
+Denim,Good,22.5,44.0,Green,Ahmedabad,121.86,56.4
+Cotton,Good,80.6,54.0,Black,Ludhiana,96.09,36.32
+Cotton,Good,40.0,48.0,White,Ahmedabad,88.36,37.22
+Denim,New,117.1,72.0,Natural Beige,Bengaluru,127.89,69.83
+Cotton,New,55.3,64.0,Natural Beige,Ahmedabad,99.62,53.5
+Wool,Fair,88.9,54.0,White,Surat,227.23,82.55
+Cotton,Good,110.0,72.0,Grey,Ahmedabad,102.11,45.11
+Cotton,Fair,81.4,48.0,Grey,Ahmedabad,97.76,30.64
+Polyester,Poor,33.8,58.0,Yellow,Bengaluru,71.87,19.61
+Silk,Good,37.2,48.0,White,Tirupur,343.95,163.21
+Silk,New,76.1,64.0,Yellow,Tirupur,334.82,186.55
+Linen,Good,37.8,60.0,Black,Ahmedabad,151.46,64.01
+Polyester,Good,47.2,64.0,Green,Bengaluru,63.95,29.88
+Silk,Good,54.7,48.0,Red,Surat,324.25,149.91
+Cotton,New,22.2,48.0,Green,Jaipur,92.69,48.29
+Polyester,Good,110.5,60.0,Black,Surat,57.47,27.6
+Cotton,Fair,98.5,48.0,Blue,Mumbai,106.61,35.96
+Polyester,Good,36.1,64.0,Green,Bengaluru,69.67,28.84
+Cotton,Good,91.2,54.0,Green,Ahmedabad,94.23,40.89
+Cotton,Good,143.6,48.0,Black,Tirupur,88.31,38.65
+Cotton,New,96.5,64.0,Yellow,Surat,91.86,46.83
+Wool,Good,86.4,48.0,Natural Beige,Jaipur,232.83,98.27
+Cotton,New,72.2,64.0,Grey,Tirupur,91.64,47.83
+Denim,Good,68.8,48.0,White,Tirupur,108.29,47.19
+Wool,Good,68.0,54.0,Grey,Bengaluru,264.71,128.3
+Denim,Good,61.9,48.0,Green,Ludhiana,111.99,49.5
+Cotton,Fair,35.4,58.0,Natural Beige,Ahmedabad,89.96,27.2
+Silk,Good,39.9,60.0,Black,Tirupur,334.74,155.02
+Silk,Fair,381.6,44.0,Yellow,Surat,345.05,109.08
+Wool,New,150.7,72.0,Natural Beige,Surat,241.33,124.26
+Cotton,Fair,85.9,60.0,Red,Mumbai,105.51,33.25
+Polyester,Fair,82.5,58.0,Red,Mumbai,69.31,22.13
+Cotton,Poor,39.9,44.0,Natural Beige,Ahmedabad,89.46,19.68
+Cotton,Good,26.4,48.0,White,Ludhiana,98.21,41.16
+Wool,Fair,83.9,58.0,Green,Surat,232.66,77.03
+Silk,Fair,41.1,60.0,Green,Surat,330.09,118.3
+Denim,Good,64.1,60.0,Black,Ludhiana,126.72,58.11
+Linen,Fair,156.0,60.0,Yellow,Ahmedabad,161.21,50.06
+Cotton,Fair,129.9,36.0,Grey,Jaipur,88.91,30.81
+Cotton,Fair,399.7,64.0,Yellow,Surat,85.95,25.48
+Polyester,New,230.9,58.0,Natural Beige,Ahmedabad,60.77,30.93
+Polyester,Good,44.2,54.0,Blue,Surat,61.05,28.06
+Cotton,New,26.4,54.0,Red,Surat,90.53,49.47
+Denim,New,67.0,54.0,Green,Tirupur,111.87,61.67
+Silk,New,43.4,64.0,Grey,Surat,347.05,190.99
+Linen,New,29.3,60.0,Blue,Tirupur,157.41,84.05
+Polyester,New,61.7,54.0,Green,Tirupur,57.67,34.05
+Polyester,Good,27.1,58.0,Green,Surat,63.18,30.3
+Cotton,Good,108.8,58.0,Natural Beige,Ludhiana,90.52,38.14
+Denim,Good,24.6,72.0,Red,Surat,116.52,51.03
+Cotton,Fair,232.4,48.0,Blue,Bengaluru,97.94,33.85
+Polyester,New,132.7,36.0,Yellow,Bengaluru,69.2,35.08
+Cotton,Good,55.6,58.0,Blue,Bengaluru,101.8,42.65
+Polyester,New,44.7,54.0,White,Ahmedabad,69.93,38.45
+Cotton,Good,61.0,54.0,Black,Surat,83.87,40.04
+Denim,Good,100.8,48.0,Natural Beige,Tirupur,107.06,48.5
+Polyester,Fair,49.1,58.0,White,Surat,58.46,22.6
+Cotton,Fair,59.9,44.0,Blue,Surat,86.83,33.64
+Linen,Good,50.7,72.0,Yellow,Surat,160.74,73.74
+Silk,Fair,71.9,36.0,Black,Ahmedabad,370.09,135.16
+Cotton,New,28.0,36.0,Grey,Surat,91.01,53.9
+Denim,Good,45.8,44.0,Green,Jaipur,121.37,51.54
+Cotton,Good,145.5,36.0,Blue,Ahmedabad,101.9,47.58
+Cotton,Fair,63.8,60.0,Grey,Ahmedabad,90.45,32.93
+Polyester,Good,86.7,72.0,Red,Surat,66.67,29.63
+Polyester,Fair,57.2,54.0,White,Ahmedabad,65.43,19.76
+Polyester,Good,15.1,64.0,Blue,Bengaluru,72.06,32.28
+Polyester,Good,302.7,48.0,Yellow,Bengaluru,70.56,28.87
+Cotton,Poor,52.3,44.0,Green,Ludhiana,96.23,17.06
+Denim,Good,281.4,54.0,Blue,Surat,110.2,46.45
+Wool,Poor,121.3,60.0,Green,Ludhiana,238.19,52.59
+Cotton,Fair,29.4,72.0,Black,Ahmedabad,92.17,38.85
+Cotton,Good,64.8,44.0,Red,Surat,84.34,38.72
+Polyester,Good,46.8,44.0,Red,Mumbai,70.56,30.07
+Linen,Good,39.1,48.0,Blue,Tirupur,140.6,59.45
+Silk,Good,141.3,44.0,Yellow,Ahmedabad,322.67,146.85
+Wool,Poor,55.9,44.0,White,Ahmedabad,243.16,52.76
+Cotton,New,22.7,60.0,Yellow,Mumbai,93.73,56.69
+Linen,New,55.2,36.0,Green,Mumbai,164.85,86.53
+Linen,Good,17.8,54.0,Yellow,Jaipur,163.77,75.74
+Denim,Fair,41.3,48.0,Yellow,Ahmedabad,118.45,37.49
+Cotton,Poor,136.8,60.0,Blue,Bengaluru,99.43,17.06
+Silk,Good,30.9,60.0,Grey,Surat,337.67,170.12
+Cotton,Fair,131.5,54.0,Yellow,Surat,97.09,33.93
+Cotton,Good,140.3,36.0,Natural Beige,Surat,94.06,44.56
+Linen,Good,86.8,60.0,White,Ahmedabad,170.6,72.31
+Cotton,Fair,31.7,72.0,White,Tirupur,90.86,32.14
+Cotton,Good,15.1,54.0,Blue,Surat,94.68,43.31
+Denim,New,27.8,48.0,Grey,Ahmedabad,125.27,73.15
+Linen,Good,47.8,60.0,Green,Tirupur,143.16,57.41
+Cotton,Poor,30.3,60.0,Yellow,Tirupur,86.25,17.61
+Denim,Good,15.1,64.0,White,Ahmedabad,126.73,55.78
+Silk,Good,218.1,54.0,White,Tirupur,339.93,153.27
+Denim,New,29.7,44.0,Grey,Bengaluru,132.48,75.7
+Polyester,Fair,39.7,54.0,Grey,Surat,63.66,20.3
+Silk,New,293.2,64.0,Yellow,Ludhiana,349.61,195.64
+Denim,Good,139.4,54.0,Black,Mumbai,119.2,58.22
+Cotton,Good,29.9,64.0,Black,Ahmedabad,89.85,42.76
+Cotton,Poor,352.5,72.0,Black,Surat,93.2,15.58
+Polyester,Good,33.4,54.0,Blue,Ahmedabad,64.06,30.0
+Polyester,Poor,43.2,44.0,Natural Beige,Tirupur,57.3,15.0
+Cotton,Good,153.9,72.0,Green,Ahmedabad,90.44,37.21
+Cotton,New,66.3,44.0,Natural Beige,Bengaluru,96.69,50.49
+Polyester,New,188.4,60.0,Green,Ahmedabad,61.74,34.23
+Cotton,Good,40.0,36.0,Natural Beige,Ahmedabad,89.7,39.96
+Polyester,Fair,86.3,36.0,Green,Bengaluru,71.97,23.51
+Wool,Good,36.5,58.0,Yellow,Tirupur,212.64,103.96
+Denim,Fair,128.2,48.0,White,Ahmedabad,128.62,40.16
+Cotton,Good,59.0,64.0,Red,Ahmedabad,90.47,41.39
+Polyester,Good,80.0,60.0,Black,Ahmedabad,68.71,29.87
+Denim,Fair,93.1,64.0,Blue,Ludhiana,112.56,40.79
+Polyester,Poor,81.2,44.0,Black,Jaipur,67.97,16.63
+Wool,Fair,100.1,72.0,Green,Ahmedabad,222.24,74.86
+Polyester,Good,183.9,54.0,Blue,Surat,57.3,25.96
+Denim,Good,151.0,58.0,Grey,Ahmedabad,116.37,54.6
+Polyester,Poor,307.7,72.0,Red,Ahmedabad,67.85,15.0
+Denim,Fair,34.0,64.0,Black,Ahmedabad,124.63,44.07
+Wool,Good,113.9,64.0,White,Ahmedabad,226.01,85.05
+Wool,Fair,181.5,54.0,Blue,Ahmedabad,252.94,85.9
+Linen,Fair,64.9,64.0,Natural Beige,Surat,155.29,59.5
+Cotton,New,62.3,72.0,Grey,Surat,91.5,49.36
+Linen,Fair,54.1,48.0,Black,Ahmedabad,169.06,61.63
+Silk,Good,105.6,58.0,Red,Tirupur,340.56,128.29
+Linen,Good,98.4,36.0,Yellow,Jaipur,152.93,65.99
+Polyester,Poor,52.8,60.0,Natural Beige,Surat,61.34,15.0
+Polyester,Good,612.5,60.0,Black,Ahmedabad,65.64,29.4
+Polyester,Good,47.8,58.0,Black,Surat,63.14,29.36
+Polyester,Fair,73.3,54.0,Natural Beige,Ahmedabad,69.16,22.97
+Wool,Fair,106.3,36.0,Green,Tirupur,233.67,84.76
+Denim,Good,435.0,54.0,Blue,Tirupur,111.14,46.97
+Polyester,Good,104.1,58.0,Yellow,Jaipur,68.59,32.21
+Cotton,New,118.3,48.0,White,Ludhiana,101.79,49.05
+Linen,Good,124.1,58.0,Red,Surat,150.07,68.79
+Polyester,Good,176.0,44.0,Black,Surat,61.48,25.68
+Cotton,New,57.6,48.0,Green,Surat,85.01,47.56
+Polyester,Fair,173.7,48.0,Yellow,Ahmedabad,67.9,25.04
+Denim,Good,19.8,72.0,White,Surat,109.87,49.58
+Silk,Good,60.5,64.0,Black,Ahmedabad,344.59,148.8
+Linen,Good,119.9,36.0,Blue,Surat,161.53,70.76
+Cotton,New,182.6,58.0,Red,Ahmedabad,89.36,44.38
+Denim,Good,18.7,58.0,White,Ahmedabad,119.15,49.3
+Denim,Good,200.3,60.0,White,Surat,118.56,49.6
+Cotton,Fair,35.3,48.0,Green,Ahmedabad,90.61,34.9
+Cotton,Fair,96.8,36.0,Blue,Surat,91.61,31.55
+Cotton,New,24.8,72.0,Blue,Ahmedabad,93.18,48.22
+Cotton,Good,101.7,58.0,Blue,Surat,92.02,39.25
+Polyester,Good,91.9,58.0,Black,Surat,57.94,26.2
+Cotton,Good,57.2,48.0,Red,Surat,83.6,38.65
+Denim,Good,15.2,44.0,Yellow,Surat,121.42,57.4
+Cotton,New,23.5,58.0,Black,Ludhiana,97.19,49.73
+Denim,Poor,23.4,48.0,Natural Beige,Surat,120.82,28.63
+Polyester,Good,128.6,36.0,Black,Ahmedabad,59.9,24.79
+Cotton,Good,61.1,58.0,Grey,Surat,95.72,47.47
+Cotton,Good,54.0,72.0,Yellow,Ahmedabad,99.56,47.83
+Polyester,Fair,118.7,48.0,Black,Ahmedabad,60.88,22.45
+Polyester,Good,90.6,48.0,Green,Ludhiana,64.82,27.11
+Denim,Fair,39.3,60.0,Yellow,Ahmedabad,110.64,41.46
+Silk,Fair,103.7,60.0,Red,Bengaluru,368.62,115.22
+Polyester,Good,37.9,60.0,Green,Tirupur,63.37,27.84
+Wool,Fair,232.9,72.0,Blue,Ahmedabad,253.51,80.06
+Wool,New,47.1,58.0,Yellow,Surat,211.6,117.94
+Denim,Good,83.1,44.0,Yellow,Surat,120.5,57.71
+Denim,New,16.4,64.0,Yellow,Ludhiana,118.32,65.01
+Cotton,Good,81.1,72.0,Natural Beige,Jaipur,101.85,44.44
+Denim,New,47.3,72.0,Red,Mumbai,130.37,68.9
+Cotton,Good,156.7,58.0,Blue,Surat,90.94,41.96
+Denim,New,153.0,64.0,White,Surat,106.83,55.41
+Linen,Good,31.9,60.0,Yellow,Mumbai,157.46,68.9
+Denim,Poor,62.9,48.0,Black,Ludhiana,128.91,34.67
+Polyester,Good,136.5,48.0,Yellow,Jaipur,66.99,29.33
+Cotton,Fair,88.4,60.0,Black,Surat,90.31,25.0
+Linen,Fair,48.6,58.0,Natural Beige,Surat,150.85,61.16
+Cotton,Good,78.5,60.0,Natural Beige,Mumbai,103.13,50.43
+Cotton,Good,218.3,48.0,Natural Beige,Tirupur,97.2,39.49
+Polyester,Poor,129.4,72.0,Grey,Ludhiana,65.86,16.96
+Polyester,Fair,58.9,36.0,Natural Beige,Mumbai,68.5,22.84
+Cotton,New,126.0,48.0,Blue,Ahmedabad,102.35,53.9
+Cotton,Fair,17.6,72.0,Red,Ludhiana,88.96,29.76
+Wool,Fair,80.9,54.0,Red,Ludhiana,240.42,84.85
+Polyester,New,266.2,60.0,Green,Surat,66.35,31.36
+Cotton,Fair,136.5,72.0,Red,Tirupur,95.01,36.04
+Polyester,Fair,281.6,58.0,Red,Ludhiana,64.47,19.62
+Linen,New,25.2,36.0,White,Ludhiana,158.17,84.65
+Polyester,Good,236.8,36.0,Grey,Surat,58.33,24.35
+Denim,New,83.0,60.0,Natural Beige,Surat,106.21,55.64
+Linen,Good,76.6,44.0,White,Surat,148.34,61.51
+Linen,Good,34.7,72.0,Grey,Surat,164.08,80.03
+Cotton,Good,97.2,54.0,Yellow,Ahmedabad,101.98,36.8
+Polyester,Good,77.2,58.0,Black,Surat,57.05,22.75
+Denim,Good,197.8,54.0,Yellow,Ahmedabad,116.55,50.24
+Cotton,New,33.9,54.0,Blue,Tirupur,95.52,51.34
+Polyester,Fair,239.7,48.0,Green,Tirupur,57.04,19.13
+Polyester,New,141.5,44.0,Black,Ahmedabad,65.78,35.31
+Denim,Good,54.5,44.0,Green,Surat,114.64,54.22
+Polyester,Good,21.0,44.0,Blue,Ludhiana,62.81,27.26
+Cotton,Poor,101.5,72.0,Green,Surat,85.29,15.0
+Cotton,Fair,27.4,60.0,Natural Beige,Bengaluru,107.05,44.0
+Cotton,New,250.0,58.0,Green,Surat,86.06,44.86
+Silk,Fair,98.1,48.0,Red,Surat,314.46,110.03
+Cotton,New,230.5,72.0,Blue,Mumbai,102.06,58.48
+Cotton,Good,118.5,72.0,Natural Beige,Ahmedabad,101.86,41.62
+Cotton,Good,45.6,72.0,Black,Jaipur,92.39,44.81
+Polyester,Good,51.3,60.0,White,Tirupur,66.28,30.67
+Silk,Fair,50.6,60.0,Green,Ahmedabad,371.16,138.32
+Denim,Good,24.2,44.0,Natural Beige,Surat,120.23,55.35
+Polyester,Good,193.1,36.0,Black,Ludhiana,68.25,28.92
+Polyester,Fair,79.2,72.0,Red,Jaipur,66.6,24.5
+Linen,Good,70.6,44.0,Natural Beige,Ahmedabad,157.36,74.6
+Denim,Good,27.1,48.0,White,Ludhiana,113.84,55.98
+Linen,Fair,18.3,72.0,Yellow,Jaipur,153.13,51.46
+Cotton,Good,140.4,64.0,Red,Surat,89.81,38.4
+Linen,Good,39.4,48.0,Natural Beige,Mumbai,164.68,74.53
+Denim,Good,52.8,54.0,Black,Surat,114.3,47.28
+Denim,Good,27.0,48.0,Blue,Surat,109.08,54.34
+Denim,Good,51.0,44.0,White,Ahmedabad,123.09,52.55
+Cotton,Good,29.1,64.0,Yellow,Ahmedabad,87.74,40.69
+Cotton,Good,72.5,48.0,White,Ahmedabad,88.25,39.63
+Linen,Good,119.1,58.0,Blue,Mumbai,180.02,81.98
+Cotton,Good,30.0,64.0,Yellow,Mumbai,101.36,47.17
+Cotton,Good,107.6,72.0,Natural Beige,Ahmedabad,96.47,36.95
+Cotton,Good,33.1,64.0,White,Ahmedabad,99.96,43.5
+Linen,Good,101.2,36.0,Black,Ahmedabad,170.16,72.31
+Silk,Good,18.6,64.0,Green,Surat,318.11,148.59
+Denim,Good,38.5,54.0,Black,Surat,121.48,48.58
+Cotton,Good,15.4,36.0,Green,Ahmedabad,96.19,43.54
+Polyester,Good,24.0,64.0,Grey,Surat,63.25,28.62
+Cotton,Fair,90.7,64.0,Green,Tirupur,93.93,27.67
+Denim,Good,44.3,60.0,Yellow,Ahmedabad,125.26,59.78
+Denim,New,62.3,48.0,Black,Ludhiana,112.33,55.87
+Wool,Good,282.2,36.0,Blue,Ahmedabad,251.69,105.77
+Wool,Good,39.4,60.0,Green,Ahmedabad,223.87,107.17
+Linen,Good,87.8,48.0,Natural Beige,Ludhiana,163.59,72.54
+Denim,Good,137.6,54.0,Natural Beige,Ahmedabad,122.21,51.75
+Polyester,Poor,136.0,60.0,Black,Bengaluru,70.1,15.0
+Denim,Good,20.7,44.0,Blue,Ludhiana,120.95,53.73
+Polyester,Good,278.9,72.0,Natural Beige,Ahmedabad,69.47,26.75
+Polyester,Good,80.4,58.0,Green,Surat,60.17,27.87
+Cotton,Good,285.6,72.0,Natural Beige,Tirupur,94.15,42.1
+Silk,Poor,196.5,36.0,Yellow,Tirupur,331.54,70.27
+Silk,Good,57.5,60.0,Red,Mumbai,368.47,176.66
+Cotton,Fair,55.7,60.0,Red,Ahmedabad,88.56,33.74
+Denim,Fair,124.7,54.0,Natural Beige,Ahmedabad,119.98,39.02
+Cotton,Fair,33.1,54.0,Natural Beige,Ahmedabad,100.11,31.81
+Cotton,New,130.6,36.0,Yellow,Tirupur,95.28,54.74
+Denim,Good,347.8,58.0,Natural Beige,Surat,112.14,47.44
+Polyester,Good,55.0,48.0,Blue,Surat,61.33,26.63
+Cotton,Good,16.0,54.0,Grey,Tirupur,88.51,41.86
+Wool,New,66.0,60.0,Natural Beige,Ahmedabad,234.85,133.12
+Denim,Good,55.9,72.0,Grey,Surat,108.16,51.56
+Cotton,New,79.8,64.0,Natural Beige,Mumbai,94.9,54.93
+Wool,Fair,30.5,72.0,Yellow,Mumbai,237.26,90.91
+Polyester,Good,81.1,36.0,Yellow,Surat,60.75,24.92
+Polyester,New,94.5,72.0,Natural Beige,Surat,64.17,34.12
+Polyester,Fair,25.3,54.0,Grey,Ahmedabad,65.8,24.89
+Polyester,Good,104.5,72.0,Natural Beige,Surat,64.46,27.4
+Polyester,Good,96.9,60.0,White,Mumbai,67.4,29.69
+Polyester,Good,48.7,60.0,Black,Ahmedabad,63.1,28.01
+Polyester,Good,238.4,72.0,Yellow,Ludhiana,64.11,28.59
+Cotton,New,240.7,44.0,Red,Tirupur,86.07,43.57
+Linen,Good,55.5,44.0,Blue,Ahmedabad,149.86,68.65
+Polyester,New,37.7,58.0,Green,Surat,61.19,35.23
+Cotton,New,46.5,72.0,Grey,Mumbai,99.23,57.17
+Wool,Poor,252.3,48.0,Yellow,Ahmedabad,243.49,38.66
+Wool,Good,67.6,54.0,Natural Beige,Jaipur,251.7,116.65
+Denim,Good,15.8,48.0,Natural Beige,Ahmedabad,117.0,52.2
+Linen,Poor,131.2,58.0,Yellow,Ahmedabad,162.48,34.79
+Silk,Good,80.8,64.0,Red,Surat,319.19,136.31
+Wool,Good,36.9,58.0,Black,Surat,220.15,89.78
+Silk,Fair,20.7,48.0,Green,Ahmedabad,338.22,109.2
+Cotton,Good,28.2,36.0,Red,Surat,85.71,35.87
+Cotton,Good,36.2,48.0,Yellow,Ludhiana,87.62,39.99
+Silk,Good,140.4,60.0,Grey,Surat,310.17,144.9
+Silk,New,20.9,72.0,Natural Beige,Ludhiana,332.17,188.69
+Denim,New,310.0,54.0,Red,Surat,118.33,59.54
+Cotton,Good,336.9,72.0,Black,Surat,88.65,43.55
+Cotton,Fair,96.4,54.0,Black,Ahmedabad,92.88,29.96
+Cotton,Good,60.6,36.0,Black,Ahmedabad,89.94,40.25
+Silk,New,108.9,48.0,Blue,Tirupur,325.66,178.61
+Cotton,New,48.1,36.0,Black,Tirupur,83.89,43.73
+Silk,New,80.4,60.0,Red,Surat,348.75,173.23
+Denim,New,26.6,36.0,Green,Surat,113.73,59.92
+Polyester,New,46.3,72.0,White,Surat,59.53,33.31
+Wool,Fair,28.5,58.0,White,Ahmedabad,252.27,80.25
+Silk,Good,92.4,60.0,White,Jaipur,365.46,156.41
+Cotton,Fair,107.0,48.0,Green,Ahmedabad,96.72,31.01
+Cotton,Good,237.2,48.0,Black,Ahmedabad,100.68,46.47
+Cotton,Good,97.1,64.0,Black,Ahmedabad,97.4,38.03
+Cotton,Good,218.1,72.0,Black,Ahmedabad,101.51,42.17
+Wool,Good,123.8,64.0,Blue,Surat,239.75,105.34
+Polyester,Good,21.5,54.0,Black,Mumbai,73.28,32.24
+Cotton,Fair,74.8,54.0,Green,Ahmedabad,96.06,37.11
+Polyester,Fair,112.0,64.0,Grey,Tirupur,65.53,21.43
+Cotton,New,100.7,72.0,Green,Surat,96.51,54.48
+Linen,Fair,60.1,60.0,Green,Ludhiana,162.78,53.42
+Polyester,Good,63.2,64.0,Natural Beige,Surat,56.81,26.93
+Cotton,New,347.8,54.0,Natural Beige,Ahmedabad,100.41,52.44
+Cotton,Fair,72.3,48.0,Natural Beige,Jaipur,88.83,29.59
+Cotton,Fair,148.3,44.0,Red,Ahmedabad,96.07,33.03
+Polyester,Good,141.0,48.0,Black,Ludhiana,64.88,30.76
+Wool,New,147.2,64.0,Natural Beige,Ahmedabad,223.81,113.2
+Cotton,Fair,60.6,44.0,Grey,Mumbai,105.65,37.65
+Polyester,New,74.5,60.0,Green,Ahmedabad,65.42,38.81
+Cotton,Good,104.6,64.0,Red,Ahmedabad,102.16,44.66
+Cotton,Good,47.8,72.0,Green,Ahmedabad,96.09,39.47
+Cotton,Good,60.6,48.0,Black,Surat,94.03,40.45
+Denim,Good,39.8,64.0,Red,Ahmedabad,116.61,52.75
+Linen,New,49.3,60.0,Green,Surat,148.22,77.25
+Cotton,Good,61.5,54.0,Yellow,Tirupur,85.91,35.0
+Denim,Fair,19.5,48.0,Black,Ahmedabad,127.08,44.75
+Polyester,New,47.3,54.0,Yellow,Surat,58.82,32.09
+Polyester,Good,404.3,36.0,Yellow,Tirupur,60.53,27.45
+Cotton,New,92.0,36.0,Red,Ludhiana,94.47,48.47
+Linen,New,210.2,60.0,Natural Beige,Tirupur,160.86,92.8
+Polyester,Good,113.9,60.0,Green,Surat,61.6,27.33
+Polyester,New,64.0,36.0,Red,Surat,57.2,32.75
+Denim,Fair,49.7,58.0,Blue,Surat,109.19,36.91
+Linen,Good,183.7,36.0,Blue,Tirupur,162.8,74.38
+Denim,Good,53.5,54.0,White,Ahmedabad,118.41,52.49
+Polyester,Good,47.0,48.0,Natural Beige,Jaipur,61.95,29.37
+Wool,Fair,198.1,48.0,Natural Beige,Tirupur,225.45,83.0
+Linen,Fair,80.2,44.0,White,Surat,144.32,50.29
+Cotton,Good,43.9,58.0,Green,Bengaluru,94.2,41.05
+Cotton,New,90.7,58.0,Blue,Ludhiana,96.61,48.57
+Cotton,New,66.8,72.0,Black,Tirupur,93.31,48.87
+Denim,Fair,29.3,54.0,Yellow,Surat,105.47,36.96
+Cotton,Good,20.5,72.0,Red,Ludhiana,100.58,44.74
+Denim,Good,59.6,36.0,Yellow,Jaipur,122.07,57.56
+Denim,Poor,63.1,36.0,Blue,Surat,120.89,21.43
+Cotton,Good,73.1,36.0,Blue,Tirupur,85.77,33.63
+Silk,Good,91.0,36.0,White,Surat,342.61,157.46
+Linen,Good,70.6,48.0,Yellow,Ahmedabad,167.14,82.37
+Cotton,Good,63.4,54.0,Yellow,Ahmedabad,100.81,43.59
+Cotton,Good,25.5,44.0,White,Ludhiana,98.13,43.33
+Polyester,Fair,53.3,48.0,White,Surat,65.82,22.41
+Polyester,Good,27.5,36.0,White,Ahmedabad,64.16,27.67
+Denim,Good,273.4,36.0,Black,Jaipur,122.35,57.6
+Cotton,Good,15.5,72.0,Yellow,Surat,86.46,36.41
+Denim,New,78.4,54.0,Blue,Ahmedabad,111.34,59.23
+Cotton,Good,17.6,58.0,Blue,Ahmedabad,92.43,42.73
+Linen,New,109.1,48.0,Natural Beige,Tirupur,163.34,88.37
+Silk,Good,43.5,60.0,Blue,Ahmedabad,372.26,175.56
+Wool,New,109.9,58.0,Yellow,Ahmedabad,233.44,113.87
+Denim,Good,24.3,44.0,Red,Tirupur,113.7,48.18
+Linen,Good,83.5,60.0,Grey,Ahmedabad,170.93,63.54
+Polyester,Good,30.9,54.0,Yellow,Surat,63.81,28.82
+Cotton,Good,33.6,64.0,Black,Ludhiana,93.69,42.14
+Denim,Good,33.0,58.0,Red,Ahmedabad,115.28,54.54
+Polyester,Fair,48.4,36.0,Black,Tirupur,65.03,23.44
+Cotton,Fair,142.7,48.0,Yellow,Jaipur,94.72,27.98
+Polyester,Good,19.6,58.0,Green,Jaipur,65.68,26.58
+Polyester,Good,107.5,60.0,Blue,Ahmedabad,60.49,28.46
+Denim,Good,54.5,44.0,White,Tirupur,120.65,59.89
+Silk,Fair,40.3,44.0,Grey,Ludhiana,349.84,123.34
+Linen,Good,52.5,36.0,Natural Beige,Ahmedabad,167.11,80.68
+Linen,Good,203.3,48.0,Blue,Ludhiana,152.07,70.9
+Polyester,Fair,23.3,48.0,White,Ludhiana,61.93,20.28
+Cotton,Good,230.5,44.0,Black,Ahmedabad,92.47,40.11
+Silk,Fair,44.9,54.0,Blue,Tirupur,322.97,110.14
+Cotton,Good,104.0,58.0,Grey,Ludhiana,89.67,39.07
+Polyester,Good,78.8,58.0,Red,Surat,58.21,26.5
+Polyester,Good,44.8,60.0,Red,Ahmedabad,65.42,29.89
+Linen,New,59.5,48.0,Green,Ahmedabad,165.24,91.26
+Linen,Good,45.0,54.0,Yellow,Tirupur,157.18,67.95
+Linen,Fair,22.8,72.0,Yellow,Tirupur,142.21,45.14
+Denim,Good,250.7,48.0,Yellow,Surat,120.59,45.08
+Denim,Good,186.2,72.0,Grey,Ludhiana,119.76,46.95
+Cotton,New,30.0,60.0,Yellow,Surat,91.76,51.36
+Wool,Fair,20.9,58.0,Grey,Tirupur,229.19,82.52
+Denim,Good,306.6,64.0,Red,Surat,106.08,46.14
+Denim,Poor,36.6,44.0,Grey,Surat,118.37,31.32
+Polyester,Fair,64.7,44.0,Black,Tirupur,64.93,24.9
+Cotton,New,97.8,36.0,Green,Surat,84.34,50.65
+Wool,Fair,101.5,72.0,Blue,Ludhiana,241.2,74.56
+Cotton,Good,141.5,58.0,Grey,Ahmedabad,101.36,46.79
+Linen,Fair,84.9,64.0,Grey,Bengaluru,177.34,61.35
+Linen,Poor,152.5,60.0,Blue,Ludhiana,150.01,30.72
+Cotton,New,55.1,60.0,Green,Ludhiana,98.22,51.4
+Cotton,New,53.8,60.0,White,Ahmedabad,100.17,56.88
+Cotton,Poor,21.0,36.0,White,Ahmedabad,89.59,22.66
+Linen,New,58.0,72.0,White,Tirupur,161.57,84.16
+Polyester,Poor,59.1,72.0,White,Surat,60.61,15.0
+Cotton,Good,40.1,60.0,Red,Ludhiana,87.91,42.3
+Cotton,Good,67.6,44.0,Grey,Ahmedabad,89.56,39.4
+Linen,Fair,74.3,44.0,Yellow,Surat,145.8,38.58
+Polyester,Good,77.0,58.0,Black,Tirupur,62.87,30.21
+Cotton,Good,47.2,60.0,Yellow,Tirupur,96.9,41.56
+Silk,Good,87.8,58.0,Blue,Tirupur,344.57,147.02
+Denim,New,42.6,36.0,Blue,Tirupur,110.11,60.1
+Cotton,Good,91.5,58.0,Natural Beige,Ahmedabad,100.44,45.3
+Cotton,Good,51.9,48.0,White,Tirupur,86.8,39.17
+Polyester,Good,22.1,48.0,Blue,Surat,62.69,29.77
+Silk,Good,61.4,48.0,Green,Ahmedabad,333.81,133.03
+Silk,Good,24.9,48.0,Natural Beige,Ludhiana,347.98,144.85
+Linen,Poor,112.8,72.0,Red,Surat,146.23,31.95
+Polyester,Good,62.7,60.0,Natural Beige,Jaipur,69.8,31.16
+Linen,Good,99.5,58.0,Green,Tirupur,147.99,63.43
+Cotton,New,105.0,54.0,Green,Surat,93.63,48.38
+Denim,Good,15.9,36.0,White,Surat,120.05,52.77
+Cotton,New,49.6,58.0,Black,Tirupur,86.67,51.2
+Cotton,Good,96.3,44.0,Red,Bengaluru,93.15,41.48
+Polyester,Good,110.2,58.0,White,Jaipur,62.86,27.04
+Denim,Poor,103.1,60.0,Green,Tirupur,109.57,22.28
+Silk,Good,47.4,36.0,Blue,Surat,319.64,146.15
+Cotton,Poor,30.7,72.0,Red,Tirupur,84.6,17.15
+Polyester,Good,115.5,44.0,Black,Jaipur,60.16,28.89
+Silk,New,96.8,36.0,Yellow,Ahmedabad,359.22,199.08
+Cotton,Fair,73.0,72.0,Green,Tirupur,89.93,27.89
+Wool,New,261.6,72.0,Red,Ahmedabad,225.45,122.75
+Polyester,Poor,55.9,44.0,Grey,Tirupur,60.42,15.0
+Wool,Fair,30.5,36.0,Natural Beige,Tirupur,245.05,80.43
+Polyester,Good,94.7,60.0,Green,Jaipur,64.86,29.88
+Cotton,New,86.9,72.0,Blue,Ludhiana,93.31,47.8
+Silk,Good,158.8,72.0,Yellow,Surat,357.32,165.68
+Denim,Fair,146.6,72.0,Green,Ahmedabad,128.45,43.97
+Wool,Good,18.0,48.0,Red,Jaipur,239.57,123.37
+Polyester,Good,95.1,58.0,White,Ahmedabad,68.34,30.36
+Cotton,Good,24.0,72.0,Black,Mumbai,101.27,44.75
+Cotton,Good,312.9,48.0,Green,Surat,87.67,36.45
+Linen,Good,47.7,44.0,Blue,Tirupur,146.5,66.05
+Denim,New,18.3,44.0,Red,Jaipur,125.59,66.79
+Polyester,Good,68.4,36.0,White,Ahmedabad,59.88,29.46
+Polyester,Good,33.5,58.0,Yellow,Tirupur,61.98,26.59
+Denim,Poor,116.0,44.0,Blue,Tirupur,116.32,25.48
+Cotton,Good,316.1,60.0,Black,Bengaluru,105.54,41.78
+Linen,Good,101.1,58.0,Yellow,Ludhiana,148.56,66.77
+Wool,Fair,103.7,36.0,Yellow,Ahmedabad,222.87,78.14
+Denim,Good,145.8,72.0,Natural Beige,Surat,105.67,45.69
+Cotton,Fair,20.9,54.0,Yellow,Surat,93.45,26.34
+Polyester,Good,197.9,54.0,Red,Ludhiana,67.9,29.21
+Silk,Fair,21.1,72.0,Green,Jaipur,325.04,117.7
+Denim,Good,52.4,72.0,Yellow,Ahmedabad,124.22,49.04
+Cotton,New,24.4,72.0,Blue,Ahmedabad,94.37,46.21
+Cotton,Good,139.7,48.0,Natural Beige,Tirupur,91.38,38.01
+Denim,Good,160.1,58.0,Red,Tirupur,105.14,45.15
+Denim,Fair,84.3,48.0,Red,Surat,121.55,44.31
+Cotton,Poor,55.1,44.0,Blue,Surat,89.56,18.04
+Cotton,Good,56.8,54.0,Blue,Tirupur,84.95,37.18
+Cotton,Good,64.2,36.0,Natural Beige,Ahmedabad,102.24,50.26
+Denim,New,179.2,72.0,Green,Ahmedabad,123.91,71.33
+Denim,Good,126.8,54.0,Blue,Ahmedabad,125.52,54.83
+Cotton,Fair,207.6,60.0,Blue,Surat,95.85,33.64
+Polyester,Good,112.6,54.0,White,Tirupur,58.18,26.46
+Denim,Good,126.6,54.0,Yellow,Ludhiana,124.86,54.73
+Linen,Good,20.2,60.0,Green,Ahmedabad,158.78,67.27
+Denim,Fair,105.7,58.0,Yellow,Ludhiana,119.08,36.82
+Polyester,Poor,187.3,44.0,Black,Ahmedabad,60.63,15.0
+Linen,Good,40.8,48.0,Black,Ahmedabad,159.91,76.07
+Polyester,Good,58.6,36.0,White,Surat,59.69,25.32
+Cotton,Fair,73.7,60.0,Red,Mumbai,98.34,32.08
+Denim,Good,82.0,58.0,Yellow,Surat,108.01,51.04
+Cotton,Good,18.9,60.0,Natural Beige,Ludhiana,91.72,44.95
+Cotton,Good,161.3,48.0,White,Bengaluru,94.34,40.11
+Cotton,Poor,51.9,54.0,White,Surat,91.15,22.38
+Denim,Good,25.4,36.0,White,Surat,112.26,51.15
+Denim,New,28.6,60.0,Yellow,Jaipur,122.83,65.34
+Linen,Fair,119.3,72.0,White,Ludhiana,155.87,62.46
+Cotton,Good,79.1,58.0,Blue,Ahmedabad,87.78,38.13
+Denim,Good,35.1,58.0,Red,Tirupur,108.45,47.26
+Cotton,Fair,55.1,72.0,Black,Bengaluru,96.84,28.39
+Linen,Good,59.6,64.0,White,Ludhiana,156.74,63.62
+Cotton,Good,22.3,72.0,Yellow,Mumbai,103.6,43.72
+Cotton,Fair,57.8,44.0,Green,Ludhiana,89.58,32.82
+Denim,Poor,272.7,64.0,Grey,Ahmedabad,112.1,16.9
+Denim,Good,157.8,58.0,White,Ahmedabad,121.03,57.17
+Cotton,Fair,122.7,54.0,Natural Beige,Surat,83.42,30.27
+Linen,Fair,102.7,58.0,Yellow,Ahmedabad,157.88,53.66
+Denim,Good,130.8,72.0,Red,Ahmedabad,129.49,62.39
+Polyester,Good,66.7,44.0,Natural Beige,Tirupur,60.5,28.45
+Silk,New,19.8,60.0,Natural Beige,Ahmedabad,347.82,187.88
+Cotton,Good,42.6,44.0,Grey,Ahmedabad,95.21,40.33
+Silk,New,29.6,60.0,Black,Tirupur,352.31,201.23
+Denim,Good,84.4,48.0,Grey,Ahmedabad,110.65,43.83
+Denim,Good,218.0,48.0,Yellow,Surat,106.75,46.43
+Cotton,Fair,213.2,44.0,Black,Surat,94.85,32.87
+Linen,Good,27.0,72.0,Natural Beige,Tirupur,161.48,65.94
+Denim,Fair,25.1,48.0,Blue,Ludhiana,126.85,40.68
+Cotton,Good,332.5,64.0,White,Ahmedabad,97.9,41.66
+Silk,Fair,17.7,36.0,Blue,Ahmedabad,348.27,117.79
+Linen,New,127.4,44.0,Natural Beige,Tirupur,162.22,89.44
+Cotton,Good,124.7,58.0,Black,Ahmedabad,101.82,50.76
+Denim,New,20.7,36.0,Red,Surat,114.53,61.1
+Cotton,Fair,23.3,54.0,Blue,Bengaluru,106.46,29.21
+Wool,Good,268.1,48.0,White,Surat,240.21,109.13
+Denim,Good,24.4,48.0,Grey,Ahmedabad,119.92,53.52
+Denim,Good,69.5,64.0,Blue,Ahmedabad,115.85,49.71
+Linen,Good,169.7,54.0,Green,Ahmedabad,169.13,71.24
+Linen,Fair,548.1,72.0,Grey,Ahmedabad,164.41,49.32
+Polyester,New,86.4,44.0,Green,Surat,64.14,35.64
+Linen,New,48.1,64.0,Grey,Bengaluru,157.86,90.83
+Cotton,Fair,144.1,64.0,Natural Beige,Ludhiana,92.81,27.7
+Polyester,Poor,27.8,72.0,Yellow,Surat,57.88,15.0
+Polyester,New,156.9,72.0,Black,Ludhiana,66.85,38.02
+Linen,Good,92.8,44.0,Grey,Ahmedabad,166.66,69.54
+Denim,Good,68.9,58.0,Natural Beige,Tirupur,114.77,48.11
+Wool,Good,17.6,64.0,Blue,Bengaluru,267.33,126.72
+Wool,Good,80.1,58.0,Blue,Ahmedabad,254.77,116.9
+Cotton,Good,68.5,44.0,Natural Beige,Ludhiana,96.05,39.57
+Polyester,Good,54.7,72.0,White,Surat,62.65,28.33
+Denim,Good,17.3,36.0,Natural Beige,Surat,107.22,44.34
+Polyester,Fair,59.7,60.0,Grey,Surat,60.88,23.78
+Cotton,Good,86.8,44.0,Red,Tirupur,95.58,43.04
+Polyester,New,200.3,58.0,Green,Tirupur,57.01,30.16
+Denim,New,54.6,44.0,Grey,Surat,119.62,70.14
+Denim,Good,43.5,64.0,Grey,Ahmedabad,114.27,54.44
+Polyester,Poor,76.4,58.0,Black,Mumbai,65.69,15.0
+Wool,Good,84.1,60.0,Black,Ludhiana,231.3,109.62
+Polyester,Good,142.0,58.0,Green,Ahmedabad,65.05,27.51
+Denim,Good,63.3,48.0,Natural Beige,Tirupur,120.95,59.52
+Polyester,Good,34.2,72.0,White,Tirupur,59.46,24.66
+Wool,Fair,51.2,48.0,Blue,Surat,218.53,67.39
+Silk,Fair,172.4,44.0,Green,Surat,339.62,119.85
+Cotton,New,24.6,54.0,Red,Surat,83.43,44.26
+Silk,Good,60.8,36.0,Yellow,Tirupur,316.65,142.16
+Silk,Good,18.5,72.0,White,Tirupur,347.51,158.89
+Cotton,Fair,176.5,64.0,Grey,Tirupur,95.98,29.75
+Denim,Fair,82.7,44.0,White,Ahmedabad,120.42,34.25
+Wool,Poor,22.6,44.0,Natural Beige,Surat,237.97,47.12
+Silk,Fair,34.7,44.0,Red,Jaipur,331.81,133.47
+Linen,Good,19.6,60.0,Natural Beige,Mumbai,173.37,82.97
+Denim,Good,236.1,60.0,Natural Beige,Mumbai,125.5,56.17
+Denim,Good,101.8,36.0,Blue,Mumbai,129.84,57.37
+Polyester,Good,107.5,54.0,Grey,Jaipur,68.72,28.52
+Denim,Fair,215.0,58.0,Green,Jaipur,112.13,37.98
+Cotton,Fair,184.3,64.0,Yellow,Tirupur,94.43,30.2
+Cotton,New,57.6,60.0,Yellow,Surat,93.39,55.08
+Wool,Good,88.7,60.0,Black,Surat,226.29,89.98
+Cotton,New,140.2,48.0,White,Tirupur,83.07,44.97
+Polyester,New,294.6,48.0,Red,Surat,65.18,35.29
+Polyester,Fair,180.4,48.0,Grey,Surat,59.39,18.89
+Silk,New,55.0,64.0,Green,Surat,356.16,177.41
+Linen,Good,98.3,54.0,Blue,Jaipur,170.42,77.74
+Polyester,New,88.4,48.0,Green,Tirupur,57.69,30.59
+Denim,Poor,74.7,72.0,Black,Ahmedabad,126.28,25.08
+Cotton,Poor,69.5,48.0,Natural Beige,Ahmedabad,93.96,20.75
+Cotton,Good,31.8,48.0,Natural Beige,Ludhiana,93.61,43.54
+Cotton,Good,107.2,72.0,Red,Surat,84.27,38.45
+Denim,Fair,115.0,64.0,Green,Tirupur,118.31,40.1
+Cotton,Good,50.0,36.0,Red,Surat,83.11,38.51
+Denim,Good,26.3,36.0,Green,Tirupur,115.47,51.7
+Linen,Fair,114.1,64.0,White,Ahmedabad,150.83,56.55
+Cotton,New,305.1,58.0,White,Surat,93.83,50.56
+Wool,Good,60.8,48.0,Natural Beige,Surat,221.27,97.15
+Linen,Fair,220.0,72.0,White,Tirupur,141.13,48.25
+Cotton,Good,442.2,72.0,Yellow,Surat,83.62,36.83
+Denim,Fair,24.5,48.0,Yellow,Surat,107.14,42.88
+Cotton,New,102.0,54.0,Natural Beige,Tirupur,91.46,51.86
+Linen,Good,21.4,72.0,White,Surat,156.3,71.15
+Polyester,Good,226.8,44.0,Green,Surat,65.08,27.24
+Cotton,New,263.4,36.0,Yellow,Surat,87.79,48.92
+Denim,Poor,19.0,58.0,White,Ahmedabad,116.6,26.98
+Cotton,New,38.6,54.0,Green,Ahmedabad,102.07,57.02
+Wool,New,126.7,48.0,Green,Ahmedabad,225.43,118.08
+Denim,Good,89.0,60.0,Natural Beige,Jaipur,123.18,55.95
+Denim,Fair,88.4,44.0,Yellow,Ahmedabad,124.92,38.5
+Wool,Good,22.8,60.0,Green,Tirupur,245.26,105.63
+Polyester,Poor,61.0,72.0,Black,Ahmedabad,62.92,15.0
+Linen,Good,74.2,58.0,Natural Beige,Mumbai,169.84,65.63
+Denim,Good,101.5,58.0,Green,Ahmedabad,117.22,48.69
+Polyester,Fair,101.7,48.0,Blue,Ahmedabad,67.98,23.42
+Denim,Fair,63.6,72.0,Grey,Tirupur,116.26,39.81
+Cotton,Poor,21.5,58.0,White,Ahmedabad,100.65,25.07
+Cotton,New,64.3,64.0,White,Tirupur,95.58,54.77
+Linen,Good,149.2,60.0,Yellow,Surat,156.64,75.23
+Wool,New,24.5,36.0,White,Ahmedabad,247.53,133.59
+Cotton,New,98.9,64.0,Yellow,Tirupur,95.19,53.02
+Cotton,Fair,16.8,48.0,White,Surat,96.06,30.83
+Silk,Good,172.2,54.0,Yellow,Surat,316.61,121.89
+Cotton,New,166.0,58.0,Green,Bengaluru,92.36,47.06
+Denim,Good,20.0,36.0,Yellow,Ahmedabad,118.5,52.81
+Linen,Good,93.0,60.0,Yellow,Ahmedabad,158.68,70.84
+Denim,New,61.1,54.0,Red,Surat,115.6,60.47
+Wool,Fair,42.8,64.0,Yellow,Ahmedabad,257.66,74.17
+Wool,Good,143.7,48.0,Grey,Ludhiana,244.68,104.33
+Polyester,New,69.2,64.0,Red,Ahmedabad,69.61,41.69
+Denim,Good,50.6,58.0,Blue,Bengaluru,123.12,59.17
+Linen,New,24.7,54.0,Black,Surat,142.78,85.28
+Cotton,Good,132.4,58.0,Grey,Ludhiana,101.02,47.82
+Polyester,New,61.1,72.0,Blue,Jaipur,69.81,35.0
+Silk,Poor,18.4,44.0,Black,Mumbai,347.92,81.76
+Denim,Fair,70.2,44.0,Yellow,Ludhiana,113.36,41.23
+Denim,Fair,61.3,64.0,Black,Mumbai,131.43,53.48
+Denim,Good,52.3,64.0,White,Ahmedabad,117.32,53.07
+Polyester,New,26.9,64.0,Green,Ludhiana,64.1,33.46
+Wool,Fair,61.8,36.0,Grey,Bengaluru,260.77,95.95
+Denim,New,336.1,48.0,Grey,Surat,112.8,57.59
+Linen,New,328.2,58.0,Blue,Bengaluru,165.83,86.58
+Linen,Fair,45.1,60.0,Natural Beige,Ludhiana,147.4,50.58
+Linen,Fair,189.8,72.0,Yellow,Tirupur,156.8,58.9
+Linen,Fair,185.3,44.0,Green,Ludhiana,148.15,46.68
+Silk,New,72.3,58.0,Natural Beige,Ahmedabad,351.19,207.76
+Silk,New,77.1,58.0,Blue,Jaipur,335.52,186.99
+Linen,New,39.1,60.0,Blue,Mumbai,157.89,79.3
+Silk,Poor,121.8,72.0,Yellow,Ahmedabad,340.98,74.24
+Polyester,Fair,41.8,48.0,Red,Surat,63.87,25.51
+Denim,Good,32.1,60.0,Grey,Surat,113.17,53.09
+Denim,New,66.7,72.0,Green,Jaipur,111.9,64.36
+Polyester,Good,85.2,64.0,Green,Mumbai,73.67,30.15
+Silk,Good,25.9,72.0,White,Ahmedabad,329.25,125.9
+Polyester,Fair,63.6,36.0,Black,Tirupur,64.19,24.2
+Linen,Good,51.9,58.0,Green,Ahmedabad,148.23,65.23
+Cotton,Good,68.2,48.0,Grey,Surat,85.08,37.6
+Linen,Fair,122.7,36.0,Red,Ahmedabad,150.33,50.28
+Denim,Fair,44.7,72.0,Green,Surat,121.3,43.26
+Silk,Good,64.4,72.0,White,Surat,341.4,142.22
+Cotton,Fair,102.4,64.0,Black,Ludhiana,93.29,33.73
+Cotton,Good,98.1,48.0,Yellow,Ludhiana,98.15,41.27
+Polyester,Fair,25.6,44.0,Natural Beige,Tirupur,58.71,18.85
+Cotton,Good,70.9,36.0,Red,Ludhiana,89.23,37.77
+Linen,New,33.4,72.0,Blue,Ahmedabad,149.37,78.3
+Polyester,Good,30.9,36.0,Blue,Surat,65.3,29.02
+Denim,Good,77.4,58.0,Black,Bengaluru,118.82,53.42
+Denim,Good,274.8,48.0,White,Ahmedabad,110.92,48.36
+Cotton,Good,193.8,58.0,Grey,Ahmedabad,93.11,41.31
+Cotton,Fair,126.7,64.0,Red,Surat,96.74,31.54
+Cotton,Good,17.3,54.0,Green,Ahmedabad,101.29,49.42
+Polyester,New,56.8,44.0,White,Surat,65.17,36.13
+Denim,Fair,352.6,54.0,White,Surat,114.68,31.01
+Denim,New,92.6,48.0,Yellow,Bengaluru,115.93,65.38
+Linen,Good,53.3,60.0,Natural Beige,Mumbai,177.2,82.1
+Cotton,New,55.2,44.0,Black,Surat,95.02,57.58
+Silk,Poor,71.2,60.0,Green,Ahmedabad,371.5,96.63
+Linen,Fair,341.1,60.0,Natural Beige,Ahmedabad,152.59,48.02
+Linen,Good,15.2,72.0,White,Tirupur,139.94,65.56
+Polyester,Good,76.8,44.0,Yellow,Ludhiana,65.4,29.5
+Linen,Fair,49.8,64.0,Yellow,Tirupur,159.96,54.11
+Silk,Good,52.0,54.0,Blue,Ahmedabad,346.9,161.17
+Cotton,New,113.8,54.0,Natural Beige,Tirupur,84.33,43.36
+Polyester,Good,18.0,72.0,Yellow,Bengaluru,72.67,31.49
+Polyester,Good,96.4,44.0,Red,Bengaluru,72.29,29.26
+Polyester,Good,26.0,44.0,White,Ahmedabad,61.13,26.61
+Linen,Fair,105.7,58.0,Natural Beige,Ahmedabad,164.63,56.12
+Denim,Good,46.2,64.0,Blue,Mumbai,121.44,54.5
+Polyester,Good,18.6,54.0,Grey,Surat,57.27,27.62
+Denim,Good,82.9,36.0,Grey,Ahmedabad,129.41,54.14
+Cotton,Good,32.5,60.0,Black,Jaipur,92.12,40.58
+Denim,Fair,37.7,72.0,Grey,Mumbai,120.73,41.09
+Denim,New,36.6,44.0,Grey,Surat,119.03,61.03
+Polyester,Good,213.8,64.0,Black,Bengaluru,66.21,25.7
+Wool,New,144.7,36.0,White,Ahmedabad,232.38,122.17
+Polyester,Good,56.1,64.0,Natural Beige,Mumbai,65.34,28.89
+Polyester,Good,64.9,64.0,Blue,Surat,65.5,28.16
+Linen,Fair,85.9,44.0,Yellow,Surat,142.34,45.68
+Polyester,New,25.8,58.0,Red,Jaipur,63.5,32.29
+Cotton,New,44.9,64.0,Blue,Ahmedabad,95.2,52.82
+Polyester,Good,44.5,60.0,White,Ahmedabad,62.83,30.51
+Polyester,New,159.2,36.0,Red,Surat,60.98,32.12
+Cotton,Good,48.4,72.0,Red,Ludhiana,97.96,48.03
+Denim,Good,58.4,48.0,Grey,Tirupur,106.79,47.56
+Wool,Fair,15.3,54.0,Yellow,Ahmedabad,247.42,81.57
+Denim,Fair,52.7,64.0,Grey,Mumbai,119.63,42.39
+Linen,Good,79.7,48.0,Black,Surat,146.91,68.11
+Silk,New,41.7,54.0,Blue,Ahmedabad,371.58,218.27
+Polyester,Good,16.7,58.0,Red,Ahmedabad,69.27,34.27
+Denim,Fair,33.9,72.0,Black,Surat,109.26,38.89
+Wool,Good,20.4,48.0,Green,Mumbai,267.43,123.89
+Polyester,Good,316.7,54.0,Grey,Tirupur,65.91,28.82
+Silk,Good,46.8,36.0,Natural Beige,Ludhiana,357.25,159.72
+Denim,Good,21.8,72.0,Yellow,Ahmedabad,125.59,58.44
+Polyester,New,97.9,60.0,Green,Ludhiana,64.99,33.0
+Denim,Good,84.6,36.0,Yellow,Surat,108.66,48.07
+Linen,Good,44.2,64.0,Red,Surat,153.74,73.29
+Polyester,New,73.5,54.0,Black,Ahmedabad,65.87,35.47
+Denim,Good,60.3,60.0,Green,Surat,119.55,52.36
+Cotton,Good,21.9,44.0,Black,Surat,94.38,45.01
+Linen,New,78.2,60.0,Black,Surat,144.62,77.78
+Wool,Good,89.1,48.0,Natural Beige,Ahmedabad,259.14,118.91
+Silk,Fair,43.5,60.0,Natural Beige,Ahmedabad,365.86,118.84
+Polyester,Good,377.8,48.0,Yellow,Tirupur,65.36,28.78
+Cotton,Fair,73.0,72.0,Red,Surat,93.46,27.89
+Denim,New,62.8,36.0,Green,Ahmedabad,117.59,66.18
+Polyester,New,101.0,60.0,Blue,Surat,60.17,29.7
+Denim,Fair,16.9,36.0,Natural Beige,Surat,121.7,45.3
+Cotton,Poor,143.4,64.0,Grey,Tirupur,97.18,21.56
+Polyester,New,276.5,58.0,Black,Surat,57.73,31.5
+Cotton,Good,89.0,36.0,Blue,Mumbai,94.75,47.97
+Cotton,Good,51.8,36.0,Black,Surat,85.51,41.27
+Wool,Good,26.1,64.0,White,Bengaluru,251.12,130.05
+Wool,New,151.3,72.0,Red,Surat,215.55,121.74
+Polyester,Good,107.4,58.0,Red,Surat,58.8,27.58
+Wool,Good,207.9,72.0,Red,Surat,226.55,95.42
+Polyester,Fair,216.0,60.0,Natural Beige,Tirupur,63.73,20.58
+Polyester,Fair,30.8,64.0,White,Surat,61.33,19.96
+Linen,New,248.0,54.0,Black,Surat,161.38,88.91
+Polyester,Good,117.5,54.0,Black,Tirupur,65.79,32.14
+Denim,Fair,21.4,44.0,Black,Bengaluru,126.09,44.85
+Cotton,Good,21.1,72.0,Blue,Surat,88.53,37.16
+Silk,Fair,38.1,48.0,Green,Ahmedabad,340.32,119.01
+Cotton,Good,61.1,72.0,Red,Ludhiana,99.87,41.49
+Wool,New,30.6,44.0,Blue,Tirupur,229.26,123.95
+Silk,Good,30.7,36.0,White,Surat,353.39,161.72
+Polyester,Good,148.5,44.0,Blue,Mumbai,67.06,29.04
+Cotton,Fair,52.6,54.0,Red,Jaipur,90.44,32.49
+Cotton,New,32.1,44.0,Blue,Surat,86.21,50.83
+Wool,New,72.5,60.0,White,Ahmedabad,233.19,119.84
+Polyester,Good,25.3,54.0,Green,Jaipur,60.9,27.26
+Polyester,New,20.5,58.0,Red,Surat,63.23,35.07
+Denim,New,131.7,72.0,Red,Surat,122.81,69.18
+Linen,Fair,23.0,60.0,White,Ahmedabad,172.32,64.14
+Polyester,Good,95.7,60.0,White,Surat,66.47,28.64
+Cotton,Fair,96.9,54.0,Yellow,Surat,90.3,29.78
+Polyester,New,196.7,58.0,Blue,Tirupur,59.15,30.36
+Cotton,New,28.2,54.0,Yellow,Ahmedabad,97.16,54.38
+Cotton,Fair,46.9,58.0,Yellow,Ludhiana,92.23,32.46
+Silk,Good,35.8,60.0,Natural Beige,Ludhiana,341.19,150.7
+Cotton,New,110.3,54.0,Red,Mumbai,101.47,52.16
+Denim,New,32.1,48.0,Yellow,Ahmedabad,128.41,72.93
+Cotton,New,21.5,72.0,Red,Ahmedabad,92.13,50.3
+Cotton,Good,289.7,54.0,Natural Beige,Tirupur,86.96,34.86
+Silk,New,29.7,72.0,Grey,Surat,328.39,172.5
+Cotton,Poor,53.4,44.0,Yellow,Ahmedabad,98.93,19.76
+Linen,Good,30.5,64.0,White,Tirupur,151.12,63.79
+Polyester,New,32.4,54.0,White,Ludhiana,59.84,33.41
+Wool,Fair,223.0,64.0,Grey,Surat,245.16,74.7
+Polyester,Good,406.1,44.0,Green,Jaipur,63.8,28.58
+Polyester,New,133.0,60.0,Green,Bengaluru,68.35,33.34
+Polyester,Good,37.2,36.0,Green,Ludhiana,69.38,31.45
+Denim,Fair,97.9,58.0,Blue,Tirupur,115.92,41.2
+Cotton,Good,132.9,64.0,White,Ahmedabad,93.44,40.24
+Polyester,Fair,29.5,64.0,Red,Mumbai,65.55,21.28
+Polyester,Good,126.7,44.0,Natural Beige,Ludhiana,60.94,31.13
+Polyester,Fair,33.8,64.0,White,Ahmedabad,67.07,24.7
+Denim,New,100.0,64.0,Green,Surat,107.99,57.69
+Denim,Fair,70.9,44.0,Red,Surat,113.1,40.44
+Cotton,New,201.0,64.0,Red,Ahmedabad,94.1,46.99
+Linen,New,22.2,44.0,White,Ahmedabad,154.29,81.5
+Denim,Good,39.7,36.0,Black,Ahmedabad,123.17,59.53
+Silk,New,15.6,58.0,Red,Surat,355.49,185.99
+Denim,Good,150.8,60.0,Grey,Bengaluru,129.33,57.04
+Denim,New,146.3,36.0,Grey,Mumbai,125.13,64.83
+Linen,New,41.2,54.0,Black,Mumbai,164.46,82.94
+Polyester,Good,101.4,36.0,Yellow,Surat,66.55,32.57
+Cotton,Good,121.5,72.0,Blue,Bengaluru,95.5,40.3
+Denim,Fair,238.9,72.0,Black,Surat,122.88,45.42
+Silk,Good,178.1,36.0,Red,Ludhiana,329.16,126.92
+Silk,Good,62.3,44.0,Yellow,Ahmedabad,349.0,149.48
+Cotton,Poor,416.2,36.0,Black,Ahmedabad,89.84,18.07
+Linen,Fair,38.8,72.0,Natural Beige,Ahmedabad,171.56,56.4
+Linen,Good,109.2,54.0,Yellow,Ahmedabad,171.05,67.99
+Silk,Good,116.1,64.0,Grey,Surat,340.69,154.53
+Denim,Good,22.3,44.0,Natural Beige,Ahmedabad,116.93,43.71
+Polyester,New,25.9,60.0,Black,Tirupur,66.24,36.33
+Cotton,Good,45.8,60.0,Green,Bengaluru,104.5,46.94
+Linen,New,15.7,72.0,Red,Ahmedabad,155.29,86.99
+Cotton,Good,27.6,36.0,White,Tirupur,91.68,39.14
+Denim,Poor,165.5,72.0,Black,Ahmedabad,122.52,26.8
+Linen,New,115.9,54.0,Grey,Ahmedabad,165.13,92.11
+Cotton,Fair,119.0,58.0,White,Mumbai,107.48,33.11
+Linen,Good,66.3,60.0,Grey,Surat,158.27,63.46
+Denim,Good,220.2,64.0,Natural Beige,Ahmedabad,112.27,44.84
+Wool,New,29.3,48.0,Natural Beige,Surat,225.88,134.98
+Denim,Fair,125.4,36.0,Red,Ahmedabad,117.35,40.85
+Silk,Fair,59.6,48.0,Green,Bengaluru,392.55,133.1
+Cotton,Poor,25.0,60.0,White,Bengaluru,101.24,26.46
+Denim,New,43.8,48.0,Red,Surat,116.79,63.3
+Denim,Good,175.1,64.0,Black,Ludhiana,115.68,48.6
+Cotton,New,206.3,54.0,Yellow,Tirupur,83.36,41.13
+Polyester,Good,22.9,48.0,Natural Beige,Tirupur,60.6,30.1
+Cotton,New,206.6,48.0,Grey,Ahmedabad,93.56,48.37
+Polyester,Good,160.2,44.0,Yellow,Ahmedabad,67.64,30.31
+Cotton,Fair,62.4,60.0,White,Ahmedabad,89.27,35.03
+Cotton,Good,38.7,36.0,White,Ahmedabad,88.69,41.5
+Linen,New,18.8,58.0,Blue,Ahmedabad,164.07,93.16
+Denim,Good,356.6,60.0,Grey,Surat,115.94,43.75
+Polyester,New,43.5,54.0,Blue,Ahmedabad,69.76,38.16
+Polyester,Good,119.5,64.0,Grey,Ahmedabad,60.57,26.38
+Linen,Good,105.3,48.0,Black,Bengaluru,168.97,78.72
+Cotton,Fair,81.3,48.0,Red,Ludhiana,93.78,36.85
+Denim,New,25.6,44.0,Red,Ahmedabad,123.53,77.46
+Denim,Good,47.5,58.0,Black,Surat,107.55,49.17
+Cotton,Poor,23.9,44.0,Red,Surat,85.57,16.87
+Silk,Good,49.3,58.0,Yellow,Ahmedabad,352.89,141.2
+Cotton,Poor,146.2,64.0,Green,Ahmedabad,94.65,16.42
+Cotton,New,27.3,58.0,White,Tirupur,83.79,45.04
+Polyester,Good,31.2,60.0,Green,Ludhiana,68.1,25.18
+Denim,Good,116.4,54.0,Green,Surat,110.45,53.26
+Denim,Good,21.4,54.0,Black,Tirupur,122.11,48.02
+Cotton,New,69.3,36.0,Natural Beige,Tirupur,96.92,50.23
+Silk,Good,91.6,36.0,Black,Surat,343.89,155.76
+Polyester,Fair,101.6,36.0,Red,Bengaluru,69.42,26.61
+Linen,Good,51.6,48.0,Red,Ahmedabad,160.35,70.57
+Linen,Good,294.8,60.0,Green,Ahmedabad,170.6,72.17
+Silk,New,39.6,36.0,Natural Beige,Surat,345.16,202.73
+Polyester,Good,270.8,36.0,Natural Beige,Jaipur,69.53,32.57
+Cotton,New,49.9,36.0,Yellow,Surat,88.08,45.23
+Silk,Good,69.2,44.0,Blue,Ahmedabad,351.63,166.95
+Linen,New,55.2,58.0,Natural Beige,Ahmedabad,156.53,83.22
+Linen,Good,61.2,72.0,Natural Beige,Ahmedabad,151.34,65.16
+Denim,Fair,41.8,48.0,Red,Ahmedabad,117.98,44.29
+Silk,Fair,252.1,58.0,White,Tirupur,312.22,91.79
+Polyester,New,220.7,64.0,Green,Surat,58.11,30.18
+Linen,Fair,70.5,54.0,White,Ahmedabad,148.53,54.26
+Polyester,New,68.2,64.0,Yellow,Ahmedabad,62.38,32.57
+Cotton,Good,24.8,58.0,Red,Ahmedabad,102.51,46.22
+Cotton,Fair,70.8,48.0,Black,Ludhiana,90.27,36.61
+Wool,Good,26.4,36.0,White,Ahmedabad,231.32,105.48
+Cotton,New,74.6,54.0,Blue,Surat,86.23,48.79
+Denim,New,44.0,58.0,Green,Tirupur,111.51,66.27
+Cotton,Fair,19.3,60.0,White,Ahmedabad,90.62,30.21
+Denim,Fair,38.3,72.0,Black,Surat,111.51,38.52
+Cotton,Good,123.2,60.0,White,Surat,93.76,42.12
+Polyester,Good,33.9,64.0,Red,Tirupur,57.67,27.87
+Polyester,New,62.2,44.0,Red,Ahmedabad,60.58,34.91
+Polyester,Good,33.1,48.0,Yellow,Bengaluru,63.27,29.33
+Cotton,Fair,62.6,44.0,Grey,Jaipur,101.24,39.02
+Cotton,Good,40.6,48.0,Blue,Ahmedabad,91.8,42.25
+Linen,New,75.8,44.0,Green,Surat,143.87,78.71
+Silk,Good,40.3,48.0,Green,Surat,306.09,126.68
+Cotton,Poor,117.0,58.0,Yellow,Surat,87.41,17.12
+Cotton,Fair,18.7,54.0,Black,Ahmedabad,91.84,27.94
+Cotton,New,37.9,54.0,Blue,Tirupur,90.75,44.92
+Cotton,Good,249.1,58.0,Grey,Surat,93.46,36.3
+Denim,New,34.8,58.0,Blue,Mumbai,119.48,68.4
+Linen,Good,108.2,58.0,Black,Ludhiana,169.47,69.7
+Wool,Good,94.5,64.0,Natural Beige,Ahmedabad,226.78,92.56
+Cotton,Fair,67.2,72.0,Grey,Ahmedabad,90.16,33.69
+Cotton,Good,16.7,48.0,White,Tirupur,95.81,48.37
+Wool,Good,21.0,54.0,Red,Ahmedabad,238.27,102.78
+Silk,New,53.0,36.0,Blue,Tirupur,311.75,163.96
+Cotton,Fair,132.6,58.0,Blue,Ahmedabad,89.57,30.1
+Linen,Poor,151.4,44.0,Black,Surat,144.76,30.38
+Denim,Good,44.4,72.0,Yellow,Mumbai,119.03,58.71
+Polyester,New,43.2,64.0,Blue,Ahmedabad,61.28,34.67
+Linen,New,49.9,58.0,Green,Surat,145.33,83.05
+Linen,Fair,389.8,54.0,Black,Surat,142.31,43.92
+Linen,Good,220.4,44.0,Grey,Ahmedabad,170.13,69.43
+Polyester,Good,103.0,58.0,Green,Ahmedabad,66.3,28.18
+Cotton,Fair,101.7,58.0,Natural Beige,Jaipur,99.72,33.57
+Cotton,Poor,27.7,48.0,White,Ludhiana,93.34,19.45
+Silk,Fair,24.6,64.0,Yellow,Mumbai,394.52,137.16
+Linen,New,69.5,72.0,Green,Surat,156.7,88.2
+Denim,Fair,245.6,54.0,Grey,Ahmedabad,117.76,34.56
+Denim,Good,84.6,64.0,Red,Surat,114.49,48.67
+Silk,Fair,36.5,36.0,Red,Ludhiana,333.38,122.29
+Denim,New,49.4,48.0,Black,Ahmedabad,116.06,61.17
+Cotton,Fair,155.7,36.0,Green,Ahmedabad,98.75,36.91
+Cotton,Fair,111.7,44.0,Green,Surat,89.92,33.32
+Polyester,New,21.6,44.0,White,Surat,56.93,32.18
+Silk,Good,110.9,58.0,White,Ludhiana,348.33,142.58
+Silk,Good,28.6,36.0,Blue,Ahmedabad,355.83,163.04
+Denim,Good,156.5,58.0,Yellow,Tirupur,117.82,53.28
+Denim,New,320.1,48.0,Black,Surat,118.43,60.25
+Denim,Fair,65.6,60.0,Black,Mumbai,129.08,45.95
+Denim,Good,98.2,54.0,Blue,Mumbai,121.36,55.71
+Silk,Good,77.4,44.0,Red,Ahmedabad,333.87,156.04
+Cotton,Fair,96.4,36.0,Red,Tirupur,86.5,32.27
+Cotton,Poor,45.2,58.0,Yellow,Ahmedabad,87.53,20.99
+Denim,Good,45.2,64.0,Green,Surat,118.12,58.6
+Cotton,Good,134.4,36.0,Black,Surat,91.51,39.24
+Denim,Good,28.1,72.0,Blue,Ahmedabad,111.91,44.53
+Cotton,Good,29.0,60.0,White,Ludhiana,94.2,37.42
+Cotton,Good,114.8,64.0,Green,Ahmedabad,91.03,43.47
+Linen,Good,16.2,58.0,Yellow,Ahmedabad,161.21,72.42
+Linen,Fair,63.5,48.0,Black,Surat,162.56,58.98
+Denim,New,64.4,72.0,White,Ludhiana,129.19,73.72
+Silk,Good,300.1,72.0,White,Jaipur,324.22,143.37
+Wool,Fair,72.5,60.0,White,Surat,223.39,72.93
+Polyester,Good,394.1,36.0,Natural Beige,Mumbai,69.57,27.31
+Cotton,Fair,23.9,64.0,Blue,Ahmedabad,89.8,27.95
+Denim,New,103.5,60.0,Green,Mumbai,125.31,61.81
+Denim,New,219.6,64.0,Black,Jaipur,114.23,53.32
+Denim,Good,123.2,44.0,Yellow,Ahmedabad,115.74,52.48
+Denim,Good,367.6,64.0,Grey,Tirupur,106.02,45.29
+Wool,Fair,34.0,36.0,Yellow,Ahmedabad,257.38,87.6
+Polyester,New,21.8,72.0,Black,Ahmedabad,68.86,36.37
+Polyester,Good,19.4,64.0,Natural Beige,Ahmedabad,63.36,28.53
+Denim,Good,137.5,64.0,Yellow,Surat,111.35,46.6
+Polyester,Good,194.4,54.0,Blue,Tirupur,57.58,23.95
+Denim,Poor,196.5,48.0,Grey,Ahmedabad,119.99,21.27
+Denim,Fair,117.5,72.0,Green,Ahmedabad,128.51,47.04
+Polyester,Good,324.2,64.0,Blue,Ahmedabad,67.04,26.13
+Silk,Good,258.6,36.0,Red,Surat,325.6,132.3
+Denim,Fair,98.7,72.0,Black,Tirupur,112.43,40.33
+Denim,Fair,130.9,44.0,Green,Surat,121.78,37.93
+Polyester,New,164.2,64.0,Green,Surat,63.07,34.12
+Polyester,Poor,146.2,44.0,Black,Bengaluru,63.77,18.03
+Cotton,Fair,71.0,36.0,Black,Tirupur,92.67,33.1
+Wool,Good,24.7,72.0,Yellow,Tirupur,244.44,102.3
+Denim,Fair,52.6,54.0,Green,Ahmedabad,120.15,47.22
+Cotton,Good,141.8,64.0,Natural Beige,Mumbai,102.52,51.48
+Cotton,New,73.5,60.0,Grey,Mumbai,97.12,53.58
+Linen,Poor,54.7,64.0,Red,Tirupur,159.99,37.2
+Cotton,Good,45.6,48.0,White,Surat,89.35,36.87
+Cotton,Fair,137.7,58.0,Black,Tirupur,95.12,33.65
+Cotton,New,87.0,36.0,Blue,Tirupur,91.96,51.11
+Polyester,Poor,121.0,72.0,Green,Ahmedabad,66.4,15.0
+Polyester,Good,37.5,64.0,Red,Surat,64.42,27.77
+Polyester,Good,96.4,44.0,White,Tirupur,57.91,26.08
+Cotton,Good,69.5,60.0,White,Ahmedabad,101.27,44.89
+Cotton,New,68.3,44.0,Blue,Surat,86.07,42.59
+Polyester,Good,15.8,48.0,White,Ahmedabad,66.66,32.02
+Polyester,Fair,420.9,72.0,Black,Bengaluru,73.65,24.05
+Polyester,Good,17.4,36.0,Black,Ahmedabad,65.19,29.22
+Silk,Good,34.6,60.0,Grey,Ahmedabad,329.76,161.53
+Cotton,Good,49.3,58.0,Red,Bengaluru,99.22,46.93
+Wool,Good,38.0,54.0,Green,Jaipur,247.18,115.81
+Denim,Good,33.4,72.0,Natural Beige,Ahmedabad,118.72,51.54
+Denim,Good,93.0,64.0,Natural Beige,Mumbai,124.57,51.08
+Polyester,New,268.8,58.0,White,Jaipur,65.9,33.29
+Cotton,Fair,24.7,60.0,Grey,Surat,89.23,32.02
+Cotton,Good,25.4,60.0,White,Ludhiana,97.86,46.06
+Polyester,Good,81.0,64.0,Grey,Jaipur,62.75,27.7
+Polyester,Fair,98.1,64.0,Black,Tirupur,59.95,21.58
+Denim,New,385.5,64.0,Yellow,Surat,107.06,51.18
+Polyester,Good,97.6,36.0,Blue,Ahmedabad,69.28,31.06
+Cotton,Fair,76.0,36.0,Green,Ahmedabad,92.53,35.5
+Wool,Good,127.1,64.0,Natural Beige,Ahmedabad,223.86,98.49
+Silk,Good,110.4,72.0,Blue,Surat,332.15,131.15
+Wool,Poor,18.9,36.0,Black,Ahmedabad,226.13,38.2
+Linen,Fair,22.4,60.0,Green,Ahmedabad,168.09,58.34
+Polyester,New,250.2,44.0,Blue,Ahmedabad,62.54,32.29
+Polyester,Fair,29.9,48.0,Green,Ahmedabad,65.87,24.32
+Cotton,Good,103.3,54.0,Green,Tirupur,91.37,41.53
+Polyester,Poor,67.7,44.0,Grey,Ludhiana,62.54,15.0
+Polyester,Fair,21.2,72.0,Red,Tirupur,57.41,20.78
+Cotton,Good,23.8,54.0,Green,Ahmedabad,99.77,45.16
+Denim,Poor,165.6,44.0,Yellow,Tirupur,121.55,21.57
+Cotton,Good,72.6,64.0,Yellow,Mumbai,94.77,42.35
+Denim,Fair,182.1,44.0,Black,Ahmedabad,115.02,41.08
+Linen,New,75.6,60.0,Blue,Surat,146.3,82.11
+Denim,New,19.4,58.0,Green,Surat,111.62,60.77
+Cotton,Good,31.8,48.0,Green,Ahmedabad,96.43,40.08
+Denim,Good,34.8,36.0,Red,Bengaluru,133.96,59.42
+Polyester,Good,186.4,64.0,Black,Ahmedabad,63.88,30.39
+Wool,Good,33.2,58.0,Red,Ahmedabad,247.9,118.75
+Cotton,New,111.4,72.0,White,Surat,93.7,52.57
+Cotton,Good,199.1,48.0,White,Ahmedabad,102.03,40.8
+Polyester,Good,39.5,44.0,Blue,Ahmedabad,61.58,27.73
+Denim,Good,37.7,44.0,Blue,Surat,105.7,47.12
+Cotton,Good,74.6,48.0,Natural Beige,Mumbai,103.82,46.94
+Wool,Good,381.8,58.0,Yellow,Ludhiana,246.27,100.82
+Cotton,Good,47.5,72.0,Grey,Surat,84.66,36.49
+Cotton,Poor,27.2,72.0,Red,Tirupur,83.48,15.0
+Polyester,Good,124.1,54.0,Green,Surat,65.91,28.09
+Cotton,Good,182.1,48.0,Yellow,Bengaluru,96.0,42.86
+Polyester,Fair,247.4,58.0,Green,Tirupur,59.87,21.8
+Denim,Good,81.9,60.0,Green,Ludhiana,115.94,51.68
+Linen,Good,28.0,58.0,White,Surat,155.01,67.73
+Cotton,Fair,34.6,44.0,Blue,Surat,83.8,27.49
+Denim,Good,26.9,58.0,Blue,Ahmedabad,125.48,46.97
+Polyester,Poor,120.7,64.0,Natural Beige,Ahmedabad,65.89,15.0
+Cotton,Good,37.9,64.0,Yellow,Jaipur,93.82,43.47
+Cotton,Good,60.8,60.0,Natural Beige,Ahmedabad,99.63,44.55
+Cotton,Fair,79.6,58.0,Natural Beige,Ahmedabad,92.04,30.36
+Denim,New,74.8,60.0,Green,Ahmedabad,120.07,73.92
+Polyester,Good,58.6,64.0,Grey,Surat,61.37,27.98
+Silk,New,43.8,54.0,White,Tirupur,336.77,184.0
+Denim,Good,164.2,48.0,Natural Beige,Ahmedabad,118.14,58.0
+Wool,Good,40.2,44.0,Blue,Ahmedabad,233.61,105.6
+Cotton,Good,174.8,44.0,Yellow,Tirupur,93.72,38.8
+Cotton,Good,288.6,48.0,White,Tirupur,86.26,32.71
+Polyester,Fair,116.6,36.0,Natural Beige,Tirupur,64.77,21.06
+Cotton,New,37.7,44.0,Black,Surat,89.87,48.16
+Wool,Good,43.5,72.0,Blue,Jaipur,258.54,122.71
+Polyester,Fair,91.8,64.0,Yellow,Mumbai,64.39,18.51
+Cotton,New,123.3,54.0,Red,Ahmedabad,94.64,49.44
+Linen,Good,110.7,44.0,Natural Beige,Surat,151.12,72.48
+Wool,New,81.4,36.0,Natural Beige,Surat,230.94,133.02
+Polyester,Good,65.5,72.0,Grey,Bengaluru,65.81,30.22
+Linen,Good,113.0,64.0,Red,Surat,152.32,67.68
+Polyester,Good,138.6,58.0,Yellow,Ludhiana,67.96,30.7
+Polyester,Poor,97.9,64.0,Black,Jaipur,69.81,15.0
+Polyester,Good,46.3,60.0,Natural Beige,Ahmedabad,65.88,28.88
+Wool,New,28.9,44.0,Blue,Mumbai,258.66,130.56
+Denim,Good,185.1,64.0,Red,Ahmedabad,124.91,54.54
+Denim,New,165.1,44.0,Natural Beige,Ahmedabad,118.88,59.88
+Cotton,New,52.9,54.0,Black,Tirupur,85.86,49.81
+Denim,Good,29.1,54.0,Red,Ahmedabad,112.05,58.85
+Cotton,New,50.6,64.0,White,Jaipur,96.04,53.93
+Wool,Good,33.6,72.0,Yellow,Ahmedabad,240.03,98.43
+Wool,Fair,52.7,44.0,Yellow,Surat,230.52,92.32
+Cotton,Good,36.0,60.0,Black,Ahmedabad,87.74,40.43
+Wool,Good,179.1,58.0,Grey,Ahmedabad,223.67,92.63
+Polyester,Fair,19.7,44.0,Natural Beige,Surat,62.57,26.92
+Polyester,New,47.6,36.0,Green,Ahmedabad,61.25,31.63
+Polyester,Fair,21.1,36.0,Blue,Ahmedabad,63.4,23.97
+Silk,Poor,40.2,36.0,Yellow,Bengaluru,344.22,80.34
+Denim,Good,43.9,54.0,Grey,Surat,105.27,52.49
+Wool,Good,122.1,72.0,Green,Tirupur,211.66,96.12
+Silk,Good,78.8,44.0,Green,Ludhiana,346.53,179.55
+Denim,New,36.8,44.0,Green,Jaipur,121.7,60.68
+Cotton,Fair,16.2,54.0,Blue,Bengaluru,104.74,38.11
+Cotton,New,191.9,58.0,Grey,Tirupur,84.9,45.91
+Denim,Good,237.9,54.0,Black,Ahmedabad,119.9,50.4
+Linen,Good,136.2,58.0,Natural Beige,Bengaluru,177.92,72.67
+Cotton,Fair,71.0,36.0,Grey,Tirupur,88.04,25.33
+Denim,New,73.9,58.0,White,Mumbai,130.88,77.1
+Cotton,Good,36.4,72.0,White,Ahmedabad,97.28,42.4
+Denim,New,43.6,44.0,Natural Beige,Tirupur,105.97,58.73
+Wool,Good,53.8,36.0,Blue,Mumbai,240.89,100.69
+Polyester,Good,49.2,36.0,Blue,Surat,65.8,31.6
+Silk,Good,86.5,36.0,Natural Beige,Mumbai,358.15,161.81
+Denim,Fair,79.5,58.0,Blue,Mumbai,133.23,42.88
+Linen,Good,53.4,54.0,Natural Beige,Ahmedabad,150.58,75.82
+Linen,New,43.1,64.0,Red,Ludhiana,148.19,82.26
+Cotton,Good,148.0,36.0,Natural Beige,Ludhiana,89.29,36.83
+Cotton,New,15.7,36.0,Yellow,Ahmedabad,102.08,55.02
+Denim,Fair,84.3,44.0,Red,Surat,109.92,35.12
+Cotton,New,69.6,54.0,Natural Beige,Ahmedabad,96.98,51.72
+Cotton,Good,100.0,48.0,Blue,Ahmedabad,97.8,45.16
+Cotton,Fair,401.0,58.0,Blue,Bengaluru,92.03,27.48
+Wool,Fair,49.4,44.0,Blue,Tirupur,228.25,81.97
+Cotton,Good,59.5,58.0,Green,Ahmedabad,89.57,41.01
+Denim,Fair,197.1,60.0,Grey,Bengaluru,125.41,47.75
+Cotton,New,17.1,54.0,White,Jaipur,99.68,54.13
+Denim,Fair,53.1,36.0,Grey,Jaipur,123.02,46.73
+Polyester,Poor,505.0,64.0,Red,Tirupur,62.13,15.41
+Cotton,Fair,101.1,72.0,Blue,Tirupur,87.61,30.91
+Linen,Good,45.2,44.0,Grey,Ahmedabad,164.94,80.32
+Denim,Poor,49.7,44.0,Green,Surat,121.56,23.91
+Denim,Good,37.5,64.0,White,Jaipur,123.34,51.36
+Polyester,Good,25.0,64.0,Natural Beige,Surat,60.97,29.82
+Polyester,Fair,16.3,44.0,White,Mumbai,67.36,23.3
+Silk,Fair,25.8,36.0,Yellow,Ludhiana,368.7,135.65
+Cotton,Good,50.0,64.0,Green,Jaipur,97.99,44.36
+Cotton,Good,197.9,44.0,Grey,Jaipur,102.51,49.58
+Denim,Good,123.0,64.0,Green,Tirupur,110.16,49.6
+Denim,New,86.2,44.0,White,Ludhiana,113.32,65.01
+Polyester,Good,71.9,58.0,Grey,Surat,66.14,29.89
+Cotton,Good,73.3,64.0,Grey,Ahmedabad,91.74,37.83
+Linen,New,41.1,60.0,Red,Surat,142.26,83.02
+Cotton,New,35.3,48.0,Natural Beige,Surat,87.2,54.78
+Silk,Poor,33.5,48.0,Natural Beige,Ahmedabad,323.53,56.79
+Linen,Poor,157.9,36.0,Red,Ahmedabad,156.66,31.16
+Denim,Good,43.0,44.0,White,Mumbai,130.36,67.98
+Linen,New,22.3,48.0,Green,Surat,163.99,89.91
+Denim,New,46.7,60.0,Red,Ludhiana,115.7,61.92
+Polyester,Good,45.2,36.0,Black,Ludhiana,64.31,32.06
+Denim,Fair,94.0,54.0,Blue,Bengaluru,118.68,37.68
+Denim,Poor,28.1,48.0,Red,Ahmedabad,124.48,26.88
+Wool,Poor,20.6,54.0,Red,Ahmedabad,248.06,59.42
+Cotton,Good,36.4,60.0,Green,Tirupur,90.02,39.57
+Denim,Good,68.9,64.0,Natural Beige,Tirupur,115.78,50.28
+Polyester,Good,185.2,58.0,Red,Ahmedabad,64.16,26.63
+Denim,New,49.2,64.0,Grey,Tirupur,117.74,65.62
+Silk,Good,108.0,36.0,Yellow,Tirupur,321.38,120.06
+Silk,New,45.6,64.0,Grey,Ahmedabad,367.31,200.93
+Denim,Good,119.2,60.0,Blue,Ahmedabad,122.62,57.37
+Cotton,Fair,24.4,60.0,Red,Ludhiana,89.36,32.1
+Polyester,Poor,22.6,60.0,Blue,Mumbai,72.75,16.3
+Polyester,Good,352.1,64.0,Grey,Surat,65.3,25.15
+Cotton,Fair,34.4,54.0,Grey,Surat,96.6,34.38
+Linen,New,18.5,58.0,Green,Ludhiana,154.92,85.42
+Cotton,Fair,125.9,64.0,Red,Ahmedabad,97.36,36.31
+Cotton,New,112.3,64.0,Black,Surat,83.32,47.47
+Silk,Good,86.0,64.0,White,Ahmedabad,332.88,138.5
+Denim,Good,64.1,44.0,Blue,Surat,109.7,47.61
+Polyester,Good,35.1,64.0,Natural Beige,Surat,62.35,24.0
+Polyester,Good,119.0,60.0,Blue,Bengaluru,71.12,31.53
+Polyester,Good,36.1,60.0,Blue,Surat,61.52,28.92
+Cotton,Good,29.8,72.0,Black,Ahmedabad,96.42,44.97
+Cotton,Good,161.4,54.0,Yellow,Surat,83.88,34.02
+Silk,Fair,81.7,64.0,Blue,Surat,352.26,120.04
+Cotton,Good,45.0,54.0,Yellow,Surat,87.68,38.65
+Wool,Poor,59.4,44.0,Black,Jaipur,235.23,43.55
+Silk,New,61.0,44.0,Black,Ahmedabad,324.19,173.02
+Wool,Good,43.2,64.0,Green,Surat,246.08,112.81
+Polyester,Fair,91.4,60.0,Natural Beige,Surat,62.38,21.96
+Polyester,Fair,38.1,72.0,Grey,Surat,58.89,21.87
+Denim,Fair,115.4,72.0,White,Ahmedabad,110.59,35.91
+Cotton,Poor,32.8,44.0,Natural Beige,Ludhiana,95.57,21.85
+Denim,New,20.5,54.0,Yellow,Tirupur,111.17,63.32
+Cotton,Fair,44.2,64.0,Green,Tirupur,96.52,33.95
+Polyester,Good,28.2,54.0,Red,Ahmedabad,62.71,28.15
+Silk,Good,133.3,58.0,Green,Surat,357.33,160.94
+Silk,Good,15.2,54.0,Yellow,Ahmedabad,377.39,186.97
+Cotton,New,196.0,36.0,Blue,Surat,85.01,47.85
+Wool,Good,70.5,44.0,Yellow,Surat,218.54,89.49
+Polyester,Good,186.8,54.0,Grey,Surat,66.25,31.05
+Linen,Fair,80.8,72.0,White,Mumbai,173.24,58.81
+Linen,Good,51.4,72.0,White,Ahmedabad,166.93,77.65
+Denim,Good,30.8,36.0,Red,Surat,108.45,47.43
+Polyester,Good,70.9,36.0,Grey,Jaipur,66.11,30.75
+Cotton,Good,451.6,58.0,Yellow,Surat,86.99,39.98
+Cotton,Fair,95.0,72.0,Yellow,Bengaluru,94.54,33.4
+Silk,Good,17.3,48.0,Black,Ahmedabad,361.52,172.06
+Cotton,Fair,96.2,36.0,Black,Ahmedabad,92.18,36.13
+Wool,Good,122.0,60.0,Red,Tirupur,240.3,108.53
+Polyester,Fair,240.8,64.0,Grey,Surat,60.92,18.74
+Polyester,New,70.7,58.0,Red,Mumbai,63.71,33.6
+Cotton,Good,162.7,36.0,White,Tirupur,87.52,38.94
+Polyester,New,110.3,72.0,Yellow,Tirupur,57.68,31.73
+Cotton,Good,139.4,54.0,Blue,Ludhiana,97.1,41.47
+Denim,Fair,106.4,54.0,Red,Surat,118.51,40.01
+Denim,Good,45.3,54.0,Natural Beige,Ahmedabad,126.44,53.64
+Cotton,New,61.3,44.0,Natural Beige,Ahmedabad,94.85,49.85
+Polyester,Good,159.0,64.0,White,Ahmedabad,61.42,26.0
+Polyester,Poor,148.2,58.0,Green,Surat,58.86,15.0
+Wool,Fair,33.9,54.0,Black,Surat,226.82,71.73
+Cotton,New,65.4,60.0,White,Surat,88.41,46.08
+Cotton,Fair,15.6,64.0,Grey,Mumbai,99.36,37.53
+Denim,Fair,44.3,72.0,White,Jaipur,120.9,42.37
+Polyester,Good,66.3,54.0,Green,Ludhiana,62.43,26.08
+Denim,Good,297.6,54.0,Green,Surat,118.8,53.69
+Denim,Fair,29.3,48.0,Green,Tirupur,121.7,40.06
+Linen,Poor,82.1,48.0,Red,Bengaluru,158.05,27.73
+Linen,Good,64.1,48.0,White,Mumbai,166.94,86.13
+Polyester,Good,21.7,54.0,White,Surat,65.28,26.48
+Cotton,Good,28.9,44.0,Grey,Ahmedabad,94.56,44.32
+Polyester,Good,157.4,54.0,Yellow,Tirupur,64.35,28.92
+Silk,New,152.1,64.0,Grey,Jaipur,355.43,192.79
+Polyester,Good,90.0,54.0,Blue,Ahmedabad,63.64,25.88
+Polyester,Fair,26.9,54.0,Black,Tirupur,57.25,22.74
+Denim,New,59.4,58.0,Green,Tirupur,110.55,59.08
+Cotton,Poor,106.7,44.0,White,Ahmedabad,94.47,17.27
+Cotton,Good,56.5,36.0,Black,Tirupur,85.35,40.51
+Polyester,New,19.5,64.0,Green,Surat,59.37,34.19
+Polyester,Good,136.5,60.0,Yellow,Surat,65.15,29.37
+Cotton,Good,21.7,36.0,Green,Mumbai,97.15,43.47
+Linen,Good,91.3,72.0,Red,Surat,150.42,64.4
+Wool,Good,107.8,58.0,Blue,Jaipur,237.15,103.96
+Polyester,Fair,30.8,60.0,Blue,Surat,60.93,19.87
+Cotton,New,55.4,48.0,Blue,Surat,84.24,47.03
+Cotton,Fair,40.7,72.0,Yellow,Surat,92.98,32.74
+Wool,Fair,46.6,36.0,Yellow,Ahmedabad,226.44,91.94
+Linen,Good,329.0,44.0,Black,Surat,148.05,60.17
+Denim,New,123.6,44.0,Natural Beige,Ludhiana,126.47,65.04
+Denim,New,437.6,54.0,Red,Tirupur,117.54,65.16
+Cotton,Poor,135.5,58.0,Natural Beige,Ludhiana,95.02,21.4
+Cotton,Good,40.5,64.0,White,Tirupur,86.02,39.46
+Cotton,Good,35.4,60.0,Grey,Ahmedabad,90.76,36.94
+Polyester,Fair,95.6,60.0,Yellow,Tirupur,62.16,18.75
+Denim,Good,169.1,72.0,Yellow,Ahmedabad,114.44,50.62
+Polyester,Good,101.5,44.0,Natural Beige,Surat,63.05,25.91
+Cotton,Poor,126.2,72.0,Grey,Surat,92.77,18.83
+Cotton,Good,81.6,64.0,White,Tirupur,97.41,50.3
+Polyester,Good,76.7,64.0,Red,Surat,62.81,29.01
+Wool,New,24.4,58.0,Red,Ahmedabad,227.66,131.61
+Silk,Good,34.6,58.0,Green,Surat,322.89,159.43
+Denim,New,75.8,54.0,Grey,Surat,120.55,62.27
+Wool,Good,15.3,60.0,White,Surat,237.59,107.17
+Polyester,Good,99.7,64.0,Black,Surat,60.86,24.91
+Cotton,Good,120.4,36.0,Black,Tirupur,87.72,35.53
+Cotton,Good,257.7,36.0,Yellow,Tirupur,93.76,42.71
+Polyester,Fair,117.7,54.0,White,Surat,58.54,18.16
+Linen,Poor,20.4,36.0,Grey,Ahmedabad,152.5,30.22
+Polyester,Poor,70.5,44.0,White,Bengaluru,71.57,16.13
+Wool,Fair,117.4,44.0,White,Ahmedabad,221.06,84.81
+Wool,Poor,58.2,58.0,Green,Ahmedabad,254.72,58.36
+Polyester,Fair,155.7,36.0,Blue,Surat,59.7,17.59
+Silk,Good,25.6,48.0,Yellow,Surat,350.96,169.6
+Silk,Good,51.5,60.0,Black,Ludhiana,329.95,148.97
+Cotton,Good,113.8,54.0,Black,Surat,93.96,44.25
+Denim,Good,111.2,58.0,Grey,Ludhiana,121.81,53.32
+Cotton,Good,115.1,58.0,Grey,Tirupur,96.67,40.56
+Cotton,Good,104.5,48.0,Yellow,Ludhiana,98.7,42.52
+Cotton,Good,34.0,58.0,Red,Ahmedabad,89.66,38.92
+Cotton,Good,199.2,60.0,Green,Surat,92.33,37.51
+Polyester,Good,178.7,72.0,Yellow,Tirupur,58.54,24.47
+Linen,New,44.6,54.0,Black,Surat,143.49,73.52
+Cotton,New,210.1,36.0,Yellow,Surat,95.16,46.29
+Wool,Fair,51.1,36.0,Red,Ludhiana,236.1,87.79
+Cotton,Good,19.6,54.0,Black,Bengaluru,95.68,44.55
+Silk,New,116.1,48.0,Red,Ahmedabad,324.25,163.45
+Cotton,New,26.4,58.0,Black,Jaipur,88.33,46.46
+Cotton,Good,76.6,36.0,Yellow,Surat,87.63,38.27
+Cotton,New,86.2,72.0,Red,Ahmedabad,91.96,47.7
+Cotton,Good,61.8,54.0,Black,Ludhiana,96.35,40.15
+Linen,Good,69.3,48.0,Green,Tirupur,147.83,60.94
+Denim,Good,75.8,60.0,Natural Beige,Ahmedabad,115.69,49.3
+Denim,Poor,45.8,72.0,White,Surat,113.92,23.96
+Cotton,Fair,173.5,60.0,Natural Beige,Ahmedabad,97.1,31.17
+Silk,Fair,44.2,72.0,Red,Surat,311.38,107.56
+Denim,Good,32.0,64.0,White,Surat,119.21,56.59
+Cotton,Poor,139.4,58.0,Yellow,Tirupur,86.33,15.58
+Cotton,Poor,44.2,60.0,Natural Beige,Surat,95.0,19.92
+Polyester,Fair,56.4,64.0,Blue,Ludhiana,63.48,23.72
+Wool,Poor,112.5,54.0,Natural Beige,Ahmedabad,246.22,52.02
+Cotton,Good,80.7,54.0,Green,Surat,94.55,46.63
+Polyester,Good,37.3,60.0,Natural Beige,Ahmedabad,67.32,32.82
+Linen,Poor,206.7,72.0,Green,Tirupur,145.92,28.07
+Linen,Good,96.6,58.0,Blue,Ahmedabad,160.97,66.61
+Denim,Fair,134.4,64.0,Black,Surat,119.92,41.83
+Wool,Good,61.1,60.0,Red,Tirupur,230.65,104.22
+Polyester,Good,132.5,60.0,Blue,Ahmedabad,69.75,28.82
+Denim,Fair,65.5,72.0,Red,Ahmedabad,117.35,44.03
+Cotton,Good,97.2,64.0,Blue,Ahmedabad,93.42,47.87
+Denim,New,72.4,36.0,Blue,Jaipur,121.26,75.91
+Wool,Good,47.5,44.0,Yellow,Ahmedabad,249.0,111.53
+Polyester,Poor,143.2,44.0,Black,Surat,62.48,15.0
+Cotton,New,65.1,48.0,Green,Mumbai,102.15,57.06
+Cotton,Good,136.5,64.0,Grey,Surat,95.87,39.89
+Polyester,Good,59.6,58.0,Blue,Ahmedabad,68.7,31.91
+Polyester,Fair,32.9,60.0,Yellow,Tirupur,65.64,22.41
+Cotton,New,17.1,36.0,Natural Beige,Ahmedabad,99.25,50.78
+Polyester,Poor,226.0,54.0,Grey,Mumbai,64.99,16.54
+Cotton,Fair,183.1,72.0,Grey,Ahmedabad,89.27,37.34
+Linen,New,62.4,64.0,Red,Surat,144.67,80.33
+Cotton,Poor,33.8,72.0,Black,Ahmedabad,98.66,17.79
+Denim,Poor,351.8,60.0,Green,Ahmedabad,119.58,16.1
+Cotton,Good,170.9,60.0,Green,Surat,88.23,38.16
+Denim,New,111.6,64.0,Natural Beige,Ahmedabad,127.22,77.67
+Silk,Fair,37.9,36.0,Blue,Ahmedabad,329.17,117.74
+Cotton,Good,144.7,58.0,Blue,Ahmedabad,93.05,39.21
+Cotton,Poor,148.0,48.0,White,Ludhiana,92.95,20.67
+Linen,Fair,44.2,60.0,Blue,Surat,161.95,56.28
+Silk,Good,179.5,64.0,Yellow,Ahmedabad,324.6,150.22
+Denim,Good,16.2,54.0,White,Ahmedabad,112.17,52.12
+Denim,Poor,89.0,36.0,Yellow,Ahmedabad,116.38,24.71
+Denim,Fair,77.1,44.0,White,Surat,113.59,39.7
+Cotton,Good,27.3,44.0,White,Mumbai,103.63,40.56
+Polyester,Good,38.1,58.0,Black,Ahmedabad,63.22,31.23
+Denim,Good,26.3,64.0,Natural Beige,Ludhiana,117.6,52.07
+Cotton,Fair,143.7,36.0,Blue,Ludhiana,99.47,34.27
+Polyester,Fair,46.2,72.0,Red,Ahmedabad,64.83,22.65
+Denim,Good,34.3,58.0,Green,Surat,114.84,53.74
+Silk,Poor,31.5,60.0,Grey,Bengaluru,385.55,91.14
+Denim,Good,48.5,58.0,Black,Tirupur,106.03,44.69
+Linen,New,156.8,44.0,Red,Bengaluru,169.36,95.81
+Cotton,Fair,79.5,44.0,Natural Beige,Surat,96.98,35.76
+Wool,Fair,106.3,36.0,Red,Ahmedabad,228.43,76.78
+Silk,Good,75.5,36.0,White,Tirupur,348.47,151.89
+Linen,Good,106.3,54.0,Grey,Ahmedabad,168.79,76.46
+Silk,New,41.1,64.0,Green,Mumbai,355.53,218.72
+Linen,Good,43.5,44.0,White,Ludhiana,153.63,61.95
+Polyester,Good,57.3,48.0,Black,Ahmedabad,64.8,31.94
+Linen,Poor,98.1,64.0,Green,Ludhiana,162.34,45.66
+Cotton,Good,40.9,64.0,Red,Bengaluru,93.74,41.74
+Cotton,Good,15.9,44.0,Natural Beige,Ludhiana,95.31,36.03
+Polyester,Fair,61.1,44.0,Yellow,Ahmedabad,65.43,22.03
+Linen,Fair,253.8,36.0,Grey,Mumbai,164.81,52.4
+Linen,New,29.8,72.0,Yellow,Surat,158.29,87.41
+Linen,Good,166.8,72.0,Grey,Ahmedabad,168.62,75.93
+Linen,Good,41.3,58.0,Black,Mumbai,178.88,77.45
+Polyester,Good,23.5,72.0,Grey,Ahmedabad,62.32,26.76
