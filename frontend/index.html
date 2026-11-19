@@ -278,14 +278,14 @@
             </div>
 
             <div style="display:flex; gap:0.75rem; margin-top:1rem; flex-wrap:wrap;">
-              <button id="btn-run-ai" class="btn btn-primary" style="flex:2;" onclick="runAIScannerPipeline()">
-                ⚡ Run AI Vision Pipeline
+              <button id="btn-run-ai" class="btn btn-primary" style="flex:2; font-size:0.95rem; font-weight:700;" onclick="runAIScannerPipeline()">
+                🔍 Check Fabric Quality & Flaws
               </button>
               <button id="btn-toggle-gradcam" class="btn btn-outline btn-sm" style="flex:1;" onclick="toggleGradCam()">
-                Show Grad-CAM Heatmap
+                💡 Highlight What AI Checked
               </button>
               <button class="btn btn-outline btn-sm" onclick="document.getElementById('scanner-file-input').click()">
-                Change Photo
+                📷 Upload Another Fabric
               </button>
             </div>
           </div>
@@ -297,46 +297,52 @@
             <div class="ai-prediction-header">
               <div>
                 <div style="font-size:0.75rem; text-transform:uppercase; color:var(--muted-text); font-weight:700;">
-                  Primary Material Classification (MobileNetV2)
+                  Identified Fabric Material
                 </div>
                 <div class="classified-title" id="res-material-class">Cotton</div>
               </div>
-              <div class="confidence-chip" id="res-confidence">94.2%</div>
+              <div class="confidence-chip" id="res-confidence">94.2% Match</div>
             </div>
 
-            <!-- Grad-CAM Explainability Box (Section 5.5) -->
-            <div style="background:#F1F5F9; border-radius:var(--radius-sm); padding:0.75rem; font-size:0.8rem; margin-bottom:1rem;">
-              <strong style="color:var(--forest-green);">🧠 Explainability Insight (Grad-CAM):</strong>
-              <div style="color:var(--muted-text); margin-top:0.2rem;">
-                Model classification influenced by salient warp-and-weft weave patterns, matte fiber reflectivity, and yarn twist density at the final Conv_1 feature map.
+            <!-- Plain Human English Explainability Box -->
+            <div style="background:#F0FDF4; border:1px solid #BBF7D0; border-radius:var(--radius-sm); padding:0.85rem; font-size:0.82rem; margin-bottom:1rem;">
+              <strong style="color:#166534;">💡 Why the AI Identified This:</strong>
+              <div id="res-explain-text" style="color:#14532D; margin-top:0.25rem; line-height:1.5;">
+                The scanner detected standard square weave texture and natural matte finish of cotton shirting.
               </div>
             </div>
 
-            <!-- YOLO Visual Defect Detection Box (Section 5.2) -->
-            <div style="border:1px solid #E2E8F0; border-radius:var(--radius-sm); padding:0.85rem; margin-bottom:1rem;">
-              <div style="font-size:0.75rem; font-weight:700; text-transform:uppercase; color:var(--muted-text); margin-bottom:0.2rem;">
-                Visual Defect Inspection (Ultralytics YOLO)
+            <!-- Surface Quality & Defect Inspection Box -->
+            <div style="border:1px solid #E2E8F0; border-radius:var(--radius-sm); padding:0.85rem; margin-bottom:1rem; background:#FFFFFF;">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.4rem;">
+                <div style="font-size:0.75rem; font-weight:700; text-transform:uppercase; color:var(--muted-text);">
+                  Surface Quality & Defect Inspection
+                </div>
+                <div style="display:flex; gap:0.35rem;">
+                  <button type="button" class="btn btn-outline btn-sm" style="padding:2px 7px; font-size:0.72rem; color:#DC2626; border-color:#FCA5A5;" onclick="manualToggleDefect(true)" title="Manually mark crack/flaw if AI missed it">⚠️ Flag Flaw</button>
+                  <button type="button" class="btn btn-outline btn-sm" style="padding:2px 7px; font-size:0.72rem; color:#059669; border-color:#86EFAC;" onclick="manualToggleDefect(false)" title="Mark as pristine">✓ Clean</button>
+                </div>
               </div>
               <div id="defect-status-text">
                 <!-- Dynamically populated -->
               </div>
             </div>
 
-            <!-- Random Forest Price Recommendation (Section 4.4 Model 1) -->
+            <!-- Suggested Resale Price Recommendation -->
             <div class="price-estimate-box">
               <div style="font-size:0.8rem; color:#166534; font-weight:700; text-transform:uppercase;">
                 AI Suggested Resale Price Range
               </div>
               <div class="price-range-val" id="res-price-range">₹42 – ₹48 / kg</div>
-              <div style="font-size:0.75rem; color:#15803D;">
-                Trained on 1,500 industrial transactions (R² = 0.9838, MAE = ₹3.19/kg).
+              <div style="font-size:0.75rem; color:#15803D;" id="res-price-subtext">
+                Estimated based on recent surplus textile sales in Indian industrial hubs.
               </div>
             </div>
 
-            <!-- Probability Distribution Breakdown -->
-            <div style="margin-bottom:1.5rem;">
-              <div style="font-size:0.75rem; font-weight:700; text-transform:uppercase; color:var(--muted-text); margin-bottom:0.5rem;">
-                Class Probability Distribution
+            <!-- Other Possible Materials -->
+            <div style="margin-bottom:1.25rem;">
+              <div style="font-size:0.75rem; font-weight:700; text-transform:uppercase; color:var(--muted-text); margin-bottom:0.4rem;">
+                Other Possible Materials Considered
               </div>
               <div id="secondary-probs-list">
                 <!-- Populated dynamically -->
@@ -346,9 +352,22 @@
             <!-- Action Buttons -->
             <div style="display:flex; gap:0.75rem;">
               <button class="btn btn-mint" style="flex:1; font-size:0.95rem; padding:0.75rem;" onclick="publishScannedListing()">
-                ✓ Publish as Verified Marketplace Listing
+                ✓ List on Marketplace with this Analysis
               </button>
             </div>
+
+            <!-- Collapsible Academic Details for Examiners -->
+            <details style="margin-top:1rem; background:#F8FAFC; border:1px solid #E2E8F0; border-radius:var(--radius-sm); padding:0.6rem; font-size:0.75rem;">
+              <summary style="cursor:pointer; font-weight:700; color:#475569;">
+                🔬 Academic Model Details (For 5th Sem Evaluation)
+              </summary>
+              <div style="margin-top:0.4rem; color:#334155; line-height:1.6; font-family:monospace;">
+                <div>• Classifier: MobileNetV2 Transfer Learning (6 classes, ImageNet base)</div>
+                <div>• Defect Engine: Ultralytics YOLO Object Detection</div>
+                <div>• Explainability: Grad-CAM on Conv_1 feature map layer</div>
+                <div>• Valuation: Random Forest Regressor (200 trees, R²=0.9838, MAE=₹3.19/kg)</div>
+              </div>
+            </details>
           </div>
         </div>
       </div>
