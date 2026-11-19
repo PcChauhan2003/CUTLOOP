@@ -256,10 +256,15 @@
           <div id="scanner-dropzone" class="upload-card" onclick="document.getElementById('scanner-file-input').click()">
             <div style="font-size:3rem; margin-bottom:1rem;">📷</div>
             <h3 style="font-size:1.15rem; margin-bottom:0.5rem; color:var(--forest-green);">Click or Drag Fabric Photograph Here</h3>
-            <p style="font-size:0.85rem; color:var(--muted-text); margin-bottom:1rem;">
+            <p style="font-size:0.85rem; color:var(--muted-text); margin-bottom:0.75rem;">
               Supports JPEG/PNG · Recommended 224 × 224 or higher resolution
             </p>
-            <button class="btn btn-outline btn-sm">Select Sample Image</button>
+            <div style="display:flex; justify-content:center; gap:0.4rem; flex-wrap:wrap;" onclick="event.stopPropagation()">
+              <button type="button" class="btn btn-outline btn-sm" onclick="loadScannerSample('cotton')">🌿 Cotton Sample</button>
+              <button type="button" class="btn btn-outline btn-sm" onclick="loadScannerSample('denim')">👖 Denim Sample</button>
+              <button type="button" class="btn btn-outline btn-sm" onclick="loadScannerSample('linen')">🌾 Linen Sample</button>
+              <button type="button" class="btn btn-outline btn-sm" onclick="loadScannerSample('silk')">🧵 Silk Sample</button>
+            </div>
             <input type="file" id="scanner-file-input" style="display:none;" accept="image/*" onchange="handleScannerFileSelect(this)">
           </div>
 
@@ -363,6 +368,22 @@
           <input type="file" id="inventory-csv-input" style="display:none;" accept=".csv" onchange="handleInventoryCSVUpload(this)">
           <button class="btn btn-primary btn-sm" onclick="openAddMaterialModal()">+ Add New Material</button>
         </div>
+      </div>
+
+      <!-- Quick Action Listing Banner for Seller -->
+      <div style="background: linear-gradient(135deg, #F0FDF4 0%, #DCFCE7 100%); border: 1px solid #86EFAC; border-radius: var(--radius-md); padding: 1.25rem; margin-bottom: 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+        <div>
+          <div style="display: flex; align-items: center; gap: 0.5rem;">
+            <span style="font-size: 1.4rem;">🏭</span>
+            <strong style="font-size: 1.05rem; color: #166534;">Have factory leftover fabric or cutting scraps?</strong>
+          </div>
+          <p style="font-size: 0.85rem; color: #14532D; margin-top: 0.25rem;">
+            Turn surplus textiles into revenue. List material batches with instant AI price estimation and visual defect analysis.
+          </p>
+        </div>
+        <button class="btn btn-primary" onclick="openAddMaterialModal()" style="font-size: 0.9rem; padding: 0.65rem 1.25rem; box-shadow: var(--shadow-sm);">
+          + List New Material For Sale
+        </button>
       </div>
 
       <!-- Seller KPI Cards (Section 2.2 A.3) -->
@@ -579,12 +600,27 @@
   <!-- ==================== MODAL 1: ADD MATERIAL / SELLER UPLOAD WORKFLOW (Section 2.2 B & 4.4 E) ==================== -->
   <div id="add-material-modal" class="modal-backdrop" style="display:none;" onclick="if(event.target===this) closeAddMaterialModal()">
     <div class="modal-dialog modal-dialog-large">
-      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1.25rem;">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem;">
         <div>
-          <h3 style="font-size:1.3rem; font-weight:800; color:var(--forest-green);">List New Surplus Material</h3>
-          <p style="font-size:0.8rem; color:var(--muted-text);">Upload factory leftovers with AI price recommendation</p>
+          <h3 style="font-size:1.3rem; font-weight:800; color:var(--forest-green);">List New Surplus Material For Sale</h3>
+          <p style="font-size:0.8rem; color:var(--muted-text);">Add surplus batches to your seller inventory with AI pricing</p>
         </div>
         <button onclick="closeAddMaterialModal()" style="background:none; border:none; font-size:1.2rem; cursor:pointer;">✕</button>
+      </div>
+
+      <!-- 1-Click Fast Presets for Instant Testing -->
+      <div style="margin-bottom:1rem; background:#F8FAFC; border:1px solid #E2E8F0; border-radius:var(--radius-sm); padding:0.65rem 0.85rem;">
+        <span style="font-size:0.75rem; font-weight:700; color:var(--muted-text); text-transform:uppercase; display:block; margin-bottom:0.4rem;">
+          ⚡ 1-Click Sample Presets (Autofill Material Specs):
+        </span>
+        <div class="preset-chips-container">
+          <button type="button" id="preset-chip-cotton" class="preset-chip active" onclick="selectPresetSampleFabric('Cotton')">🌿 Cotton Rolls</button>
+          <button type="button" id="preset-chip-denim" class="preset-chip" onclick="selectPresetSampleFabric('Denim')">👖 Indigo Denim</button>
+          <button type="button" id="preset-chip-silk" class="preset-chip" onclick="selectPresetSampleFabric('Silk')">🧵 Mulberry Silk</button>
+          <button type="button" id="preset-chip-linen" class="preset-chip" onclick="selectPresetSampleFabric('Linen')">🌾 Summer Linen</button>
+          <button type="button" id="preset-chip-polyester" class="preset-chip" onclick="selectPresetSampleFabric('Polyester')">🎽 Poly Mesh</button>
+          <button type="button" id="preset-chip-wool" class="preset-chip" onclick="selectPresetSampleFabric('Wool')">🐑 Woolen Tweed</button>
+        </div>
       </div>
 
       <form id="add-material-form" onsubmit="handleSellerSubmitMaterial(event)">
@@ -593,24 +629,28 @@
           <div>
             <div style="margin-bottom:1rem;">
               <label style="font-size:0.82rem; font-weight:600; display:block; margin-bottom:0.3rem;">Material Title *</label>
-              <input type="text" id="new-mat-name" class="form-control" style="width:100%;" placeholder="e.g. Cotton surplus fabric rolls" required>
+              <input type="text" id="new-mat-name" class="form-control" style="width:100%;" placeholder="e.g. Cotton surplus fabric rolls" value="Surplus Raw Cotton Fabric Rolls (100% Organic)" required>
             </div>
 
             <div style="margin-bottom:1rem;">
-              <label style="font-size:0.82rem; font-weight:600; display:block; margin-bottom:0.3rem;">Fabric Photo *</label>
-              <div class="upload-card" style="padding:1.5rem 1rem;" onclick="document.getElementById('new-mat-file').click()">
-                <div id="new-mat-droptext">
+              <label style="font-size:0.82rem; font-weight:600; display:block; margin-bottom:0.3rem;">Fabric Photo</label>
+              <div class="upload-card" style="padding:1rem; cursor:pointer;" onclick="document.getElementById('new-mat-file').click()" title="Click to upload custom photograph">
+                <div id="new-mat-droptext" style="display:none;">
                   <div style="font-size:1.8rem; margin-bottom:0.3rem;">📸</div>
                   <span style="font-size:0.82rem; color:var(--forest-green); font-weight:600;">Choose Photo or Drag File</span>
                 </div>
-                <img id="new-mat-img-preview" src="" style="display:none; width:100%; max-height:160px; object-fit:contain; border-radius:var(--radius-sm);" alt="Preview">
-                <input type="file" id="new-mat-file" style="display:none;" accept="image/*" onchange="previewNewMaterialImage(this)" required>
+                <img id="new-mat-img-preview" src="images/materials/cotton_rolls.jpg" style="width:100%; height:140px; object-fit:cover; border-radius:var(--radius-sm); border:1px solid #CBD5E1;" alt="Fabric Preview">
+                <div style="margin-top:0.5rem; font-size:0.75rem; color:var(--forest-green); font-weight:600;">
+                  📷 Click photo to upload your custom image (or use preset above)
+                </div>
+                <!-- Note: removed required attribute so form submission is never blocked by invisible inputs -->
+                <input type="file" id="new-mat-file" style="display:none;" accept="image/*" onchange="previewNewMaterialImage(this)">
               </div>
             </div>
 
             <div style="margin-bottom:1rem;">
               <label style="font-size:0.82rem; font-weight:600; display:block; margin-bottom:0.3rem;">Description</label>
-              <textarea id="new-mat-desc" class="form-control" style="width:100%; height:75px;" placeholder="Factory origin, weave details, batch notes..."></textarea>
+              <textarea id="new-mat-desc" class="form-control" style="width:100%; height:75px;" placeholder="Factory origin, weave details, batch notes...">High quality 100% natural cotton cut-offs from shirting production. Clean, dry stored in warehouse rolls.</textarea>
             </div>
           </div>
 
@@ -619,8 +659,8 @@
             <div style="display:grid; grid-template-columns: 1fr 1fr; gap:0.75rem; margin-bottom:1rem;">
               <div>
                 <label style="font-size:0.82rem; font-weight:600; display:block; margin-bottom:0.3rem;">Fabric Type *</label>
-                <select id="new-mat-type" class="form-control" style="width:100%;" required>
-                  <option value="Cotton">Cotton</option>
+                <select id="new-mat-type" class="form-control" style="width:100%;" onchange="handleNewMatTypeChange(this.value)" required>
+                  <option value="Cotton" selected>Cotton</option>
                   <option value="Denim">Denim</option>
                   <option value="Silk">Silk</option>
                   <option value="Linen">Linen</option>
@@ -631,7 +671,7 @@
               <div>
                 <label style="font-size:0.82rem; font-weight:600; display:block; margin-bottom:0.3rem;">Condition *</label>
                 <select id="new-mat-condition" class="form-control" style="width:100%;" required>
-                  <option value="Good">Good</option>
+                  <option value="Good" selected>Good</option>
                   <option value="New">New (Deadstock roll)</option>
                   <option value="Fair">Fair (Cutting offcuts)</option>
                 </select>
@@ -641,7 +681,7 @@
             <div style="display:grid; grid-template-columns: 1fr 1fr; gap:0.75rem; margin-bottom:1rem;">
               <div>
                 <label style="font-size:0.82rem; font-weight:600; display:block; margin-bottom:0.3rem;">Quantity (kg) *</label>
-                <input type="number" id="new-mat-qty" class="form-control" style="width:100%;" value="100" min="1" required>
+                <input type="number" id="new-mat-qty" class="form-control" style="width:100%;" value="120" min="1" required>
               </div>
               <div>
                 <label style="font-size:0.82rem; font-weight:600; display:block; margin-bottom:0.3rem;">Min Order (kg) *</label>
@@ -663,7 +703,7 @@
                 </button>
               </div>
               <div id="ai-price-suggestion-result" style="font-size:0.82rem; color:#15803D;">
-                Click "Suggest Price with AI" to estimate fair market value based on 1,500 historical transactions.
+                Click "Suggest Price with AI" to estimate fair market value via Random Forest.
               </div>
             </div>
 
@@ -676,7 +716,7 @@
 
         <div style="display:flex; gap:0.75rem; justify-content:flex-end; border-top:1px solid #E2E8F0; padding-top:1rem; margin-top:0.5rem;">
           <button type="button" class="btn btn-outline" onclick="closeAddMaterialModal()">Cancel</button>
-          <button type="submit" class="btn btn-primary" id="btn-submit-listing">Publish Marketplace Listing</button>
+          <button type="submit" class="btn btn-primary" id="btn-submit-listing">✓ Publish Surplus Listing</button>
         </div>
       </form>
     </div>

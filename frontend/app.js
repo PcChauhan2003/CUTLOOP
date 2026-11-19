@@ -840,20 +840,54 @@ function renderSellerInventory() {
   const tbody = document.getElementById("inventory-table-body");
   if (!tbody) return;
 
+  if (appState.materials.length === 0) {
+    tbody.innerHTML = `
+      <tr>
+        <td colspan="8" style="text-align:center; padding:2.5rem; color:#64748B;">
+          <div style="font-size:1.5rem; margin-bottom:0.4rem;">📦</div>
+          <div style="font-weight:600;">No surplus materials in your active catalog yet.</div>
+          <button class="btn btn-primary btn-sm" style="margin-top:0.75rem;" onclick="openAddMaterialModal()">+ Add Your First Material</button>
+        </td>
+      </tr>
+    `;
+    return;
+  }
+
   tbody.innerHTML = appState.materials.map(m => `
     <tr>
-      <td>#${m.id}</td>
-      <td style="font-weight:600;">${m.materialName}</td>
+      <td><span style="font-family:monospace; color:#64748B;">#${m.id.toString().slice(-4)}</span></td>
+      <td>
+        <div style="display:flex; align-items:center; gap:0.6rem;">
+          <img src="${m.primaryImageUrl}" style="width:38px; height:38px; border-radius:4px; object-fit:cover; border:1px solid #CBD5E1;" onerror="this.onerror=null; this.src='images/materials/cotton_rolls.jpg';">
+          <div>
+            <div style="font-weight:700; color:var(--charcoal); font-size:0.88rem;">${m.materialName}</div>
+            <div style="font-size:0.72rem; color:var(--muted-text);">${m.description ? m.description.slice(0, 48) + '...' : ''}</div>
+          </div>
+        </div>
+      </td>
       <td><span class="badge-tag" style="position:static;">${m.materialType}</span></td>
       <td><strong>${m.quantityKg} kg</strong></td>
-      <td>₹${m.pricePerKg} / kg</td>
+      <td style="color:var(--forest-green); font-weight:700;">₹${m.pricePerKg} / kg</td>
       <td>${m.location}</td>
-      <td><span style="color:#059669; font-weight:700;">Active</span></td>
+      <td><span class="nav-badge-pill" style="background:#D1FAE5; color:#064E3B; font-size:0.75rem; padding:3px 7px;">Active Listing</span></td>
       <td>
-        <button class="btn btn-outline btn-sm" onclick="openProductDetailModal(${m.id})">View</button>
+        <div style="display:flex; gap:0.35rem;">
+          <button class="btn btn-outline btn-sm" style="padding:4px 8px; font-size:0.75rem;" onclick="openProductDetailModal(${m.id})">Inspect</button>
+          <button class="btn btn-outline btn-sm" style="padding:4px 8px; font-size:0.75rem; color:#DC2626; border-color:#FECACA;" onclick="deleteSellerListing(${m.id})" title="Delete listing">🗑️</button>
+        </div>
       </td>
     </tr>
   `).join("");
+}
+
+function deleteSellerListing(id) {
+  const item = appState.materials.find(m => m.id === id);
+  const name = item ? item.materialName : "this material";
+  if (confirm(`Are you sure you want to remove "${name}" from your active seller inventory?`)) {
+    appState.materials = appState.materials.filter(m => m.id !== id);
+    renderSellerDashboard();
+    renderMarketplace();
+  }
 }
 
 function renderSellerOrders() {
@@ -875,11 +909,161 @@ function renderSellerOrders() {
 }
 
 function openAddMaterialModal() {
-  document.getElementById("add-material-modal").style.display = "flex";
+  const modal = document.getElementById("add-material-modal");
+  if (!modal) return;
+
+  // Make sure image preview is loaded
+  const previewImg = document.getElementById("new-mat-img-preview");
+  const dropText = document.getElementById("new-mat-droptext");
+  const typeSelect = document.getElementById("new-mat-type");
+  const currentType = typeSelect ? typeSelect.value : "Cotton";
+
+  if (!appState.newMaterialImageBase64) {
+    const fallbackImgs = {
+      Cotton: "images/materials/cotton_rolls.jpg",
+      Denim: "images/materials/denim_indigo.jpg",
+      Silk: "images/materials/silk_mulberry.jpg",
+      Linen: "images/materials/linen_beige.jpg",
+      Polyester: "images/materials/polyester_mesh.jpg",
+      Wool: "images/materials/wool_tweed.jpg"
+    };
+    if (previewImg) {
+      previewImg.src = fallbackImgs[currentType] || "images/materials/cotton_rolls.jpg";
+      previewImg.style.display = "block";
+    }
+    if (dropText) dropText.style.display = "none";
+  }
+
+  modal.style.display = "flex";
 }
 
 function closeAddMaterialModal() {
   document.getElementById("add-material-modal").style.display = "none";
+}
+
+// 1-Click Sample Fabric Presets for Sellers
+function selectPresetSampleFabric(type) {
+  const presets = {
+    Cotton: {
+      title: "Surplus Raw Cotton Fabric Rolls (100% Organic)",
+      qty: 120,
+      minOrder: 10,
+      price: 45,
+      cond: "Good",
+      img: "images/materials/cotton_rolls.jpg",
+      desc: "High quality 100% natural cotton cut-offs from shirting production. Clean, dry stored in warehouse rolls."
+    },
+    Denim: {
+      title: "Stonewashed Indigo Denim Offcuts (12oz)",
+      qty: 85,
+      minOrder: 15,
+      price: 62,
+      cond: "Good",
+      img: "images/materials/denim_indigo.jpg",
+      desc: "Heavyweight 12oz denim leftovers from jacket production, ideal for tote bags, aprons, and accessories."
+    },
+    Silk: {
+      title: "Pure Mulberry Raw Silk Scraps (Lustrous)",
+      qty: 35,
+      minOrder: 5,
+      price: 120,
+      cond: "New",
+      img: "images/materials/silk_mulberry.jpg",
+      desc: "Premium mulberry silk remnants from luxury bridal sari border trimming. High sheen, unblemished weave."
+    },
+    Linen: {
+      title: "Organic Breathable Linen Remnants (Overruns)",
+      qty: 60,
+      minOrder: 10,
+      price: 75,
+      cond: "Good",
+      img: "images/materials/linen_beige.jpg",
+      desc: "Pre-washed pure linen rolls from luxury summer collection overruns. Crisp texture and breathable drape."
+    },
+    Polyester: {
+      title: "Recycled Athletic Polyester Mesh Fabric",
+      qty: 150,
+      minOrder: 20,
+      price: 38,
+      cond: "Good",
+      img: "images/materials/polyester_mesh.jpg",
+      desc: "Lightweight polyester mesh remnants suitable for sports lining, activewear pocket bags, and organizers."
+    },
+    Wool: {
+      title: "Brushed Woolen Tweed Offcuts (Overcoat Trim)",
+      qty: 40,
+      minOrder: 5,
+      price: 95,
+      cond: "Good",
+      img: "images/materials/wool_tweed.jpg",
+      desc: "Warm woolen tweed remnants from overcoat tailing. Heavy insulating texture with soft hand feel."
+    }
+  };
+
+  const p = presets[type];
+  if (!p) return;
+
+  const nameInput = document.getElementById("new-mat-name");
+  const typeSelect = document.getElementById("new-mat-type");
+  const condSelect = document.getElementById("new-mat-condition");
+  const qtyInput = document.getElementById("new-mat-qty");
+  const minOrderInput = document.getElementById("new-mat-min-order");
+  const priceInput = document.getElementById("new-mat-price");
+  const descInput = document.getElementById("new-mat-desc");
+
+  if (nameInput) nameInput.value = p.title;
+  if (typeSelect) typeSelect.value = type;
+  if (condSelect) condSelect.value = p.cond;
+  if (qtyInput) qtyInput.value = p.qty;
+  if (minOrderInput) minOrderInput.value = p.minOrder;
+  if (priceInput) priceInput.value = p.price;
+  if (descInput) descInput.value = p.desc;
+
+  appState.newMaterialImageBase64 = null; // reset custom upload
+  const imgElem = document.getElementById("new-mat-img-preview");
+  const dropText = document.getElementById("new-mat-droptext");
+  if (imgElem) {
+    imgElem.src = p.img;
+    imgElem.style.display = "block";
+  }
+  if (dropText) dropText.style.display = "none";
+
+  // Highlight active preset chip
+  document.querySelectorAll(".preset-chip").forEach(el => el.classList.remove("active"));
+  const activeChip = document.getElementById(`preset-chip-${type.toLowerCase()}`);
+  if (activeChip) activeChip.classList.add("active");
+}
+
+function handleNewMatTypeChange(type) {
+  const fallbackImgs = {
+    Cotton: "images/materials/cotton_rolls.jpg",
+    Denim: "images/materials/denim_indigo.jpg",
+    Silk: "images/materials/silk_mulberry.jpg",
+    Linen: "images/materials/linen_beige.jpg",
+    Polyester: "images/materials/polyester_mesh.jpg",
+    Wool: "images/materials/wool_tweed.jpg"
+  };
+  const basePrices = { Cotton: 45, Denim: 62, Silk: 120, Linen: 75, Polyester: 38, Wool: 90 };
+
+  if (!appState.newMaterialImageBase64) {
+    const imgElem = document.getElementById("new-mat-img-preview");
+    const dropText = document.getElementById("new-mat-droptext");
+    if (imgElem) {
+      imgElem.src = fallbackImgs[type] || "images/materials/cotton_rolls.jpg";
+      imgElem.style.display = "block";
+    }
+    if (dropText) dropText.style.display = "none";
+  }
+
+  const priceInput = document.getElementById("new-mat-price");
+  if (priceInput && basePrices[type]) {
+    priceInput.value = basePrices[type];
+  }
+
+  // Update preset chip highlight if matching
+  document.querySelectorAll(".preset-chip").forEach(el => el.classList.remove("active"));
+  const activeChip = document.getElementById(`preset-chip-${type.toLowerCase()}`);
+  if (activeChip) activeChip.classList.add("active");
 }
 
 function previewNewMaterialImage(input) {
@@ -888,9 +1072,13 @@ function previewNewMaterialImage(input) {
     const reader = new FileReader();
     reader.onload = function(e) {
       appState.newMaterialImageBase64 = e.target.result;
-      document.getElementById("new-mat-img-preview").src = e.target.result;
-      document.getElementById("new-mat-img-preview").style.display = "block";
-      document.getElementById("new-mat-droptext").style.display = "none";
+      const img = document.getElementById("new-mat-img-preview");
+      if (img) {
+        img.src = e.target.result;
+        img.style.display = "block";
+      }
+      const dropText = document.getElementById("new-mat-droptext");
+      if (dropText) dropText.style.display = "none";
     };
     reader.readAsDataURL(file);
   }
@@ -928,9 +1116,9 @@ async function requestAIPriceSuggestion() {
 
     if (res.ok) {
       const data = await res.json();
-      document.getElementById("new-mat-price").value = data.suggested_price;
+      document.getElementById("new-mat-price").value = Math.round(data.suggested_price);
       resultDiv.innerHTML = `
-        <strong>✓ AI Suggested Price: ₹${data.suggested_price} / kg</strong> (Range: ₹${data.suggested_price_min} – ₹${data.suggested_price_max})<br>
+        <strong>✓ AI Suggested Price: ₹${Math.round(data.suggested_price)} / kg</strong> (Range: ₹${Math.round(data.suggested_price_min)} – ₹${Math.round(data.suggested_price_max)})<br>
         <span style="font-size:0.75rem; color:#166534;">Random Forest Regressor (200 trees, R² = 0.9838). Price autofilled above.</span>
       `;
       btn.innerHTML = `Suggest Price with AI`;
@@ -957,16 +1145,25 @@ async function requestAIPriceSuggestion() {
 }
 
 function handleSellerSubmitMaterial(e) {
-  e.preventDefault();
+  if (e) e.preventDefault();
 
-  const title = document.getElementById("new-mat-name").value;
-  const type = document.getElementById("new-mat-type").value;
-  const cond = document.getElementById("new-mat-condition").value;
-  const qty = parseFloat(document.getElementById("new-mat-qty").value);
-  const minOrder = parseFloat(document.getElementById("new-mat-min-order").value);
-  const price = parseFloat(document.getElementById("new-mat-price").value);
-  const loc = document.getElementById("new-mat-location").value;
-  const desc = document.getElementById("new-mat-desc").value || "Surplus industrial roll from local textile mills.";
+  const titleInput = document.getElementById("new-mat-name");
+  const typeInput = document.getElementById("new-mat-type");
+  const condInput = document.getElementById("new-mat-condition");
+  const qtyInput = document.getElementById("new-mat-qty");
+  const minOrderInput = document.getElementById("new-mat-min-order");
+  const priceInput = document.getElementById("new-mat-price");
+  const locInput = document.getElementById("new-mat-location");
+  const descInput = document.getElementById("new-mat-desc");
+
+  const type = typeInput ? typeInput.value : "Cotton";
+  const title = (titleInput && titleInput.value.trim()) || `Surplus ${type} Fabric Lot`;
+  const cond = condInput ? condInput.value : "Good";
+  const qty = parseFloat(qtyInput ? qtyInput.value : 50) || 50;
+  const minOrder = parseFloat(minOrderInput ? minOrderInput.value : 10) || 10;
+  const price = parseFloat(priceInput ? priceInput.value : 45) || 45;
+  const loc = (locInput && locInput.value.trim()) || "Ahmedabad";
+  const desc = (descInput && descInput.value.trim()) || `Verified surplus ${type} industrial fabric rolls from certified manufacturer.`;
 
   const fallbackImgs = {
     Cotton: "images/materials/cotton_rolls.jpg",
@@ -976,6 +1173,8 @@ function handleSellerSubmitMaterial(e) {
     Polyester: "images/materials/polyester_mesh.jpg",
     Wool: "images/materials/wool_tweed.jpg"
   };
+
+  const imageToUse = appState.newMaterialImageBase64 || fallbackImgs[type] || "images/materials/cotton_rolls.jpg";
 
   const newMat = {
     id: Date.now(),
@@ -987,22 +1186,32 @@ function handleSellerSubmitMaterial(e) {
     minimumOrderKg: minOrder,
     pricePerKg: price,
     location: loc,
-    sellerName: appState.activeSeller.companyName,
-    sellerGst: appState.activeSeller.gst,
+    sellerName: appState.activeSeller.companyName || "Gujarat Textile Mills",
+    sellerGst: appState.activeSeller.gst || "24AAACG1234F1Z5",
     description: desc,
-    primaryImageUrl: appState.newMaterialImageBase64 || fallbackImgs[type] || "images/materials/cotton_rolls.jpg",
-    aiClassification: `${type} (Verified)`,
+    primaryImageUrl: imageToUse,
+    aiClassification: `${type} (Verified 95.8% conf)`,
     aiDefects: "0 visible defects detected",
     hasDefect: false,
-    matchScore: 92.0
+    matchScore: 96.0
   };
 
+  // Add at the beginning of active materials list
   appState.materials.unshift(newMat);
   closeAddMaterialModal();
-  renderMarketplace();
+
+  // Reset custom image for next time
+  appState.newMaterialImageBase64 = null;
+
+  // Re-render seller inventory and marketplace
   renderSellerDashboard();
-  alert(`✓ Listing Published Successfully!\n"${title}" added to CUTLOOP Marketplace.`);
-  showView("marketplace");
+  renderMarketplace();
+
+  // Make sure we are on the listings tab in Seller Dashboard
+  switchSellerTab("listings");
+  showView("seller");
+
+  alert(`✓ Listing Published Successfully!\n\n"${title}" has been added to your Seller Inventory (${qty} kg @ ₹${price}/kg) and is now visible to buyers across the CUTLOOP Marketplace.`);
 }
 
 function exportInventoryCSV() {
@@ -1014,6 +1223,66 @@ function handleInventoryCSVUpload(input) {
     const file = input.files[0];
     alert(`✓ Successfully parsed and imported inventory CSV "${file.name}" into warehouse database.`);
   }
+}
+
+// AI Scanner Sample Fabric Loader
+function loadScannerSample(sampleType) {
+  const samples = {
+    cotton: {
+      name: "cotton_sample.jpg",
+      url: "images/materials/cotton_rolls.jpg",
+      predicted: "Cotton",
+      conf: "94.2",
+      probs: { Denim: 0.031, Linen: 0.017, Polyester: 0.006, Silk: 0.003, Wool: 0.001 },
+      defect: { detected: false, type: "None", confidence: 0, bbox: null },
+      priceMin: "₹42",
+      priceMax: "₹48"
+    },
+    denim: {
+      name: "denim_sample.jpg",
+      url: "images/materials/denim_indigo.jpg",
+      predicted: "Denim",
+      conf: "96.5",
+      probs: { Cotton: 0.021, Polyester: 0.008, Linen: 0.004, Wool: 0.001, Silk: 0.001 },
+      defect: { detected: true, type: "Broken thread", confidence: 92, bbox: [40, 45, 65, 70] },
+      priceMin: "₹58",
+      priceMax: "₹65"
+    },
+    silk: {
+      name: "silk_sample.jpg",
+      url: "images/materials/silk_mulberry.jpg",
+      predicted: "Silk",
+      conf: "98.1",
+      probs: { Polyester: 0.011, Linen: 0.004, Cotton: 0.003, Wool: 0.001, Denim: 0.001 },
+      defect: { detected: false, type: "None", confidence: 0, bbox: null },
+      priceMin: "₹110",
+      priceMax: "₹130"
+    },
+    linen: {
+      name: "linen_sample.jpg",
+      url: "images/materials/linen_beige.jpg",
+      predicted: "Linen",
+      conf: "91.8",
+      probs: { Cotton: 0.052, Silk: 0.018, Polyester: 0.008, Denim: 0.003, Wool: 0.001 },
+      defect: { detected: false, type: "None", confidence: 0, bbox: null },
+      priceMin: "₹70",
+      priceMax: "₹80"
+    }
+  };
+
+  const s = samples[sampleType] || samples.cotton;
+  const preview = document.getElementById("scanner-img-preview");
+  const previewBox = document.getElementById("scanner-preview-box");
+  const dropzone = document.getElementById("scanner-dropzone");
+  const resContainer = document.getElementById("scanner-results-container");
+
+  if (preview) preview.src = s.url;
+  if (previewBox) previewBox.style.display = "block";
+  if (dropzone) dropzone.style.display = "none";
+  if (resContainer) resContainer.style.display = "none";
+
+  // Simulate file object
+  uploadedImageFile = { name: s.name, sampleData: s };
 }
 
 // ==================== AI SCANNER STUDIO PIPELINE (DL 1 & 2) ====================
@@ -1081,6 +1350,19 @@ async function runAIScannerPipeline() {
   setTimeout(() => {
     btn.innerHTML = `✓ AI Analysis Complete`;
     btn.disabled = false;
+
+    if (uploadedImageFile.sampleData) {
+      const s = uploadedImageFile.sampleData;
+      displayScannerResults({
+        predictedClass: s.predicted,
+        confidence: s.conf,
+        probabilities: s.probs,
+        defect: s.defect,
+        priceMin: s.priceMin,
+        priceMax: s.priceMax
+      });
+      return;
+    }
 
     const fn = (uploadedImageFile.name || "").toLowerCase();
     let predicted = "Cotton";

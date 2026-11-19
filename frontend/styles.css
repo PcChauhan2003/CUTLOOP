@@ -1022,3 +1022,39 @@ body {
   background: #F8FAFC;
   border-color: var(--forest-green);
 }
+
+/* Quick Sample Fabric Preset Chips */
+.preset-chips-container {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.preset-chip {
+  background: #F1F5F9;
+  border: 1px solid #CBD5E1;
+  border-radius: var(--radius-sm);
+  padding: 0.35rem 0.75rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #334155;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: all 0.15s ease;
+}
+
+.preset-chip:hover {
+  background: #E2E8F0;
+  border-color: var(--forest-green);
+  color: var(--forest-green);
+}
+
+.preset-chip.active {
+  background: #DCFCE7;
+  border-color: #10B981;
+  color: #064E3B;
+  box-shadow: 0 0 0 1px #10B981;
+}
