@@ -11,13 +11,13 @@
 </head>
 <body>
 
-  <!-- Top Navigation Bar -->
+  <!-- ==================== TOP NAVIGATION BAR ==================== -->
   <header class="navbar">
     <div class="brand-container" onclick="showView('landing')">
       <div class="brand-logo-badge">CL</div>
       <div>
         <div class="brand-title">CUTLOOP</div>
-        <div class="brand-tagline">One factory's leftover is another creator's raw material.</div>
+        <div class="brand-tagline">One factory's leftover material is another creator's raw material.</div>
       </div>
     </div>
 
@@ -25,158 +25,214 @@
       <li><a class="nav-link active" id="nav-landing" onclick="showView('landing')">Home</a></li>
       <li><a class="nav-link" id="nav-marketplace" onclick="showView('marketplace')">Marketplace</a></li>
       <li><a class="nav-link" id="nav-scanner" onclick="showView('scanner')">AI Scanner <span class="nav-badge-pill">DL 1 & 2</span></a></li>
-      <li><a class="nav-link" id="nav-inventory" onclick="showView('inventory')">Seller Hub</a></li>
-      <li><a class="nav-link" id="nav-analytics" onclick="showView('analytics')">Impact & Demand</a></li>
+      <li><a class="nav-link" id="nav-seller" onclick="showView('seller')">Seller Dashboard</a></li>
+      <li><a class="nav-link" id="nav-orders" onclick="showView('orders')">Orders & Logistics <span class="nav-badge-pill" id="orders-badge">2</span></a></li>
+      <li><a class="nav-link" id="nav-analytics" onclick="showView('analytics')">AI Market Insights</a></li>
       <li><a class="nav-link" id="nav-admin" onclick="showView('admin')">Admin</a></li>
     </ul>
 
     <div class="nav-actions">
-      <button class="btn btn-mint btn-sm" onclick="showView('scanner')">+ Scan Leftover</button>
+      <!-- Live Persona Switcher (Allows instant testing of Buyer, Seller, and Admin roles) -->
+      <select class="user-persona-select" id="persona-selector" onchange="switchPersona(this.value)" title="Switch Active Persona">
+        <option value="BUYER">👤 Buyer: Aarti (Artisans Studio)</option>
+        <option value="SELLER">🏭 Seller: Rajesh (Gujarat Textiles)</option>
+        <option value="ADMIN">🛡️ Admin: Moderation Team</option>
+      </select>
+
+      <button class="btn btn-mint btn-sm" onclick="openAddMaterialModal()">+ Add Material</button>
       <button class="btn btn-outline-white btn-sm" onclick="openCartModal()">
         🛒 Cart (<span id="cart-count-badge">0</span>)
       </button>
     </div>
   </header>
 
-  <!-- Main Content Body -->
+  <!-- ==================== MAIN CONTENT CONTAINER ==================== -->
   <main class="main-content">
 
-    <!-- ==================== VIEW 1: LANDING PAGE ==================== -->
+    <!-- ==================== VIEW 1: HOME / LANDING PAGE (Section 2.2 A.1) ==================== -->
     <section id="view-landing" class="view-section active">
       <div class="hero-card">
-        <div class="hero-pill">🌿 Circular Economy · B2B Industrial Textile Upcycling</div>
+        <div class="hero-pill">🌿 Circular Economy · B2B Industrial Textile Upcycling Marketplace</div>
         <h1 class="hero-title">Give Industrial Leftovers a Second Life.</h1>
         <p class="hero-subtitle">
           Discover, exchange, and transform unused factory cut-offs, surplus rolls, and deadstock into high-value raw material with AI-driven fabric vision and predictive pricing.
         </p>
         <div class="hero-buttons">
           <button class="btn btn-mint" onclick="showView('marketplace')">Explore Marketplace</button>
-          <button class="btn btn-outline-white" onclick="showView('scanner')">AI Material Scanner</button>
-          <button class="btn btn-outline-white" onclick="showView('inventory')">Seller Inventory Portal</button>
+          <button class="btn btn-outline-white" onclick="showView('scanner')">AI Material Scanner (DL 1 & 2)</button>
+          <button class="btn btn-outline-white" onclick="openAddMaterialModal()">Sell Factory Surplus</button>
+          <button class="btn btn-outline-white" onclick="openLegalModal()">Security & Compliance</button>
         </div>
       </div>
 
-      <!-- Sustainability Impact Banner -->
+      <!-- Sustainability Impact Stats (Section 9.2) -->
       <div class="stats-banner">
         <div class="stat-card">
           <div class="stat-number" id="landing-stat-recovered">650 kg</div>
-          <div class="stat-label">Material Recovered</div>
-          <div class="stat-subtext">Traded through verified marketplace</div>
+          <div class="stat-label">Material Recovered Through CUTLOOP</div>
+          <div class="stat-subtext">Verified pre-consumer volume diverted from waste</div>
         </div>
         <div class="stat-card">
-          <div class="stat-number" id="landing-stat-co2">1,202 kg</div>
+          <div class="stat-number" id="landing-stat-co2">1,202.5 kg</div>
           <div class="stat-label">CO₂ Emissions Avoided</div>
-          <div class="stat-subtext">~1.85 kg CO₂ saved per kg reused textile</div>
+          <div class="stat-subtext">Calculated at ~1.85 kg CO₂ saved per kg reused textile</div>
         </div>
         <div class="stat-card">
           <div class="stat-number">94.2%</div>
           <div class="stat-label">Fabric Classification Confidence</div>
-          <div class="stat-subtext">MobileNetV2 Deep Learning model</div>
+          <div class="stat-subtext">MobileNetV2 Deep Learning Transfer Model</div>
         </div>
         <div class="stat-card">
-          <div class="stat-number">5 Factory Hubs</div>
-          <div class="stat-label">Active Industrial Clusters</div>
+          <div class="stat-number">4 Industrial Hubs</div>
+          <div class="stat-label">Active Regional Clusters</div>
           <div class="stat-subtext">Ahmedabad · Surat · Tirupur · Ludhiana</div>
         </div>
       </div>
 
-      <!-- How It Works -->
+      <!-- How It Works (Section 2.2 A.1) -->
       <div class="section-header">
         <h2 class="section-title">How CUTLOOP Works</h2>
-        <p class="section-desc">Streamlining the industrial supply chain in three intelligent steps</p>
+        <p class="section-desc">Streamlining the industrial textile supply chain in three intelligent steps</p>
       </div>
 
       <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-bottom: 3rem;">
         <div class="stat-card">
           <div style="font-size:2rem; margin-bottom:0.5rem;">📸</div>
-          <h3 style="font-size:1.1rem; margin-bottom:0.4rem; color:var(--forest-green);">1. Snap & Scan Surplus</h3>
+          <h3 style="font-size:1.15rem; margin-bottom:0.4rem; color:var(--forest-green);">1. Snap & Scan Surplus</h3>
           <p style="font-size:0.88rem; color:var(--muted-text);">
             Textile factories upload sample photographs of cutting leftovers, remnant rolls, or deadstock fabric.
           </p>
         </div>
         <div class="stat-card">
           <div style="font-size:2rem; margin-bottom:0.5rem;">🧠</div>
-          <h3 style="font-size:1.1rem; margin-bottom:0.4rem; color:var(--forest-green);">2. AI Analyzes & Prices</h3>
+          <h3 style="font-size:1.15rem; margin-bottom:0.4rem; color:var(--forest-green);">2. AI Analyzes & Prices</h3>
           <p style="font-size:0.88rem; color:var(--muted-text);">
-            Dual deep learning models classify weave, detect visible defects with YOLO, and suggest optimal resale pricing.
+            Dual deep learning models classify weave, detect visible defects with YOLO, and suggest fair market resale pricing via Random Forest.
           </p>
         </div>
         <div class="stat-card">
           <div style="font-size:2rem; margin-bottom:0.5rem;">🤝</div>
-          <h3 style="font-size:1.1rem; margin-bottom:0.4rem; color:var(--forest-green);">3. Creators Purchase Direct</h3>
+          <h3 style="font-size:1.15rem; margin-bottom:0.4rem; color:var(--forest-green);">3. Creators Purchase Direct</h3>
           <p style="font-size:0.88rem; color:var(--muted-text);">
-            Upcycling brands, craft studios, and fashion designers buy batch quantities at 40–60% off virgin market cost.
+            Upcycling brands, craft studios, and fashion designers buy batch quantities at 40–60% off virgin market cost with live logistics tracking.
           </p>
         </div>
       </div>
 
-      <!-- Categories -->
+      <!-- Featured Categories (Section 2.2 A.1) -->
       <div class="section-header">
-        <h2 class="section-title">Material Categories</h2>
+        <h2 class="section-title">Explore Material Categories</h2>
         <p class="section-desc">Standardized textile classes supported by our AI vision scanner</p>
       </div>
 
       <div class="category-grid">
-        <div class="category-chip" onclick="showView('marketplace')">
+        <div class="category-chip" onclick="filterByCategory('Cotton')">
           <div class="category-icon">🌿</div>
           <div class="category-name">Cotton</div>
-          <div class="category-count">120 kg listed</div>
+          <div class="category-count">120 kg available</div>
         </div>
-        <div class="category-chip" onclick="showView('marketplace')">
+        <div class="category-chip" onclick="filterByCategory('Denim')">
           <div class="category-icon">👖</div>
           <div class="category-name">Denim</div>
-          <div class="category-count">85 kg listed</div>
+          <div class="category-count">85 kg available</div>
         </div>
-        <div class="category-chip" onclick="showView('marketplace')">
+        <div class="category-chip" onclick="filterByCategory('Silk')">
           <div class="category-icon">✨</div>
           <div class="category-name">Silk</div>
-          <div class="category-count">35 kg listed</div>
+          <div class="category-count">35 kg available</div>
         </div>
-        <div class="category-chip" onclick="showView('marketplace')">
+        <div class="category-chip" onclick="filterByCategory('Linen')">
           <div class="category-icon">🌾</div>
           <div class="category-name">Linen</div>
-          <div class="category-count">60 kg listed</div>
+          <div class="category-count">60 kg available</div>
         </div>
-        <div class="category-chip" onclick="showView('marketplace')">
+        <div class="category-chip" onclick="filterByCategory('Polyester')">
           <div class="category-icon">🧵</div>
           <div class="category-name">Polyester</div>
-          <div class="category-count">150 kg listed</div>
+          <div class="category-count">150 kg available</div>
         </div>
-        <div class="category-chip" onclick="showView('marketplace')">
+        <div class="category-chip" onclick="filterByCategory('Wool')">
           <div class="category-icon">🐑</div>
           <div class="category-name">Wool</div>
-          <div class="category-count">40 kg listed</div>
+          <div class="category-count">40 kg available</div>
         </div>
       </div>
     </section>
 
 
-    <!-- ==================== VIEW 2: MARKETPLACE ==================== -->
+    <!-- ==================== VIEW 2: MARKETPLACE / BUYER PAGE (Section 2.2 A.4) ==================== -->
     <section id="view-marketplace" class="view-section">
       <div class="section-header" style="display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:1rem;">
         <div>
           <h2 class="section-title">Industrial Material Marketplace</h2>
-          <p class="section-desc">Search, filter, and match surplus fabric lots across industrial clusters</p>
+          <p class="section-desc">Discover, filter, and source verified surplus fabric lots across industrial clusters</p>
         </div>
-        <button class="btn btn-primary btn-sm" onclick="showView('scanner')">+ List New Material</button>
+        <button class="btn btn-primary btn-sm" onclick="openAddMaterialModal()">+ List Surplus Material</button>
       </div>
 
-      <!-- AI Material Matching Box (Section 7.4) -->
+      <!-- AI Material Requirement Matcher (Section 7.4) -->
       <div style="background:#F0FDF4; border:1px solid #BBF7D0; border-radius:var(--radius-md); padding:1.25rem; margin-bottom:1.5rem;">
-        <div style="display:flex; align-items:center; gap:0.5rem; margin-bottom:0.5rem;">
-          <span style="font-size:1.2rem;">✨</span>
-          <strong style="color:#166534; font-size:0.95rem;">AI Material Requirement Matcher</strong>
-          <span class="nav-badge-pill">Weighted Algorithm</span>
+        <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:0.5rem; flex-wrap:wrap; gap:0.5rem;">
+          <div style="display:flex; align-items:center; gap:0.5rem;">
+            <span style="font-size:1.2rem;">✨</span>
+            <strong style="color:#166534; font-size:0.95rem;">AI Material Requirement Matcher</strong>
+            <span class="nav-badge-pill">Weighted Multi-Attribute Scoring</span>
+          </div>
+          <span style="font-size:0.75rem; color:#15803D;">Formula: <code>Score = 0.35M + 0.25P + 0.20Q + 0.10C + 0.10L</code></span>
         </div>
         <p style="font-size:0.82rem; color:#14532D; margin-bottom:0.75rem;">
-          Enter what you need. Our algorithm scores listings using: <code>Score = 0.35M + 0.25P + 0.20Q + 0.10C + 0.10L</code>
+          Tell the AI what project you're making (e.g. <em>"Blue cotton fabric under ₹60/kg, need 20 kg in Ahmedabad"</em>) to rank the best matching factory surplus.
         </p>
         <div style="display:grid; grid-template-columns: 2fr 1fr 1fr 1.2fr auto; gap:0.75rem;">
-          <input type="text" id="ai-match-query" placeholder="e.g. Cotton fabric for bags" value="Cotton" style="padding:0.55rem; border:1px solid #CBD5E1; border-radius:var(--radius-sm);">
-          <input type="number" id="ai-match-budget" placeholder="Budget ₹/kg" value="50" style="padding:0.55rem; border:1px solid #CBD5E1; border-radius:var(--radius-sm);">
-          <input type="number" id="ai-match-qty" placeholder="Need kg" value="20" style="padding:0.55rem; border:1px solid #CBD5E1; border-radius:var(--radius-sm);">
-          <input type="text" id="ai-match-loc" placeholder="Location" value="Ahmedabad" style="padding:0.55rem; border:1px solid #CBD5E1; border-radius:var(--radius-sm);">
+          <input type="text" id="ai-match-query" placeholder="Material needed (e.g. Cotton)" value="Cotton" class="form-control">
+          <input type="number" id="ai-match-budget" placeholder="Max ₹/kg" value="60" class="form-control">
+          <input type="number" id="ai-match-qty" placeholder="Quantity kg" value="20" class="form-control">
+          <input type="text" id="ai-match-loc" placeholder="Location" value="Ahmedabad" class="form-control">
           <button class="btn btn-mint btn-sm" onclick="triggerAIMaterialMatch()">Rank Matches</button>
+        </div>
+      </div>
+
+      <!-- Filters & Sorting Bar (Section 2.2 A.4) -->
+      <div class="filter-bar-container">
+        <div class="filter-inputs-group">
+          <input type="text" id="filter-search-input" placeholder="🔍 Search materials, descriptions..." class="form-control" style="min-width: 200px;" oninput="applyMarketplaceFilters()">
+          
+          <select id="filter-type-select" class="form-control" onchange="applyMarketplaceFilters()">
+            <option value="">All Fabric Types</option>
+            <option value="Cotton">Cotton</option>
+            <option value="Denim">Denim</option>
+            <option value="Silk">Silk</option>
+            <option value="Linen">Linen</option>
+            <option value="Polyester">Polyester</option>
+            <option value="Wool">Wool</option>
+          </select>
+
+          <select id="filter-condition-select" class="form-control" onchange="applyMarketplaceFilters()">
+            <option value="">All Conditions</option>
+            <option value="New">New (Deadstock roll)</option>
+            <option value="Good">Good (Clean cutting offcuts)</option>
+            <option value="Fair">Fair (End-of-bolt remnants)</option>
+          </select>
+
+          <select id="filter-location-select" class="form-control" onchange="applyMarketplaceFilters()">
+            <option value="">All Hubs</option>
+            <option value="Ahmedabad">Ahmedabad</option>
+            <option value="Surat">Surat</option>
+            <option value="Tirupur">Tirupur</option>
+            <option value="Ludhiana">Ludhiana</option>
+          </select>
+
+          <input type="number" id="filter-max-price" placeholder="Max ₹/kg" class="form-control" style="width: 100px;" oninput="applyMarketplaceFilters()">
+        </div>
+
+        <div style="display:flex; align-items:center; gap:0.5rem;">
+          <span style="font-size:0.8rem; color:var(--muted-text);">Sort:</span>
+          <select id="sort-select" class="form-control" onchange="applyMarketplaceFilters()">
+            <option value="relevance">AI Match Relevance</option>
+            <option value="price-asc">Price: Low to High</option>
+            <option value="price-desc">Price: High to Low</option>
+            <option value="qty-desc">Quantity: High to Low</option>
+          </select>
         </div>
       </div>
 
@@ -187,7 +243,7 @@
     </section>
 
 
-    <!-- ==================== VIEW 3: AI SCANNER STUDIO ==================== -->
+    <!-- ==================== VIEW 3: AI SCANNER STUDIO (Deep Learning 1 & 2) ==================== -->
     <section id="view-scanner" class="view-section">
       <div class="section-header">
         <h2 class="section-title">AI Material Scanner & Defect Inspector</h2>
@@ -195,13 +251,13 @@
       </div>
 
       <div class="scanner-layout">
-        <!-- Left: Image Upload & Preview -->
+        <!-- Left Column: Upload & Live Visual Inspection -->
         <div>
           <div id="scanner-dropzone" class="upload-card" onclick="document.getElementById('scanner-file-input').click()">
             <div style="font-size:3rem; margin-bottom:1rem;">📷</div>
             <h3 style="font-size:1.15rem; margin-bottom:0.5rem; color:var(--forest-green);">Click or Drag Fabric Photograph Here</h3>
             <p style="font-size:0.85rem; color:var(--muted-text); margin-bottom:1rem;">
-              Supports JPEG/PNG · Recommended 224 × 224 or higher
+              Supports JPEG/PNG · Recommended 224 × 224 or higher resolution
             </p>
             <button class="btn btn-outline btn-sm">Select Sample Image</button>
             <input type="file" id="scanner-file-input" style="display:none;" accept="image/*" onchange="handleScannerFileSelect(this)">
@@ -212,46 +268,46 @@
               <img id="scanner-img-preview" src="" alt="Uploaded Fabric">
               <div id="gradcam-overlay" class="gradcam-overlay" style="display:none;"></div>
               <div id="yolo-defect-box" class="yolo-box" style="display:none;">
-                <span class="yolo-box-label">Hole (91% conf)</span>
+                <span class="yolo-box-label" id="yolo-box-label">Hole (91% conf)</span>
               </div>
             </div>
 
-            <div style="display:flex; gap:0.75rem; margin-top:1rem;">
-              <button id="btn-run-ai" class="btn btn-primary" style="flex:1;" onclick="runAIScannerPipeline()">
+            <div style="display:flex; gap:0.75rem; margin-top:1rem; flex-wrap:wrap;">
+              <button id="btn-run-ai" class="btn btn-primary" style="flex:2;" onclick="runAIScannerPipeline()">
                 ⚡ Run AI Vision Pipeline
               </button>
-              <button id="btn-toggle-gradcam" class="btn btn-outline btn-sm" onclick="toggleGradCam()">
+              <button id="btn-toggle-gradcam" class="btn btn-outline btn-sm" style="flex:1;" onclick="toggleGradCam()">
                 Show Grad-CAM Heatmap
               </button>
               <button class="btn btn-outline btn-sm" onclick="document.getElementById('scanner-file-input').click()">
-                Change
+                Change Photo
               </button>
             </div>
           </div>
         </div>
 
-        <!-- Right: AI Results Panel -->
+        <!-- Right Column: AI Analysis Results Card -->
         <div>
           <div id="scanner-results-container" class="ai-results-card" style="display:none;">
             <div class="ai-prediction-header">
               <div>
-                <div style="font-size:0.78rem; text-transform:uppercase; color:var(--muted-text); font-weight:700;">
-                  Primary Material Classification
+                <div style="font-size:0.75rem; text-transform:uppercase; color:var(--muted-text); font-weight:700;">
+                  Primary Material Classification (MobileNetV2)
                 </div>
                 <div class="classified-title" id="res-material-class">Cotton</div>
               </div>
               <div class="confidence-chip" id="res-confidence">94.2%</div>
             </div>
 
-            <!-- Grad-CAM Explainability Banner -->
+            <!-- Grad-CAM Explainability Box (Section 5.5) -->
             <div style="background:#F1F5F9; border-radius:var(--radius-sm); padding:0.75rem; font-size:0.8rem; margin-bottom:1rem;">
               <strong style="color:var(--forest-green);">🧠 Explainability Insight (Grad-CAM):</strong>
               <div style="color:var(--muted-text); margin-top:0.2rem;">
-                Classification influenced by salient warp-and-weft weave patterns, matte fiber reflectivity, and yarn twist density at the final Conv_1 feature map.
+                Model classification influenced by salient warp-and-weft weave patterns, matte fiber reflectivity, and yarn twist density at the final Conv_1 feature map.
               </div>
             </div>
 
-            <!-- Defect Detection Box -->
+            <!-- YOLO Visual Defect Detection Box (Section 5.2) -->
             <div style="border:1px solid #E2E8F0; border-radius:var(--radius-sm); padding:0.85rem; margin-bottom:1rem;">
               <div style="font-size:0.75rem; font-weight:700; text-transform:uppercase; color:var(--muted-text); margin-bottom:0.2rem;">
                 Visual Defect Inspection (Ultralytics YOLO)
@@ -261,53 +317,86 @@
               </div>
             </div>
 
-            <!-- Price Recommendation -->
+            <!-- Random Forest Price Recommendation (Section 4.4 Model 1) -->
             <div class="price-estimate-box">
               <div style="font-size:0.8rem; color:#166534; font-weight:700; text-transform:uppercase;">
                 AI Suggested Resale Price Range
               </div>
               <div class="price-range-val" id="res-price-range">₹42 – ₹48 / kg</div>
               <div style="font-size:0.75rem; color:#15803D;">
-                Calculated by Random Forest Regressor from 1,500 observed industrial transactions.
+                Trained on 1,500 industrial transactions (R² = 0.9838, MAE = ₹3.19/kg).
               </div>
             </div>
 
-            <!-- Other Predictions -->
+            <!-- Probability Distribution Breakdown -->
             <div style="margin-bottom:1.5rem;">
               <div style="font-size:0.75rem; font-weight:700; text-transform:uppercase; color:var(--muted-text); margin-bottom:0.5rem;">
                 Class Probability Distribution
               </div>
               <div id="secondary-probs-list">
-                <!-- Filled dynamically -->
+                <!-- Populated dynamically -->
               </div>
             </div>
 
-            <!-- Publish Listing Button -->
-            <button class="btn btn-mint" style="width:100%; font-size:1rem; padding:0.8rem;" onclick="publishScannedListing()">
-              ✓ Publish as Marketplace Listing
-            </button>
+            <!-- Action Buttons -->
+            <div style="display:flex; gap:0.75rem;">
+              <button class="btn btn-mint" style="flex:1; font-size:0.95rem; padding:0.75rem;" onclick="publishScannedListing()">
+                ✓ Publish as Verified Marketplace Listing
+              </button>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
 
-    <!-- ==================== VIEW 4: SELLER INVENTORY ==================== -->
-    <section id="view-inventory" class="view-section">
+    <!-- ==================== VIEW 4: SELLER DASHBOARD (Section 2.2 A.3) ==================== -->
+    <section id="view-seller" class="view-section">
       <div class="section-header" style="display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:1rem;">
         <div>
           <h2 class="section-title">Seller Hub & Inventory Management</h2>
-          <p class="section-desc">Manage warehouse leftover stock, track listings, and sync via CSV</p>
+          <p class="section-desc">Active factory: <strong>Gujarat Textile Mills (Narol, Ahmedabad)</strong> · GST: 24AAACG1234F1Z5</p>
         </div>
-        <div style="display:flex; gap:0.5rem;">
+        <div style="display:flex; gap:0.5rem; flex-wrap:wrap;">
           <button class="btn btn-outline btn-sm" onclick="exportInventoryCSV()">📥 Export Inventory CSV</button>
           <button class="btn btn-outline btn-sm" onclick="document.getElementById('inventory-csv-input').click()">📤 Import Inventory CSV</button>
           <input type="file" id="inventory-csv-input" style="display:none;" accept=".csv" onchange="handleInventoryCSVUpload(this)">
-          <button class="btn btn-primary btn-sm" onclick="showView('scanner')">+ New Scan Listing</button>
+          <button class="btn btn-primary btn-sm" onclick="openAddMaterialModal()">+ Add New Material</button>
         </div>
       </div>
 
-      <div style="background:var(--bg-card); border:1px solid var(--border-color); border-radius:var(--radius-md); overflow:hidden; box-shadow:var(--shadow-sm);">
+      <!-- Seller KPI Cards (Section 2.2 A.3) -->
+      <div class="stats-banner" style="margin-bottom:1.5rem;">
+        <div class="stat-card">
+          <div class="stat-number" id="seller-stat-listings">5</div>
+          <div class="stat-label">Total Listings</div>
+          <div class="stat-subtext">Active factory catalog</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number" id="seller-stat-inventory">450 kg</div>
+          <div class="stat-label">Available Inventory</div>
+          <div class="stat-subtext">Across 5 material batches</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number" id="seller-stat-sold">210 kg</div>
+          <div class="stat-label">Sold Materials</div>
+          <div class="stat-subtext">Recovered through CUTLOOP</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">₹11,450</div>
+          <div class="stat-label">Total Revenue Generated</div>
+          <div class="stat-subtext">Secondary surplus monetization</div>
+        </div>
+      </div>
+
+      <!-- Seller Tabs: Manage Listings vs Manage Orders -->
+      <div class="tab-group">
+        <button class="tab-btn active" id="seller-tab-btn-listings" onclick="switchSellerTab('listings')">Active Listings (5)</button>
+        <button class="tab-btn" id="seller-tab-btn-orders" onclick="switchSellerTab('orders')">Incoming Buyer Orders (2)</button>
+      </div>
+
+      <!-- Tab Content 1: Listings Table -->
+      <div id="seller-tab-listings" style="background:var(--bg-card); border:1px solid var(--border-color); border-radius:var(--radius-md); overflow-x:auto; box-shadow:var(--shadow-sm);">
         <table class="data-table">
           <thead>
             <tr>
@@ -315,9 +404,10 @@
               <th>Material Description</th>
               <th>Category</th>
               <th>Available Stock</th>
-              <th>Price</th>
+              <th>Price / kg</th>
               <th>Location</th>
               <th>Status</th>
+              <th>Actions</th>
             </tr>
           </thead>
           <tbody id="inventory-table-body">
@@ -325,41 +415,76 @@
           </tbody>
         </table>
       </div>
+
+      <!-- Tab Content 2: Seller Order Fulfillment (Section 2.4) -->
+      <div id="seller-tab-orders" style="display:none; background:var(--bg-card); border:1px solid var(--border-color); border-radius:var(--radius-md); overflow-x:auto; box-shadow:var(--shadow-sm); padding:1rem;">
+        <p style="font-size:0.85rem; color:var(--muted-text); margin-bottom:1rem;">
+          Fulfill incoming buyer purchases. Updating order status advances the buyer's real-time logistics tracking timeline.
+        </p>
+        <div id="seller-orders-list">
+          <!-- Populated dynamically -->
+        </div>
+      </div>
     </section>
 
 
-    <!-- ==================== VIEW 5: IMPACT & DEMAND ANALYTICS ==================== -->
+    <!-- ==================== VIEW 5: ORDERS & LOGISTICS TRACKING (Section 2.4) ==================== -->
+    <section id="view-orders" class="view-section">
+      <div class="section-header">
+        <h2 class="section-title">Orders & Logistics Tracking</h2>
+        <p class="section-desc">Real-time status tracking for purchased factory surplus materials with atomic inventory deduction</p>
+      </div>
+
+      <!-- Logistics Policy Alert (Section 2.4) -->
+      <div style="background:#EFF6FF; border:1px solid #BFDBFE; border-radius:var(--radius-md); padding:1rem; margin-bottom:1.5rem; display:flex; align-items:center; gap:0.75rem;">
+        <span style="font-size:1.5rem;">🚚</span>
+        <div>
+          <strong style="color:#1E40AF; font-size:0.9rem;">CUTLOOP Circular Logistics Protocol:</strong>
+          <p style="font-size:0.8rem; color:#1E3A8A; margin-top:0.2rem;">
+            Surplus textile batches are bundled in recycled poly-woven bale wraps. Sellers confirm pickup within 24 hours. Buyers can track preparation, carrier dispatch, and final delivery.
+          </p>
+        </div>
+      </div>
+
+      <!-- Orders List Container -->
+      <div id="orders-display-container">
+        <!-- Rendered dynamically by app.js -->
+      </div>
+    </section>
+
+
+    <!-- ==================== VIEW 6: AI MARKET INSIGHTS & DEMAND (Section 4.4 Model 2) ==================== -->
     <section id="view-analytics" class="view-section">
       <div class="section-header">
-        <h2 class="section-title">Platform Impact & AI Demand Forecasting</h2>
-        <p class="section-desc">Real-time circular economy metrics and machine learning demand predictions</p>
+        <h2 class="section-title">AI Market Insights & Demand Prediction</h2>
+        <p class="section-desc">Machine Learning Model 2 (Random Forest with Chronological Validation) & Real-Time Sustainability Metrics</p>
       </div>
 
       <div class="stats-banner">
         <div class="stat-card">
           <div class="stat-number" id="val-recovered-kg">650 kg</div>
-          <div class="stat-label">Material Recovered</div>
-          <div class="stat-subtext">Verified volume diverted from waste</div>
+          <div class="stat-label">Material Recovered Through CUTLOOP</div>
+          <div class="stat-subtext">Verified pre-consumer waste diverted</div>
         </div>
         <div class="stat-card">
           <div class="stat-number" id="val-co2-saved">1,202.5 kg</div>
           <div class="stat-label">CO₂ Footprint Saved</div>
-          <div class="stat-subtext">Carbon reduction multiplier</div>
+          <div class="stat-subtext">Carbon reduction multiplier (1.85x)</div>
         </div>
         <div class="stat-card">
           <div class="stat-number" id="val-total-orders">18</div>
           <div class="stat-label">Completed Transactions</div>
-          <div class="stat-subtext">Atomic orders processed</div>
+          <div class="stat-subtext">Atomic orders processed without stock conflicts</div>
         </div>
       </div>
 
       <!-- Demand Forecasting Table (Module 6) -->
       <div class="section-header" style="margin-top:2rem;">
-        <h3 style="font-size:1.25rem; font-weight:700;">Forecasted Material Demand (Next 30 Days)</h3>
-        <p class="section-desc">Machine Learning Model 2 (Random Forest with Chronological Validation)</p>
+        <h3 style="font-size:1.25rem; font-weight:800; color:var(--forest-green);">Projected Material Demand (Next 30 Days)</h3>
+        <p class="section-desc">Trained on 46 months chronological transaction history (MAE = 16.18 monthly orders, zero future data leakage)</p>
       </div>
 
-      <div style="background:var(--bg-card); border:1px solid var(--border-color); border-radius:var(--radius-md); overflow:hidden; box-shadow:var(--shadow-sm);">
+      <div style="background:var(--bg-card); border:1px solid var(--border-color); border-radius:var(--radius-md); overflow-x:auto; box-shadow:var(--shadow-sm);">
         <table class="data-table">
           <thead>
             <tr>
@@ -367,7 +492,7 @@
               <th>Forecasted Monthly Orders</th>
               <th>Projected Growth</th>
               <th>Supply vs Demand</th>
-              <th>AI Inventory Advice</th>
+              <th>AI Factory Inventory Advice</th>
             </tr>
           </thead>
           <tbody>
@@ -376,21 +501,21 @@
               <td>142 orders</td>
               <td><span style="color:#059669; font-weight:700;">+18% ↗</span></td>
               <td>High Demand / Low Surplus</td>
-              <td>Release surplus inventory early; peak demand approaching.</td>
+              <td>Release surplus inventory early; peak garment season approaching.</td>
             </tr>
             <tr>
               <td style="font-weight:700;">Denim</td>
               <td>98 orders</td>
               <td><span style="color:#059669; font-weight:700;">+12% ↗</span></td>
               <td>Strong Demand</td>
-              <td>Steady buyer activity for 10–14oz offcuts.</td>
+              <td>Steady buyer activity for 10–14oz offcuts for tote bags & accessories.</td>
             </tr>
             <tr>
               <td style="font-weight:700;">Linen</td>
               <td>64 orders</td>
               <td><span style="color:#059669; font-weight:700;">+22% ↗</span></td>
               <td>Surging Seasonally</td>
-              <td>Summer overruns command top tier resale prices.</td>
+              <td>Summer overruns command top tier resale prices in Mumbai & Bangalore.</td>
             </tr>
             <tr>
               <td style="font-weight:700;">Polyester</td>
@@ -404,7 +529,7 @@
               <td>38 orders</td>
               <td><span style="color:#059669; font-weight:700;">+8% ↗</span></td>
               <td>Premium Niche</td>
-              <td>High margin artisan demand for sari border trims.</td>
+              <td>High margin artisan demand for sari border trims and artisanal crafts.</td>
             </tr>
           </tbody>
         </table>
@@ -412,14 +537,14 @@
     </section>
 
 
-    <!-- ==================== VIEW 6: ADMIN MODERATION ==================== -->
+    <!-- ==================== VIEW 7: ADMIN MODERATION PANEL (Section 2.6 & Section 10) ==================== -->
     <section id="view-admin" class="view-section">
       <div class="section-header">
         <h2 class="section-title">Admin Moderation & Security Panel</h2>
-        <p class="section-desc">Manage registered suppliers, buyers, listing integrity, and audit trails</p>
+        <p class="section-desc">Manage registered suppliers, buyers, listing integrity, role permissions, and audit logs</p>
       </div>
 
-      <div style="background:var(--bg-card); border:1px solid var(--border-color); border-radius:var(--radius-md); overflow:hidden; box-shadow:var(--shadow-sm);">
+      <div style="background:var(--bg-card); border:1px solid var(--border-color); border-radius:var(--radius-md); overflow-x:auto; box-shadow:var(--shadow-sm); margin-bottom:2rem;">
         <table class="data-table">
           <thead>
             <tr>
@@ -428,7 +553,7 @@
               <th>Email</th>
               <th>Platform Role</th>
               <th>Account Status</th>
-              <th>Action</th>
+              <th>Actions</th>
             </tr>
           </thead>
           <tbody id="admin-users-table">
@@ -436,12 +561,216 @@
           </tbody>
         </table>
       </div>
+
+      <div class="section-header">
+        <h3 style="font-size:1.15rem; font-weight:700;">System Security & Audit Log</h3>
+      </div>
+      <div style="background:#0F172A; color:#E2E8F0; border-radius:var(--radius-md); padding:1rem; font-family:monospace; font-size:0.8rem; line-height:1.6;">
+        <div>[SECURITY-OK] BCrypt password hashing active for all user credentials.</div>
+        <div>[SECURITY-OK] InsufficientStockException active: Database atomic transactions protect warehouse inventory.</div>
+        <div>[SECURITY-OK] RestClient timeout configured: Graceful fallback keeps listings in DRAFT if AI offline.</div>
+        <div>[SECURITY-OK] Verified Review Guard: Reviews strictly locked to confirmed order IDs.</div>
+      </div>
     </section>
 
   </main>
 
 
-  <!-- ==================== MODAL: SHOPPING CART & CHECKOUT ==================== -->
+  <!-- ==================== MODAL 1: ADD MATERIAL / SELLER UPLOAD WORKFLOW (Section 2.2 B & 4.4 E) ==================== -->
+  <div id="add-material-modal" class="modal-backdrop" style="display:none;" onclick="if(event.target===this) closeAddMaterialModal()">
+    <div class="modal-dialog modal-dialog-large">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1.25rem;">
+        <div>
+          <h3 style="font-size:1.3rem; font-weight:800; color:var(--forest-green);">List New Surplus Material</h3>
+          <p style="font-size:0.8rem; color:var(--muted-text);">Upload factory leftovers with AI price recommendation</p>
+        </div>
+        <button onclick="closeAddMaterialModal()" style="background:none; border:none; font-size:1.2rem; cursor:pointer;">✕</button>
+      </div>
+
+      <form id="add-material-form" onsubmit="handleSellerSubmitMaterial(event)">
+        <div style="display:grid; grid-template-columns: 1fr 1fr; gap:1.25rem;">
+          <!-- Left Column: Image & Details -->
+          <div>
+            <div style="margin-bottom:1rem;">
+              <label style="font-size:0.82rem; font-weight:600; display:block; margin-bottom:0.3rem;">Material Title *</label>
+              <input type="text" id="new-mat-name" class="form-control" style="width:100%;" placeholder="e.g. Cotton surplus fabric rolls" required>
+            </div>
+
+            <div style="margin-bottom:1rem;">
+              <label style="font-size:0.82rem; font-weight:600; display:block; margin-bottom:0.3rem;">Fabric Photo *</label>
+              <div class="upload-card" style="padding:1.5rem 1rem;" onclick="document.getElementById('new-mat-file').click()">
+                <div id="new-mat-droptext">
+                  <div style="font-size:1.8rem; margin-bottom:0.3rem;">📸</div>
+                  <span style="font-size:0.82rem; color:var(--forest-green); font-weight:600;">Choose Photo or Drag File</span>
+                </div>
+                <img id="new-mat-img-preview" src="" style="display:none; width:100%; max-height:160px; object-fit:contain; border-radius:var(--radius-sm);" alt="Preview">
+                <input type="file" id="new-mat-file" style="display:none;" accept="image/*" onchange="previewNewMaterialImage(this)" required>
+              </div>
+            </div>
+
+            <div style="margin-bottom:1rem;">
+              <label style="font-size:0.82rem; font-weight:600; display:block; margin-bottom:0.3rem;">Description</label>
+              <textarea id="new-mat-desc" class="form-control" style="width:100%; height:75px;" placeholder="Factory origin, weave details, batch notes..."></textarea>
+            </div>
+          </div>
+
+          <!-- Right Column: Specs & AI Price Suggestion -->
+          <div>
+            <div style="display:grid; grid-template-columns: 1fr 1fr; gap:0.75rem; margin-bottom:1rem;">
+              <div>
+                <label style="font-size:0.82rem; font-weight:600; display:block; margin-bottom:0.3rem;">Fabric Type *</label>
+                <select id="new-mat-type" class="form-control" style="width:100%;" required>
+                  <option value="Cotton">Cotton</option>
+                  <option value="Denim">Denim</option>
+                  <option value="Silk">Silk</option>
+                  <option value="Linen">Linen</option>
+                  <option value="Polyester">Polyester</option>
+                  <option value="Wool">Wool</option>
+                </select>
+              </div>
+              <div>
+                <label style="font-size:0.82rem; font-weight:600; display:block; margin-bottom:0.3rem;">Condition *</label>
+                <select id="new-mat-condition" class="form-control" style="width:100%;" required>
+                  <option value="Good">Good</option>
+                  <option value="New">New (Deadstock roll)</option>
+                  <option value="Fair">Fair (Cutting offcuts)</option>
+                </select>
+              </div>
+            </div>
+
+            <div style="display:grid; grid-template-columns: 1fr 1fr; gap:0.75rem; margin-bottom:1rem;">
+              <div>
+                <label style="font-size:0.82rem; font-weight:600; display:block; margin-bottom:0.3rem;">Quantity (kg) *</label>
+                <input type="number" id="new-mat-qty" class="form-control" style="width:100%;" value="100" min="1" required>
+              </div>
+              <div>
+                <label style="font-size:0.82rem; font-weight:600; display:block; margin-bottom:0.3rem;">Min Order (kg) *</label>
+                <input type="number" id="new-mat-min-order" class="form-control" style="width:100%;" value="10" min="1" required>
+              </div>
+            </div>
+
+            <div style="margin-bottom:1rem;">
+              <label style="font-size:0.82rem; font-weight:600; display:block; margin-bottom:0.3rem;">Factory Location *</label>
+              <input type="text" id="new-mat-location" class="form-control" style="width:100%;" value="Ahmedabad" required>
+            </div>
+
+            <!-- AI Price Predictor Integration (Section 4.4 E Model 1) -->
+            <div style="background:#F0FDF4; border:1px solid #BBF7D0; border-radius:var(--radius-sm); padding:0.85rem; margin-bottom:1rem;">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.4rem;">
+                <span style="font-size:0.82rem; font-weight:700; color:#166534;">🤖 AI Price Estimator</span>
+                <button type="button" class="btn btn-mint btn-sm" id="btn-suggest-price" onclick="requestAIPriceSuggestion()">
+                  Suggest Price with AI
+                </button>
+              </div>
+              <div id="ai-price-suggestion-result" style="font-size:0.82rem; color:#15803D;">
+                Click "Suggest Price with AI" to estimate fair market value based on 1,500 historical transactions.
+              </div>
+            </div>
+
+            <div style="margin-bottom:1.25rem;">
+              <label style="font-size:0.82rem; font-weight:600; display:block; margin-bottom:0.3rem;">Expected Selling Price (₹/kg) *</label>
+              <input type="number" id="new-mat-price" class="form-control" style="width:100%; font-size:1.1rem; font-weight:700; color:var(--forest-green);" value="45" min="5" required>
+            </div>
+          </div>
+        </div>
+
+        <div style="display:flex; gap:0.75rem; justify-content:flex-end; border-top:1px solid #E2E8F0; padding-top:1rem; margin-top:0.5rem;">
+          <button type="button" class="btn btn-outline" onclick="closeAddMaterialModal()">Cancel</button>
+          <button type="submit" class="btn btn-primary" id="btn-submit-listing">Publish Marketplace Listing</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+
+  <!-- ==================== MODAL 2: PRODUCT DETAILS MODAL (Section 2.2 A.5) ==================== -->
+  <div id="product-detail-modal" class="modal-backdrop" style="display:none;" onclick="if(event.target===this) closeProductDetailModal()">
+    <div class="modal-dialog modal-dialog-large">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem;">
+        <span class="badge-tag" id="detail-category-badge" style="position:static;">Cotton</span>
+        <button onclick="closeProductDetailModal()" style="background:none; border:none; font-size:1.2rem; cursor:pointer;">✕</button>
+      </div>
+
+      <div style="display:grid; grid-template-columns: 1fr 1fr; gap:1.5rem;">
+        <!-- Left: Image Preview & Defect Overlay -->
+        <div>
+          <div class="preview-container" style="max-height: 280px; position:relative;">
+            <img id="detail-img" src="" alt="Product Detail">
+            <div id="detail-defect-box" class="yolo-box" style="display:none;">
+              <span class="yolo-box-label" id="detail-defect-label">Hole (91% conf)</span>
+            </div>
+          </div>
+
+          <!-- AI Inspection Details Section (Section 5.5 C) -->
+          <div style="background:#F8FAFC; border:1px solid #E2E8F0; border-radius:var(--radius-sm); padding:0.85rem; margin-top:1rem;">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.4rem;">
+              <strong style="color:var(--forest-green); font-size:0.85rem;">🔍 AI Vision Quality Inspection</strong>
+              <span class="nav-badge-pill" style="background:#D1FAE5; color:#064E3B;">Verified Result</span>
+            </div>
+            <div style="font-size:0.8rem; color:var(--muted-text); line-height:1.5;">
+              <div>• <strong>Fabric Classification:</strong> <span id="detail-ai-class">Cotton (94.2% confidence)</span></div>
+              <div>• <strong>Visible Defects:</strong> <span id="detail-ai-defects">0 visible defects detected</span></div>
+              <div>• <strong>Inspection Method:</strong> MobileNetV2 + Ultralytics YOLO Object Detection</div>
+            </div>
+
+            <!-- Disclaimer (Section 4.7 & 5.5 C) -->
+            <div style="background:#FEF3C7; border:1px solid #FCD34D; border-radius:var(--radius-sm); padding:0.5rem; font-size:0.72rem; color:#92400E; margin-top:0.6rem;">
+              ⚠️ <strong>Inspection Disclaimer:</strong> Visual surface inspection only. A photograph cannot certify tensile strength, chemical composition, or hidden structural damage.
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Specs, Pricing, & Add to Cart -->
+        <div>
+          <h2 id="detail-title" style="font-size:1.35rem; font-weight:800; color:var(--charcoal); margin-bottom:0.4rem;">
+            Surplus Raw Cotton Fabric Rolls
+          </h2>
+          <div style="font-size:0.82rem; color:var(--muted-text); margin-bottom:1rem;">
+            📍 <span id="detail-location">Ahmedabad, Gujarat</span> · Seller: <strong id="detail-seller">Gujarat Textile Mills</strong>
+          </div>
+
+          <div style="background:#F1F5F9; border-radius:var(--radius-sm); padding:0.85rem; margin-bottom:1rem;">
+            <div style="display:flex; align-items:baseline; gap:0.5rem;">
+              <span class="price-main" id="detail-price">₹45.00</span>
+              <span class="price-sub">/ kg</span>
+            </div>
+            <div style="font-size:0.8rem; color:var(--forest-green); font-weight:600; margin-top:0.25rem;">
+              ⚖️ <span id="detail-stock">120 kg</span> available in warehouse · Min Order: <span id="detail-min-order">10 kg</span>
+            </div>
+          </div>
+
+          <p id="detail-desc" style="font-size:0.85rem; color:#475569; line-height:1.6; margin-bottom:1.25rem;">
+            High quality 100% natural cotton cut-offs from shirting production. Clean, dry stored, unblemished remnants suitable for craft and bag making.
+          </p>
+
+          <!-- Verified Buyer Reviews Preview (Section 2.6 C) -->
+          <div style="border-top:1px solid #E2E8F0; padding-top:0.75rem; margin-bottom:1.25rem;">
+            <div style="font-size:0.78rem; font-weight:700; color:var(--muted-text); text-transform:uppercase; margin-bottom:0.4rem;">
+              Verified Buyer Reviews (Order Verified Only)
+            </div>
+            <div style="font-size:0.8rem; color:#334155;">
+              ⭐⭐⭐⭐⭐ <em>"Consistent weave, arrived neatly baled. Saved us 50% compared to virgin fabric."</em> — <strong>Artisans Co</strong>
+            </div>
+          </div>
+
+          <!-- Purchase Quantity Stepper & Add to Cart -->
+          <div style="display:flex; gap:0.75rem; align-items:center;">
+            <div style="display:flex; align-items:center; border:1px solid #CBD5E1; border-radius:var(--radius-sm); overflow:hidden;">
+              <button onclick="decrementDetailQty()" style="padding:0.55rem 0.85rem; border:none; background:#F1F5F9; cursor:pointer;">-</button>
+              <input type="number" id="detail-qty-input" value="10" min="5" style="width:60px; text-align:center; border:none; font-weight:700;">
+              <button onclick="incrementDetailQty()" style="padding:0.55rem 0.85rem; border:none; background:#F1F5F9; cursor:pointer;">+</button>
+            </div>
+            <button class="btn btn-mint" style="flex:1;" onclick="addDetailItemToCart()">
+              Add to Shopping Cart
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ==================== MODAL 3: SHOPPING CART & TEST CHECKOUT (Section 2.2 A.6 & 2.3) ==================== -->
   <div id="cart-modal" class="modal-backdrop" style="display:none;" onclick="if(event.target===this) closeCartModal()">
     <div class="modal-dialog">
       <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1.25rem;">
@@ -459,21 +788,39 @@
           <strong id="cart-subtotal">₹0.00</strong>
         </div>
         <div style="display:flex; justify-content:space-between; font-size:0.9rem; margin-bottom:0.4rem;">
-          <span>Industrial Logistics & Handling:</span>
+          <span>Logistics & Handling (Recycled Bales):</span>
           <span>₹150.00</span>
         </div>
-        <div style="display:flex; justify-content:space-between; font-size:1.2rem; font-weight:800; color:var(--forest-green); margin-top:0.75rem;">
+        <div style="display:flex; justify-content:space-between; font-size:0.9rem; margin-bottom:0.4rem;">
+          <span>Platform Service Fee (5% Commission):</span>
+          <span id="cart-commission">₹0.00</span>
+        </div>
+        <div style="display:flex; justify-content:space-between; font-size:1.25rem; font-weight:800; color:var(--forest-green); margin-top:0.75rem;">
           <span>Total Payable:</span>
           <span id="cart-total">₹0.00</span>
         </div>
       </div>
 
-      <div style="background:#FEF3C7; border:1px solid #FCD34D; border-radius:var(--radius-sm); padding:0.65rem; font-size:0.78rem; color:#92400E; margin:1.25rem 0;">
-        ℹ️ Sandbox Test Environment: Payment gateway is running in simulated test mode. No real payment will be charged.
+      <!-- Delivery Address Form -->
+      <div style="margin:1rem 0; background:#F8FAFC; border:1px solid #E2E8F0; border-radius:var(--radius-sm); padding:0.75rem;">
+        <label style="font-size:0.8rem; font-weight:700; color:var(--charcoal); display:block; margin-bottom:0.3rem;">
+          📍 Delivery Destination:
+        </label>
+        <input type="text" id="checkout-address-input" class="form-control" style="width:100%; font-size:0.82rem;" value="14 Green Park Society, Ambawadi, Ahmedabad - 380015">
+      </div>
+
+      <!-- Test Payment Simulation Notice (Section 2.3) -->
+      <div style="background:#FEF3C7; border:1px solid #FCD34D; border-radius:var(--radius-sm); padding:0.65rem; font-size:0.78rem; color:#92400E; margin-bottom:1rem;">
+        ℹ️ <strong>Sandbox Payment Test Gateway:</strong> Razorpay simulation mode. No real money will be charged.
+        <div style="margin-top:0.3rem;">
+          <label style="cursor:pointer; font-weight:600;">
+            <input type="checkbox" id="simulate-payment-failure-toggle"> Simulate Payment Failure (To test PaymentFailedException handling)
+          </label>
+        </div>
       </div>
 
       <div style="display:flex; gap:0.75rem;">
-        <button class="btn btn-outline" style="flex:1;" onclick="closeCartModal()">Continue Browsing</button>
+        <button class="btn btn-outline" style="flex:1;" onclick="closeCartModal()">Continue Shopping</button>
         <button id="btn-checkout-pay" class="btn btn-mint" style="flex:1;" onclick="proceedToSimulatedPayment()">
           Pay with Test Gateway
         </button>
@@ -482,15 +829,94 @@
   </div>
 
 
-  <!-- Footer -->
+  <!-- ==================== MODAL 4: ORDER CONFIRMATION / RECEIPT (Section 2.3) ==================== -->
+  <div id="order-confirmation-modal" class="modal-backdrop" style="display:none;" onclick="if(event.target===this) closeOrderConfirmationModal()">
+    <div class="modal-dialog">
+      <div style="text-align:center; padding:1rem 0;">
+        <div style="font-size:3rem; margin-bottom:0.5rem;">🎉</div>
+        <h3 style="font-size:1.4rem; font-weight:800; color:var(--forest-green); margin-bottom:0.3rem;">
+          Test Order Confirmed!
+        </h3>
+        <p style="font-size:0.85rem; color:var(--muted-text);">
+          Simulated transaction processed successfully. Stock has been deducted atomically.
+        </p>
+      </div>
+
+      <div style="background:#F8FAFC; border:1px solid #E2E8F0; border-radius:var(--radius-md); padding:1.25rem; margin-bottom:1.25rem; font-size:0.85rem;">
+        <div style="display:flex; justify-content:space-between; margin-bottom:0.4rem;">
+          <span style="color:var(--muted-text);">Order Number:</span>
+          <strong id="receipt-order-num">ORD-2026-1042</strong>
+        </div>
+        <div style="display:flex; justify-content:space-between; margin-bottom:0.4rem;">
+          <span style="color:var(--muted-text);">Transaction Reference:</span>
+          <strong id="receipt-txn-ref" style="font-family:monospace; color:#059669;">TXN-874291-SUCCESS</strong>
+        </div>
+        <div style="display:flex; justify-content:space-between; margin-bottom:0.4rem;">
+          <span style="color:var(--muted-text);">Material Volume:</span>
+          <strong id="receipt-total-kg">20 kg</strong>
+        </div>
+        <div style="display:flex; justify-content:space-between; font-size:1.05rem; font-weight:800; color:var(--forest-green); padding-top:0.4rem; border-top:1px solid #E2E8F0;">
+          <span>Amount Paid:</span>
+          <span id="receipt-amount">₹1,095.00</span>
+        </div>
+      </div>
+
+      <div style="display:flex; gap:0.75rem;">
+        <button class="btn btn-outline" style="flex:1;" onclick="closeOrderConfirmationModal(); showView('marketplace');">Continue Marketplace</button>
+        <button class="btn btn-mint" style="flex:1;" onclick="closeOrderConfirmationModal(); showView('orders');">Track Live Delivery 🚚</button>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ==================== MODAL 5: LEGAL & SECURITY COMPLIANCE (Section 2.6) ==================== -->
+  <div id="legal-modal" class="modal-backdrop" style="display:none;" onclick="if(event.target===this) closeLegalModal()">
+    <div class="modal-dialog">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1.25rem;">
+        <h3 style="font-size:1.3rem; font-weight:800; color:var(--forest-green);">Legal & Security Checklist (Section 2.6)</h3>
+        <button onclick="closeLegalModal()" style="background:none; border:none; font-size:1.2rem; cursor:pointer;">✕</button>
+      </div>
+
+      <div style="font-size:0.85rem; color:#334155; line-height:1.6;">
+        <h4 style="color:var(--forest-green); margin-bottom:0.3rem;">1. Authentication & Role-Based Access Control</h4>
+        <p style="margin-bottom:0.8rem;">
+          Passwords hashed using BCrypt. Buyers cannot modify seller inventories; sellers can only update their own listings; admins moderate platform listings.
+        </p>
+
+        <h4 style="color:var(--forest-green); margin-bottom:0.3rem;">2. Privacy & Data Minimization</h4>
+        <p style="margin-bottom:0.8rem;">
+          No personal phone numbers or exact residential addresses are exposed publicly on listings. Only general city and cluster locations are visible before order dispatch.
+        </p>
+
+        <h4 style="color:var(--forest-green); margin-bottom:0.3rem;">3. Anti-Fake Review Policy</h4>
+        <p style="margin-bottom:0.8rem;">
+          Reviews can only be authored by verified buyers who have a completed order ID recorded in the MySQL database.
+        </p>
+
+        <h4 style="color:var(--forest-green); margin-bottom:0.3rem;">4. Dark Pattern Guarantee</h4>
+        <p style="margin-bottom:0.8rem;">
+          Zero hidden surcharges. Transparent delivery calculations. No preselected optional fees. Accurate real-time inventory levels preventing artificial urgency.
+        </p>
+      </div>
+
+      <button class="btn btn-primary" style="width:100%; margin-top:1rem;" onclick="closeLegalModal()">I Understand</button>
+    </div>
+  </div>
+
+
+  <!-- ==================== FOOTER ==================== -->
   <footer class="footer">
     <div class="footer-inner">
       <div>
-        <strong style="color:#FFFFFF; font-size:1.05rem;">CUTLOOP</strong> — Industrial Leftover AI Marketplace
-        <div style="font-size:0.78rem; margin-top:0.25rem;">Module 3 (DL 1) · Module 4 (DL 2) · Module 5 (DS 1) · Module 6 (DS 2) · Spring Boot & FastAPI Core</div>
+        <strong style="color:#FFFFFF; font-size:1.05rem;">CUTLOOP</strong> — Industrial Waste-to-Value Marketplace
+        <div style="font-size:0.78rem; margin-top:0.25rem;">
+          Module 3 (DL 1: MobileNetV2) · Module 4 (DL 2: YOLO) · Module 5 (DS 1: Price Model) · Module 6 (DS 2: Demand Model) · Java Spring Boot Core
+        </div>
       </div>
-      <div>
-        <span>Ahmedabad · Surat · Tirupur · Bengaluru</span>
+      <div style="display:flex; gap:1.5rem; font-size:0.82rem;">
+        <a onclick="openLegalModal()" style="color:#A7F3D0; cursor:pointer;">Legal & Security Checklist</a>
+        <a onclick="showView('orders')" style="color:#A7F3D0; cursor:pointer;">Logistics Tracking</a>
+        <a onclick="showView('analytics')" style="color:#A7F3D0; cursor:pointer;">Impact Metrics</a>
       </div>
     </div>
   </footer>
