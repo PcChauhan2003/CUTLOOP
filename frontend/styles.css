@@ -892,3 +892,133 @@ body {
   flex-wrap: wrap;
   gap: 1.5rem;
 }
+/* ==================== PAYMENT METHODS & ONLINE GATEWAY (Section 2.3) ==================== */
+.payment-options-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0.75rem;
+  margin: 1rem 0;
+}
+
+.payment-option-card {
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  padding: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background: #FFFFFF;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.payment-option-card:hover {
+  border-color: var(--forest-green);
+  background-color: #F8FAFC;
+}
+
+.payment-option-card.selected {
+  border-color: var(--forest-green);
+  background-color: #F0FDF4;
+  box-shadow: 0 0 0 2px var(--mint);
+}
+
+.payment-icon-circle {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #F1F5F9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+}
+
+.gw-layout {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  margin: 1.25rem 0;
+}
+
+.gw-sidebar {
+  background-color: #F8FAFC;
+  border-right: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+}
+
+.gw-tab {
+  padding: 0.85rem 1rem;
+  text-align: left;
+  background: none;
+  border: none;
+  border-bottom: 1px solid #F1F5F9;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #475569;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.15s ease;
+}
+
+.gw-tab:hover {
+  background-color: #F1F5F9;
+}
+
+.gw-tab.active {
+  background-color: #FFFFFF;
+  color: var(--forest-green);
+  border-left: 3px solid var(--forest-green);
+  font-weight: 700;
+}
+
+.gw-content {
+  background-color: #FFFFFF;
+  padding: 1.25rem;
+}
+
+.qr-display-box {
+  background: #F8FAFC;
+  border: 2px dashed #CBD5E1;
+  border-radius: var(--radius-sm);
+  padding: 1.25rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.qr-code-graphic {
+  width: 150px;
+  height: 150px;
+  background: #FFFFFF;
+  border: 1px solid #CBD5E1;
+  border-radius: 6px;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bank-radio-label {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.6rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-size: 0.85rem;
+  margin-bottom: 0.5rem;
+}
+
+.bank-radio-label:hover {
+  background: #F8FAFC;
+  border-color: var(--forest-green);
+}

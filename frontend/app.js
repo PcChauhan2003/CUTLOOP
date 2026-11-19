@@ -27,6 +27,9 @@ let appState = {
   selectedDetailMaterial: null,
   detailQuantity: 10,
   cart: [],
+  selectedPaymentMethod: "UPI",
+  activeOnlinePaymentTab: "upi",
+  pendingOrderSummary: null,
   orders: [
     {
       orderId: "ORD-2026-1042",
@@ -41,9 +44,10 @@ let appState = {
       totalAmount: 1050.0,
       orderDate: "2026-11-17",
       shippingAddress: "14 Green Park Society, Ambawadi, Ahmedabad - 380015",
+      paymentMethod: "UPI (Google Pay)",
       status: "Dispatched",
       statusIndex: 3, // 0=Pending, 1=Confirmed, 2=Preparing, 3=Dispatched, 4=Delivered
-      txnRef: "TXN-874291-SUCCESS"
+      txnRef: "TXN-874291-UPI"
     },
     {
       orderId: "ORD-2026-1039",
@@ -58,9 +62,10 @@ let appState = {
       totalAmount: 2320.0,
       orderDate: "2026-11-15",
       shippingAddress: "102 Indiranagar 100ft Road, Bengaluru - 560038",
+      paymentMethod: "Razorpay Online (Card)",
       status: "Delivered",
       statusIndex: 4,
-      txnRef: "TXN-652109-SUCCESS"
+      txnRef: "TXN-652109-CARD"
     }
   ],
   analytics: {
@@ -74,7 +79,7 @@ let appState = {
   newMaterialImageBase64: null
 };
 
-// Default high-quality sample listings
+// 100% Reliable Local Fabric Images (Stored locally in frontend/images/materials/)
 const DEFAULT_SAMPLE_MATERIALS = [
   {
     id: 1,
@@ -88,8 +93,8 @@ const DEFAULT_SAMPLE_MATERIALS = [
     location: "Ahmedabad",
     sellerName: "Gujarat Textile Mills",
     sellerGst: "24AAACG1234F1Z5",
-    description: "High quality 100% natural cotton cut-offs from shirting production. Clean and dry stored in warehouse.",
-    primaryImageUrl: "https://images.unsplash.com/photo-1598032895397-b9472444bf93?auto=format&fit=crop&w=600&q=80",
+    description: "High quality 100% natural cotton cut-offs from shirting production. Clean, dry stored in warehouse rolls.",
+    primaryImageUrl: "images/materials/cotton_rolls.jpg",
     aiClassification: "Cotton (94.2% confidence)",
     aiDefects: "0 visible defects detected",
     hasDefect: false,
@@ -109,7 +114,7 @@ const DEFAULT_SAMPLE_MATERIALS = [
     sellerName: "Gujarat Textile Mills",
     sellerGst: "24AAACG1234F1Z5",
     description: "Heavyweight 12oz denim leftovers from jacket production, ideal for tote bags, aprons, and accessories.",
-    primaryImageUrl: "https://images.unsplash.com/photo-1542272604-780c96856592?auto=format&fit=crop&w=600&q=80",
+    primaryImageUrl: "images/materials/denim_indigo.jpg",
     aiClassification: "Denim (96.5% confidence)",
     aiDefects: "1 minor broken thread at margin (surface cosmetic only)",
     hasDefect: true,
@@ -129,7 +134,7 @@ const DEFAULT_SAMPLE_MATERIALS = [
     sellerName: "Surat Fabric Hub",
     sellerGst: "24AABCS5678K1Z8",
     description: "Premium mulberry silk remnants from luxury bridal sari border trimming. High sheen, unblemished weave.",
-    primaryImageUrl: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=600&q=80",
+    primaryImageUrl: "images/materials/silk_mulberry.jpg",
     aiClassification: "Silk (98.1% confidence)",
     aiDefects: "0 visible defects detected",
     hasDefect: false,
@@ -149,7 +154,7 @@ const DEFAULT_SAMPLE_MATERIALS = [
     sellerName: "Surat Fabric Hub",
     sellerGst: "24AABCS5678K1Z8",
     description: "Pre-washed pure linen rolls from luxury summer collection overruns. Crisp texture and breathable drape.",
-    primaryImageUrl: "https://images.unsplash.com/photo-1579783902614-a3fb3927b675?auto=format&fit=crop&w=600&q=80",
+    primaryImageUrl: "images/materials/linen_beige.jpg",
     aiClassification: "Linen (91.8% confidence)",
     aiDefects: "0 visible defects detected",
     hasDefect: false,
@@ -169,12 +174,32 @@ const DEFAULT_SAMPLE_MATERIALS = [
     sellerName: "Gujarat Textile Mills",
     sellerGst: "24AAACG1234F1Z5",
     description: "Lightweight polyester mesh remnants suitable for sports lining, activewear pocket bags, and organizers.",
-    primaryImageUrl: "https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=600&q=80",
+    primaryImageUrl: "images/materials/polyester_mesh.jpg",
     aiClassification: "Polyester (92.4% confidence)",
     aiDefects: "0 visible defects detected",
     hasDefect: false,
     defectBox: null,
     matchScore: 79.0
+  },
+  {
+    id: 6,
+    materialName: "Brushed Woolen Tweed Offcuts",
+    materialType: "Wool",
+    colour: "Heather Grey",
+    conditionType: "Good",
+    quantityKg: 40.0,
+    minimumOrderKg: 5.0,
+    pricePerKg: 95.0,
+    location: "Ludhiana",
+    sellerName: "Ludhiana Wool Mills",
+    sellerGst: "03AAACL9876E1Z2",
+    description: "Warm woolen tweed remnants from overcoat tailing. Heavy insulating texture with soft hand feel.",
+    primaryImageUrl: "images/materials/wool_tweed.jpg",
+    aiClassification: "Wool (95.0% confidence)",
+    aiDefects: "0 visible defects detected",
+    hasDefect: false,
+    defectBox: null,
+    matchScore: 84.0
   }
 ];
 
@@ -241,18 +266,32 @@ async function loadMaterials() {
     if (res.ok) {
       const data = await res.json();
       if (data && data.length > 0) {
-        appState.materials = data.map(m => ({
-          ...m,
-          matchScore: m.matchScore || 90.0,
-          aiClassification: `${m.materialType} (Verified)`,
-          aiDefects: "0 visible defects detected"
-        }));
+        appState.materials = data.map(m => {
+          // If server image URL is relative or missing, use local image
+          let img = m.primaryImageUrl;
+          if (!img || img.startsWith("/images/samples/")) {
+            const typeKey = (m.materialType || "").toLowerCase();
+            if (typeKey.includes("denim")) img = "images/materials/denim_indigo.jpg";
+            else if (typeKey.includes("silk")) img = "images/materials/silk_mulberry.jpg";
+            else if (typeKey.includes("linen")) img = "images/materials/linen_beige.jpg";
+            else if (typeKey.includes("poly")) img = "images/materials/polyester_mesh.jpg";
+            else if (typeKey.includes("wool")) img = "images/materials/wool_tweed.jpg";
+            else img = "images/materials/cotton_rolls.jpg";
+          }
+          return {
+            ...m,
+            primaryImageUrl: img,
+            matchScore: m.matchScore || 90.0,
+            aiClassification: `${m.materialType} (Verified)`,
+            aiDefects: "0 visible defects detected"
+          };
+        });
         renderMarketplace();
         return;
       }
     }
   } catch (err) {
-    console.log("[CUTLOOP] Backend sync: Serving client cache.");
+    console.log("[CUTLOOP] Backend sync: Serving guaranteed local cache.");
   }
   appState.materials = [...DEFAULT_SAMPLE_MATERIALS];
   renderMarketplace();
@@ -281,7 +320,7 @@ function applyMarketplaceFilters() {
       (m.description && m.description.toLowerCase().includes(searchQ)) ||
       m.materialType.toLowerCase().includes(searchQ);
 
-    const matchesType = !typeF || m.materialType.equalsIgnoreCase ? m.materialType.equalsIgnoreCase(typeF) : m.materialType.toLowerCase() === typeF.toLowerCase();
+    const matchesType = !typeF || m.materialType.toLowerCase() === typeF.toLowerCase();
     const matchesCondition = !conditionF || m.conditionType.toLowerCase() === conditionF.toLowerCase();
     const matchesLocation = !locationF || m.location.toLowerCase() === locationF.toLowerCase();
     const matchesPrice = m.pricePerKg <= maxPriceF;
@@ -322,7 +361,7 @@ function renderMarketplace(items = appState.materials) {
   container.innerHTML = items.map(m => `
     <div class="product-card">
       <div class="product-img-box" onclick="openProductDetailModal(${m.id})">
-        <img src="${m.primaryImageUrl || 'https://images.unsplash.com/photo-1598032895397-b9472444bf93?auto=format&fit=crop&w=600&q=80'}" alt="${m.materialName}">
+        <img src="${m.primaryImageUrl}" alt="${m.materialName}" onerror="this.onerror=null; this.src='images/materials/cotton_rolls.jpg';">
         <span class="badge-tag">${m.materialType || 'Fabric'}</span>
         ${m.matchScore ? `<span class="match-score-badge">★ ${m.matchScore}% Match</span>` : ''}
       </div>
@@ -457,7 +496,7 @@ function addDetailItemToCart() {
   closeProductDetailModal();
 }
 
-// ==================== SHOPPING CART & CHECKOUT (Section 2.2 A.6 & 2.3) ====================
+// ==================== SHOPPING CART & PAYMENT METHODS (Section 2.2 A.6 & 2.3) ====================
 function quickAddToCart(materialId) {
   const item = appState.materials.find(m => m.id === materialId);
   if (!item) return;
@@ -514,7 +553,7 @@ function openCartModal() {
       return `
         <div style="display:flex; justify-content:space-between; align-items:center; padding:0.75rem 0; border-bottom:1px solid #E2E8F0;">
           <div style="display:flex; align-items:center; gap:0.75rem;">
-            <img src="${item.image}" style="width:48px; height:48px; border-radius:4px; object-fit:cover;">
+            <img src="${item.image}" style="width:48px; height:48px; border-radius:4px; object-fit:cover;" onerror="this.onerror=null; this.src='images/materials/cotton_rolls.jpg';">
             <div>
               <div style="font-weight:700; font-size:0.9rem;">${item.name}</div>
               <div style="font-size:0.78rem; color:#64748B;">₹${item.pricePerKg}/kg × ${item.quantityKg} kg</div>
@@ -551,34 +590,98 @@ function closeCartModal() {
   document.getElementById("cart-modal").style.display = "none";
 }
 
-// Payment Simulation with Success / Failure Demonstrations (Section 2.3)
-async function proceedToSimulatedPayment() {
+// Payment method selector
+function selectPaymentMethod(method) {
+  appState.selectedPaymentMethod = method;
+  document.querySelectorAll(".payment-option-card").forEach(el => el.classList.remove("selected"));
+  const card = document.getElementById(`pay-card-${method.toLowerCase()}`);
+  if (card) card.classList.add("selected");
+}
+
+// Open Razorpay / Online Payment Gateway Modal
+function proceedToOnlinePaymentModal() {
   if (appState.cart.length === 0) return;
 
-  const btn = document.getElementById("btn-checkout-pay");
-  const failToggle = document.getElementById("simulate-payment-failure-toggle");
+  const subtotal = appState.cart.reduce((s, i) => s + (i.pricePerKg * i.quantityKg), 0);
+  const totalKg = appState.cart.reduce((s, i) => s + i.quantityKg, 0);
+  const deliveryFee = 150.00;
+  const commission = subtotal * 0.05;
+  const total = subtotal + deliveryFee + commission;
   const address = document.getElementById("checkout-address-input").value;
 
-  btn.innerHTML = `<span class="spinner"></span> Simulating Test Gateway Handshake...`;
+  appState.pendingOrderSummary = {
+    subtotal: subtotal,
+    totalKg: totalKg,
+    totalAmount: total,
+    address: address,
+    primaryItem: appState.cart[0]
+  };
+
+  document.getElementById("gateway-pay-amount").innerText = `₹${total.toFixed(2)}`;
+  document.getElementById("gateway-items-summary").innerText = `${appState.cart.length} item(s) · ${totalKg} kg industrial fabric`;
+
+  // Preselect active tab according to chosen method
+  switchGatewayTab(appState.selectedPaymentMethod.toLowerCase());
+
+  closeCartModal();
+  document.getElementById("online-gateway-modal").style.display = "flex";
+}
+
+function closeOnlineGatewayModal() {
+  document.getElementById("online-gateway-modal").style.display = "none";
+}
+
+function switchGatewayTab(tab) {
+  appState.activeOnlinePaymentTab = tab;
+  document.querySelectorAll(".gw-tab").forEach(t => t.classList.remove("active"));
+  document.querySelectorAll(".gw-panel").forEach(p => p.style.display = "none");
+
+  const activeTabBtn = document.getElementById(`gw-tab-${tab}`);
+  const activePanel = document.getElementById(`gw-panel-${tab}`);
+
+  if (activeTabBtn) activeTabBtn.classList.add("active");
+  if (activePanel) activePanel.style.display = "block";
+}
+
+// Execute Payment Handshake (Supports Success and Simulated Failure)
+function submitGatewayPayment() {
+  if (!appState.pendingOrderSummary) return;
+
+  const failToggle = document.getElementById("gw-fail-simulation-toggle");
+  const btn = document.getElementById("btn-gw-execute");
+
+  btn.innerHTML = `<span class="spinner"></span> Contacting Bank Gateway...`;
   btn.disabled = true;
 
-  // Simulate server transaction delay
   setTimeout(() => {
+    // Demonstration of Section 3.3 PaymentFailedException
     if (failToggle && failToggle.checked) {
-      // Demonstrate Section 3.3 PaymentFailedException handling
-      btn.innerHTML = `Pay with Test Gateway`;
+      btn.innerHTML = `Pay ₹${appState.pendingOrderSummary.totalAmount.toFixed(2)}`;
       btn.disabled = false;
-      alert(`❌ Payment Simulation Failed!\n[PaymentFailedException]: Test sandbox simulated card decline or insufficient test funds.\nYour order has NOT been placed and warehouse inventory remains reserved.`);
+      alert(`❌ Payment Authorization Failed!\n[PaymentFailedException]: Bank declined online transaction or 3D-Secure timeout.\nYour order has NOT been placed and stock remains untouched.`);
+      return;
+    }
+
+    // Step 2: Show OTP Verification Popup simulation
+    const otp = prompt("🔒 [Razorpay / Bank 3D Secure Simulation]\nEnter SMS OTP sent to registered mobile (Simulated code: 123456):", "123456");
+    if (otp !== "123456") {
+      btn.innerHTML = `Pay ₹${appState.pendingOrderSummary.totalAmount.toFixed(2)}`;
+      btn.disabled = false;
+      alert("❌ Invalid OTP entered. Payment failed.");
       return;
     }
 
     // Success State
-    const subtotal = appState.cart.reduce((s, i) => s + (i.pricePerKg * i.quantityKg), 0);
-    const totalKg = appState.cart.reduce((s, i) => s + i.quantityKg, 0);
-    const totalAmount = subtotal + 150.0 + (subtotal * 0.05);
-
+    const summary = appState.pendingOrderSummary;
     const newOrderNum = `ORD-2026-${Math.floor(1000 + Math.random() * 9000)}`;
-    const newTxnRef = `TXN-${Math.floor(100000 + Math.random() * 900000)}-SUCCESS`;
+    const methodLabels = {
+      upi: "UPI (Google Pay / PhonePe)",
+      card: "Credit / Debit Card (Visa/Mastercard)",
+      netbanking: "Net Banking (Instant EFT)",
+      neft: "Industrial B2B NEFT / RTGS"
+    };
+    const paymentMethodName = methodLabels[appState.activeOnlinePaymentTab] || "Online Gateway";
+    const newTxnRef = `TXN-${Math.floor(100000 + Math.random() * 900000)}-${appState.activeOnlinePaymentTab.toUpperCase()}`;
 
     // Deduct stock atomically from catalog
     appState.cart.forEach(cartItem => {
@@ -588,42 +691,43 @@ async function proceedToSimulatedPayment() {
       }
     });
 
-    const primaryItem = appState.cart[0];
     const newOrder = {
       orderId: newOrderNum,
       buyerName: appState.currentUser.fullName,
       sellerName: "Gujarat Textile Mills",
-      materialName: primaryItem.name,
-      materialType: primaryItem.materialType || "Cotton",
-      quantityKg: totalKg,
-      pricePerKg: primaryItem.pricePerKg,
-      subtotal: subtotal,
+      materialName: summary.primaryItem.name,
+      materialType: summary.primaryItem.materialType || "Cotton",
+      quantityKg: summary.totalKg,
+      pricePerKg: summary.primaryItem.pricePerKg,
+      subtotal: summary.subtotal,
       deliveryFee: 150.0,
-      totalAmount: totalAmount,
+      totalAmount: summary.totalAmount,
       orderDate: new Date().toISOString().split("T")[0],
-      shippingAddress: address,
+      shippingAddress: summary.address,
+      paymentMethod: paymentMethodName,
       status: "Confirmed",
       statusIndex: 1, // Pending -> Confirmed
       txnRef: newTxnRef
     };
 
     appState.orders.unshift(newOrder);
-    appState.analytics.materialRecoveredKg += totalKg;
-    appState.analytics.co2SavedKg += (totalKg * 1.85);
+    appState.analytics.materialRecoveredKg += summary.totalKg;
+    appState.analytics.co2SavedKg += (summary.totalKg * 1.85);
     appState.analytics.totalOrders += 1;
 
     appState.cart = [];
     updateCartBadge();
-    closeCartModal();
+    closeOnlineGatewayModal();
 
-    btn.innerHTML = `Pay with Test Gateway`;
+    btn.innerHTML = `Pay ₹${summary.totalAmount.toFixed(2)}`;
     btn.disabled = false;
 
     // Show Confirmation Receipt Modal
     document.getElementById("receipt-order-num").innerText = newOrderNum;
     document.getElementById("receipt-txn-ref").innerText = newTxnRef;
-    document.getElementById("receipt-total-kg").innerText = `${totalKg} kg`;
-    document.getElementById("receipt-amount").innerText = `₹${totalAmount.toFixed(2)}`;
+    document.getElementById("receipt-total-kg").innerText = `${summary.totalKg} kg`;
+    document.getElementById("receipt-amount").innerText = `₹${summary.totalAmount.toFixed(2)}`;
+    document.getElementById("receipt-method").innerText = paymentMethodName;
     document.getElementById("order-confirmation-modal").style.display = "flex";
 
   }, 1000);
@@ -656,7 +760,7 @@ function renderOrders() {
           <div>
             <div style="font-size:0.75rem; text-transform:uppercase; color:#64748B; font-weight:700;">Purchase Order</div>
             <h3 style="font-size:1.25rem; font-weight:800; color:var(--forest-green);">${o.orderId}</h3>
-            <div style="font-size:0.8rem; color:#64748B;">Order Date: ${o.orderDate} · Txn: <code>${o.txnRef}</code></div>
+            <div style="font-size:0.8rem; color:#64748B;">Order Date: ${o.orderDate} · Payment: <strong>${o.paymentMethod || 'Online'}</strong> · Txn: <code>${o.txnRef}</code></div>
           </div>
           <div style="text-align:right;">
             <div style="font-size:1.3rem; font-weight:800; color:var(--charcoal);">₹${o.totalAmount.toFixed(2)}</div>
@@ -760,7 +864,7 @@ function renderSellerOrders() {
     <div style="display:flex; justify-content:space-between; align-items:center; border:1px solid #E2E8F0; border-radius:var(--radius-sm); padding:1rem; margin-bottom:0.75rem; background:#FFFFFF;">
       <div>
         <div style="font-weight:700; color:var(--forest-green);">${o.orderId} · ${o.materialName}</div>
-        <div style="font-size:0.8rem; color:#64748B;">Quantity: ${o.quantityKg} kg · Total: ₹${o.totalAmount.toFixed(2)} · Buyer: ${o.buyerName}</div>
+        <div style="font-size:0.8rem; color:#64748B;">Quantity: ${o.quantityKg} kg · Total: ₹${o.totalAmount.toFixed(2)} · Payment: ${o.paymentMethod || 'Online'}</div>
         <div style="font-size:0.75rem; color:#059669; font-weight:600; margin-top:0.2rem;">Current State: ${o.status}</div>
       </div>
       <div>
@@ -864,6 +968,15 @@ function handleSellerSubmitMaterial(e) {
   const loc = document.getElementById("new-mat-location").value;
   const desc = document.getElementById("new-mat-desc").value || "Surplus industrial roll from local textile mills.";
 
+  const fallbackImgs = {
+    Cotton: "images/materials/cotton_rolls.jpg",
+    Denim: "images/materials/denim_indigo.jpg",
+    Silk: "images/materials/silk_mulberry.jpg",
+    Linen: "images/materials/linen_beige.jpg",
+    Polyester: "images/materials/polyester_mesh.jpg",
+    Wool: "images/materials/wool_tweed.jpg"
+  };
+
   const newMat = {
     id: Date.now(),
     materialName: title,
@@ -877,7 +990,7 @@ function handleSellerSubmitMaterial(e) {
     sellerName: appState.activeSeller.companyName,
     sellerGst: appState.activeSeller.gst,
     description: desc,
-    primaryImageUrl: appState.newMaterialImageBase64 || "https://images.unsplash.com/photo-1598032895397-b9472444bf93?auto=format&fit=crop&w=600&q=80",
+    primaryImageUrl: appState.newMaterialImageBase64 || fallbackImgs[type] || "images/materials/cotton_rolls.jpg",
     aiClassification: `${type} (Verified)`,
     aiDefects: "0 visible defects detected",
     hasDefect: false,
@@ -982,6 +1095,10 @@ async function runAIScannerPipeline() {
       predicted = "Silk";
       conf = "98.1";
       probs = { Polyester: 0.011, Linen: 0.004, Cotton: 0.003 };
+    } else if (fn.includes("linen")) {
+      predicted = "Linen";
+      conf = "91.8";
+      probs = { Cotton: 0.045, Wool: 0.015, Silk: 0.008 };
     }
 
     const hasDef = fn.includes("defect") || fn.includes("hole") || fn.includes("tear");

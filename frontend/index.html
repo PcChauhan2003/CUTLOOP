@@ -809,20 +809,211 @@
         <input type="text" id="checkout-address-input" class="form-control" style="width:100%; font-size:0.82rem;" value="14 Green Park Society, Ambawadi, Ahmedabad - 380015">
       </div>
 
-      <!-- Test Payment Simulation Notice (Section 2.3) -->
-      <div style="background:#FEF3C7; border:1px solid #FCD34D; border-radius:var(--radius-sm); padding:0.65rem; font-size:0.78rem; color:#92400E; margin-bottom:1rem;">
-        ℹ️ <strong>Sandbox Payment Test Gateway:</strong> Razorpay simulation mode. No real money will be charged.
-        <div style="margin-top:0.3rem;">
-          <label style="cursor:pointer; font-weight:600;">
-            <input type="checkbox" id="simulate-payment-failure-toggle"> Simulate Payment Failure (To test PaymentFailedException handling)
-          </label>
+      <!-- Payment Method Selection (Section 2.3) -->
+      <div style="margin-top:1.25rem;">
+        <label style="font-size:0.82rem; font-weight:700; color:var(--charcoal); display:block; margin-bottom:0.4rem;">
+          Select Payment Method:
+        </label>
+        <div class="payment-options-grid" style="display:grid; grid-template-columns: 1fr 1fr; gap:0.6rem; margin-bottom:1rem;">
+          <div id="pay-card-upi" class="payment-option-card selected" onclick="selectPaymentMethod('UPI')">
+            <div class="payment-icon-circle">📱</div>
+            <div>
+              <div style="font-weight:700; font-size:0.85rem;">Instant UPI</div>
+              <div style="font-size:0.72rem; color:var(--muted-text);">GPay, PhonePe, Paytm, BHIM</div>
+            </div>
+          </div>
+          <div id="pay-card-card" class="payment-option-card" onclick="selectPaymentMethod('CARD')">
+            <div class="payment-icon-circle">💳</div>
+            <div>
+              <div style="font-weight:700; font-size:0.85rem;">Cards</div>
+              <div style="font-size:0.72rem; color:var(--muted-text);">Visa, Mastercard, RuPay</div>
+            </div>
+          </div>
+          <div id="pay-card-netbanking" class="payment-option-card" onclick="selectPaymentMethod('NETBANKING')">
+            <div class="payment-icon-circle">🏦</div>
+            <div>
+              <div style="font-weight:700; font-size:0.85rem;">Net Banking</div>
+              <div style="font-size:0.72rem; color:var(--muted-text);">SBI, HDFC, ICICI, Axis</div>
+            </div>
+          </div>
+          <div id="pay-card-neft" class="payment-option-card" onclick="selectPaymentMethod('NEFT')">
+            <div class="payment-icon-circle">📑</div>
+            <div>
+              <div style="font-weight:700; font-size:0.85rem;">B2B NEFT/RTGS</div>
+              <div style="font-size:0.72rem; color:var(--muted-text);">Industrial Virtual Account</div>
+            </div>
+          </div>
         </div>
       </div>
 
       <div style="display:flex; gap:0.75rem;">
         <button class="btn btn-outline" style="flex:1;" onclick="closeCartModal()">Continue Shopping</button>
-        <button id="btn-checkout-pay" class="btn btn-mint" style="flex:1;" onclick="proceedToSimulatedPayment()">
-          Pay with Test Gateway
+        <button id="btn-checkout-pay" class="btn btn-mint" style="flex:1;" onclick="proceedToOnlinePaymentModal()">
+          Proceed to Online Payment →
+        </button>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ==================== MODAL: RAZORPAY / SANDBOX ONLINE PAYMENT GATEWAY (Section 2.3) ==================== -->
+  <div id="online-gateway-modal" class="modal-backdrop" style="display:none;" onclick="if(event.target===this) closeOnlineGatewayModal()">
+    <div class="modal-dialog modal-dialog-large" style="max-width: 650px;">
+      <!-- Gateway Header -->
+      <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #E2E8F0; padding-bottom:0.85rem;">
+        <div style="display:flex; align-items:center; gap:0.6rem;">
+          <div style="background:#0F172A; color:#38BDF8; font-weight:800; font-size:0.9rem; padding:4px 8px; border-radius:4px; letter-spacing:0.5px;">
+            RAZORPAY
+          </div>
+          <div>
+            <div style="font-size:0.95rem; font-weight:800; color:var(--charcoal);">Sandbox Test Gateway</div>
+            <div style="font-size:0.72rem; color:var(--muted-text);">🔒 256-Bit SSL Encrypted Bank Simulation</div>
+          </div>
+        </div>
+        <button onclick="closeOnlineGatewayModal()" style="background:none; border:none; font-size:1.2rem; cursor:pointer;">✕</button>
+      </div>
+
+      <!-- Amount Banner -->
+      <div style="background:#F0FDF4; border:1px solid #BBF7D0; border-radius:var(--radius-sm); padding:0.75rem 1rem; margin-top:1rem; display:flex; justify-content:space-between; align-items:center;">
+        <div>
+          <span style="font-size:0.75rem; color:#166534; font-weight:600; text-transform:uppercase;">Paying to CUTLOOP Escrow</span>
+          <div style="font-size:0.82rem; color:#14532D;" id="gateway-items-summary">1 item(s) · 10 kg industrial fabric</div>
+        </div>
+        <div style="text-align:right;">
+          <span style="font-size:0.72rem; color:var(--muted-text); display:block;">Payable Amount</span>
+          <span id="gateway-pay-amount" style="font-size:1.4rem; font-weight:900; color:var(--forest-green);">₹0.00</span>
+        </div>
+      </div>
+
+      <!-- Tabbed Gateway Layout -->
+      <div class="gw-layout">
+        <!-- Sidebar Navigation -->
+        <div class="gw-sidebar">
+          <button id="gw-tab-upi" class="gw-tab active" onclick="switchGatewayTab('upi')">
+            <span>📱</span> UPI QR / App
+          </button>
+          <button id="gw-tab-card" class="gw-tab" onclick="switchGatewayTab('card')">
+            <span>💳</span> Cards
+          </button>
+          <button id="gw-tab-netbanking" class="gw-tab" onclick="switchGatewayTab('netbanking')">
+            <span>🏦</span> Net Banking
+          </button>
+          <button id="gw-tab-neft" class="gw-tab" onclick="switchGatewayTab('neft')">
+            <span>📑</span> B2B NEFT
+          </button>
+        </div>
+
+        <!-- Content Panels -->
+        <div class="gw-content">
+          <!-- 1. UPI Panel -->
+          <div id="gw-panel-upi" class="gw-panel">
+            <div style="font-size:0.85rem; font-weight:700; margin-bottom:0.5rem; color:var(--charcoal);">
+              Scan Dynamic UPI QR Code
+            </div>
+            <div class="qr-display-box">
+              <div class="qr-code-graphic">
+                <!-- SVG UPI QR Simulation -->
+                <svg width="130" height="130" viewBox="0 0 100 100" fill="#0F172A">
+                  <path d="M0,0 h30 v30 h-30 z M10,10 h10 v10 h-10 z"/>
+                  <path d="M70,0 h30 v30 h-30 z M80,10 h10 v10 h-10 z"/>
+                  <path d="M0,70 h30 v30 h-30 z M10,80 h10 v10 h-10 z"/>
+                  <path d="M40,10 h10 v20 h-10 z M60,10 h5 v15 h-5 z"/>
+                  <path d="M35,40 h15 v15 h-15 z M55,40 h10 v10 h-10 z M75,40 h20 v10 h-20 z"/>
+                  <path d="M40,65 h10 v15 h-10 z M60,60 h10 v25 h-10 z M75,70 h20 v20 h-20 z"/>
+                  <path d="M15,45 h10 v10 h-10 z M80,25 h10 v10 h-10 z"/>
+                </svg>
+              </div>
+              <span style="font-size:0.75rem; color:var(--muted-text);">Scan using Google Pay, PhonePe, Paytm, or BHIM</span>
+            </div>
+            <div style="margin-top:0.75rem;">
+              <label style="font-size:0.78rem; font-weight:600; display:block; margin-bottom:0.25rem;">Or Enter UPI ID / VPA</label>
+              <div style="display:flex; gap:0.5rem;">
+                <input type="text" id="gw-upi-id" class="form-control" style="font-size:0.82rem; flex:1;" value="buyer@okhdfcbank" placeholder="name@upi">
+                <button type="button" class="btn btn-outline btn-sm" onclick="alert('UPI payment request pushed to your banking app!')">Verify VPA</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2. Cards Panel -->
+          <div id="gw-panel-card" class="gw-panel" style="display:none;">
+            <div style="font-size:0.85rem; font-weight:700; margin-bottom:0.5rem; color:var(--charcoal);">
+              Enter Card Details (Sandbox Test Cards)
+            </div>
+            <div style="margin-bottom:0.75rem;">
+              <label style="font-size:0.75rem; font-weight:600; display:block; margin-bottom:0.2rem;">Card Number</label>
+              <input type="text" class="form-control" style="font-size:0.85rem; font-family:monospace; letter-spacing:1px;" value="4111 2222 3333 4444" placeholder="Card Number">
+            </div>
+            <div style="display:grid; grid-template-columns: 1fr 1fr; gap:0.75rem; margin-bottom:0.75rem;">
+              <div>
+                <label style="font-size:0.75rem; font-weight:600; display:block; margin-bottom:0.2rem;">Valid Thru (MM/YY)</label>
+                <input type="text" class="form-control" style="font-size:0.85rem; text-align:center;" value="12/28" placeholder="MM/YY">
+              </div>
+              <div>
+                <label style="font-size:0.75rem; font-weight:600; display:block; margin-bottom:0.2rem;">CVV</label>
+                <input type="password" maxlength="3" class="form-control" style="font-size:0.85rem; text-align:center;" value="123" placeholder="CVV">
+              </div>
+            </div>
+            <div>
+              <label style="font-size:0.75rem; font-weight:600; display:block; margin-bottom:0.2rem;">Cardholder Name</label>
+              <input type="text" class="form-control" style="font-size:0.85rem;" value="Aarti Sharma (EcoCrafts Studio)">
+            </div>
+          </div>
+
+          <!-- 3. Net Banking Panel -->
+          <div id="gw-panel-netbanking" class="gw-panel" style="display:none;">
+            <div style="font-size:0.85rem; font-weight:700; margin-bottom:0.5rem; color:var(--charcoal);">
+              Select Your Commercial / Retail Bank
+            </div>
+            <label class="bank-radio-label">
+              <input type="radio" name="gw-bank" checked> <strong>State Bank of India (SBI)</strong>
+            </label>
+            <label class="bank-radio-label">
+              <input type="radio" name="gw-bank"> <strong>HDFC Bank</strong>
+            </label>
+            <label class="bank-radio-label">
+              <input type="radio" name="gw-bank"> <strong>ICICI Bank</strong>
+            </label>
+            <label class="bank-radio-label">
+              <input type="radio" name="gw-bank"> <strong>Axis Bank Corporate</strong>
+            </label>
+            <div style="font-size:0.75rem; color:var(--muted-text); margin-top:0.4rem;">
+              ℹ️ You will be redirected to the secure simulated bank portal to enter your OTP.
+            </div>
+          </div>
+
+          <!-- 4. NEFT / RTGS Panel -->
+          <div id="gw-panel-neft" class="gw-panel" style="display:none;">
+            <div style="font-size:0.85rem; font-weight:700; margin-bottom:0.5rem; color:var(--charcoal);">
+              Virtual Escrow Account (B2B Bulk Orders)
+            </div>
+            <div style="background:#F1F5F9; border-radius:var(--radius-sm); padding:0.75rem; font-size:0.8rem; line-height:1.6;">
+              <div><strong>Beneficiary:</strong> CUTLOOP Escrow Technologies Pvt Ltd</div>
+              <div><strong>Account No:</strong> <span style="font-family:monospace; color:#0F172A;">9248002938102</span></div>
+              <div><strong>IFSC Code:</strong> <span style="font-family:monospace; color:#0F172A;">HDFC0000042</span></div>
+              <div><strong>Branch:</strong> Navrangpura Corporate Branch, Ahmedabad</div>
+            </div>
+            <div style="font-size:0.75rem; color:var(--muted-text); margin-top:0.5rem;">
+              Instant webhook confirmation enabled. Orders dispatch upon RTGS credit verification.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Simulation Decline Option (Exception Handling Demo - Section 3.3) -->
+      <div style="background:#FEF3C7; border:1px solid #FCD34D; border-radius:var(--radius-sm); padding:0.6rem 0.85rem; font-size:0.75rem; color:#92400E; margin-bottom:1rem;">
+        <label style="cursor:pointer; font-weight:600; display:flex; align-items:center; gap:0.4rem;">
+          <input type="checkbox" id="gw-fail-simulation-toggle">
+          <span>Simulate Bank Authorization Decline (Tests Java <code>PaymentFailedException</code>)</span>
+        </label>
+      </div>
+
+      <!-- Footer Buttons -->
+      <div style="display:flex; gap:0.75rem;">
+        <button class="btn btn-outline" style="flex:1;" onclick="closeOnlineGatewayModal(); openCartModal();">
+          ← Back to Cart
+        </button>
+        <button id="btn-gw-execute" class="btn btn-primary" style="flex:2;" onclick="submitGatewayPayment()">
+          Authorize & Pay Securely 🔒
         </button>
       </div>
     </div>
@@ -850,6 +1041,10 @@
         <div style="display:flex; justify-content:space-between; margin-bottom:0.4rem;">
           <span style="color:var(--muted-text);">Transaction Reference:</span>
           <strong id="receipt-txn-ref" style="font-family:monospace; color:#059669;">TXN-874291-SUCCESS</strong>
+        </div>
+        <div style="display:flex; justify-content:space-between; margin-bottom:0.4rem;">
+          <span style="color:var(--muted-text);">Payment Method:</span>
+          <strong id="receipt-method" style="color:var(--charcoal);">Instant UPI</strong>
         </div>
         <div style="display:flex; justify-content:space-between; margin-bottom:0.4rem;">
           <span style="color:var(--muted-text);">Material Volume:</span>
