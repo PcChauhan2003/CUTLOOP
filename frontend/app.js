@@ -4,8 +4,8 @@
  * Connects with Java Spring Boot (Port 8080) and Python FastAPI (Port 8000)
  */
 
-const BACKEND_URL = "http://localhost:8080/api";
-const AI_SERVICE_URL = "http://localhost:8000/api/ai";
+const BACKEND_URL = "/api";
+const AI_SERVICE_URL = "/api/ai";
 
 // ==================== APPLICATION STATE ====================
 let appState = {
