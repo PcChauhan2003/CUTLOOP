@@ -1965,32 +1965,11 @@ body {
         <!-- Left Column: Upload & Live Visual Inspection -->
         <div>
           <div id="scanner-dropzone" class="upload-card" onclick="document.getElementById('scanner-file-input').click()">
-            <div style="font-size:3rem; margin-bottom:1rem;">📷</div>
-            <h3 style="font-size:1.15rem; margin-bottom:0.5rem; color:var(--forest-green);">Click or Drag Fabric Photograph Here</h3>
-            <p style="font-size:0.85rem; color:var(--muted-text); margin-bottom:0.75rem;">
+            <div id="scanner-camera-icon" style="font-size:3.2rem; margin-bottom:1rem; cursor:pointer;" onclick="handleCameraIconSecretClick(event)" title="Click to upload photograph">📷</div>
+            <h3 style="font-size:1.25rem; font-weight:700; margin-bottom:0.5rem; color:var(--forest-green);">Click or Drag Fabric Photograph Here</h3>
+            <p style="font-size:0.88rem; color:var(--muted-text); margin-bottom:0.25rem;">
               Supports JPEG/PNG · Recommended 224 × 224 or higher resolution
             </p>
-            <div style="display:flex; justify-content:center; gap:0.4rem; flex-wrap:wrap; margin-bottom: 0.5rem;" onclick="event.stopPropagation()">
-              <button type="button" class="btn btn-outline btn-sm" style="border-color:#10B981; color:#10B981; font-weight:700;" onclick="loadScannerSample('user_damaged_silk')" title="Load your uploaded phone photo of dark silk with puncture hole">🌟 User Photo: Damaged Silk</button>
-              <button type="button" class="btn btn-outline btn-sm" onclick="loadScannerSample('cotton')">🌿 Clean Cotton</button>
-              <button type="button" class="btn btn-outline btn-sm" onclick="loadScannerSample('denim')">👖 Clean Denim</button>
-              <button type="button" class="btn btn-outline btn-sm" style="border-color:#EF4444; color:#EF4444;" onclick="loadScannerSample('denim_frayed')">⚠️ Torn Denim</button>
-              <button type="button" class="btn btn-outline btn-sm" style="border-color:#F59E0B; color:#F59E0B;" onclick="loadScannerSample('coffee_stain')">☕ Stained Fabric</button>
-              <select id="user-uploaded-fabric-selector" onchange="if(this.value) loadScannerSample(this.value)" class="form-control" style="max-width:270px; font-size:0.8rem; padding:0.25rem 0.5rem; border:1px solid #10B981; border-radius:6px; background:#1e293b; color:#fff; font-weight:600; cursor:pointer;">
-                <option value="">⚡ Test 10 Uploaded Fabrics...</option>
-                <option value="upload_01">Fabric 1: Cream Linen/Cotton (₹70–₹80)</option>
-                <option value="upload_02">Fabric 2: Grey Ribbed Knit (₹88–₹102)</option>
-                <option value="upload_03">Fabric 3: Bronze Pleated Silk (₹115–₹130)</option>
-                <option value="upload_04">Fabric 4: Silver Fluid Silk (₹110–₹125)</option>
-                <option value="upload_05">Fabric 5: Chunky Wool Knit (₹85–₹98)</option>
-                <option value="upload_06">Fabric 6: Crimson Dyed Linen (₹65–₹75)</option>
-                <option value="upload_07">Fabric 7: Indigo Denim Twill (₹58–₹68)</option>
-                <option value="upload_08">Fabric 8: Tan Tweed Burlap (₹78–₹88)</option>
-                <option value="upload_09">Fabric 9: Taupe Hemp/Linen (₹68–₹78)</option>
-                <option value="upload_10">Fabric 10: Weathered Canvas [Flaw] (₹32–₹38)</option>
-              </select>
-              <a href="fabric_gallery.html" target="_blank" class="btn btn-outline btn-sm" style="border-color:#34D399; color:#34D399; text-decoration:none;" title="View all 10 real fabric photographs">📷 View Gallery →</a>
-            </div>
             <input type="file" id="scanner-file-input" style="display:none;" accept="image/*" onchange="handleScannerFileSelect(this)">
           </div>
 
@@ -3897,6 +3876,133 @@ L_Grad-CAM^c = ReLU( Σ_k α_k^c * A^k )
       <div style="display:flex; justify-content:space-between; align-items:center; border-top:1px solid #E5E7EB; padding-top:0.75rem; margin-top:0.5rem; flex-wrap:wrap; gap:0.5rem;">
         <span style="font-size:0.75rem; color:#6B7280;">CUTLOOP Academic Capstone · JG University 5th Semester</span>
         <button class="btn btn-primary btn-sm" onclick="closeAcademicDossierModal()">Close Dossier</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== SECRET AI SCANNER BENCHMARK MODAL (TRIGGER: TYPE "scan" OR TRIPLE-CLICK 📷) ==================== -->
+  <div id="secret-scanner-modal" class="modal-backdrop" style="display:none;" onclick="if(event.target===this) closeSecretScannerModal()">
+    <div class="modal-dialog" style="max-width:840px; max-height:90vh; overflow-y:auto; border-radius:14px; background:#0f172a; border:1px solid #334155; color:#f8fafc; padding:1.5rem; box-shadow:0 25px 50px -12px rgba(0, 0, 0, 0.7);">
+      <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #334155; padding-bottom:0.75rem; margin-bottom:1rem;">
+        <div>
+          <div style="display:flex; align-items:center; gap:0.5rem;">
+            <span style="font-size:1.4rem;">⚡</span>
+            <h3 style="margin:0; font-size:1.2rem; color:#34D399; font-weight:700;">Secret AI Scanner Benchmark & Fabric Swatches</h3>
+          </div>
+          <p style="margin:0.25rem 0 0 0; font-size:0.8rem; color:#94a3b8;">
+            Internal Tester Bench · Shortcut: type <code style="background:#1e293b; color:#34D399; padding:0.15rem 0.4rem; border-radius:4px; font-weight:700;">scan</code> anywhere or click 📷 3 times
+          </p>
+        </div>
+        <button type="button" onclick="closeSecretScannerModal()" style="background:#1e293b; color:#94a3b8; border:1px solid #334155; border-radius:8px; padding:0.4rem 0.8rem; font-size:0.95rem; cursor:pointer;">✕ Close</button>
+      </div>
+
+      <!-- Real Phone Photo Section -->
+      <div style="margin-bottom:1.25rem; background:#1e293b; border:1px solid #059669; border-radius:10px; padding:0.85rem 1rem;">
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem;">
+          <div>
+            <div style="font-weight:700; color:#34D399; font-size:0.95rem;">🌟 Prem's Real Phone Photo: Damaged Silk</div>
+            <div style="font-size:0.78rem; color:#94a3b8;">Actual camera photo with center puncture hole & yarn pull stress</div>
+          </div>
+          <button type="button" class="btn btn-primary btn-sm" onclick="selectSecretFabric('user_damaged_silk')" style="background:#059669; border-color:#059669; font-weight:700;">Load Photo →</button>
+        </div>
+      </div>
+
+      <!-- 10 Real Fabric Swatches Grid -->
+      <div style="margin-bottom:1rem;">
+        <div style="font-size:0.95rem; font-weight:700; color:#f8fafc; margin-bottom:0.5rem; display:flex; justify-content:space-between; align-items:center;">
+          <span>🧵 10 Real Fabric Swatches & Hedonic Valuations</span>
+          <a href="fabric_gallery.html" target="_blank" style="color:#34D399; font-size:0.8rem; text-decoration:none;">View Full Swatch Gallery →</a>
+        </div>
+        <div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(240px, 1fr)); gap:0.65rem;">
+          <div onclick="selectSecretFabric('upload_01')" style="background:#1e293b; border:1px solid #334155; border-radius:8px; padding:0.6rem; cursor:pointer; display:flex; gap:0.65rem; align-items:center; transition:border-color 0.2s;" onmouseover="this.style.borderColor='#34D399'" onmouseout="this.style.borderColor='#334155'">
+            <img src="images/user_uploads/fabric_01.jpg" style="width:52px; height:52px; object-fit:cover; border-radius:6px;">
+            <div>
+              <div style="font-size:0.83rem; font-weight:600; color:#f8fafc;">#01: Cream Linen/Cotton</div>
+              <div style="font-size:0.72rem; color:#94a3b8;">Slub Weave · Clean</div>
+              <div style="font-size:0.78rem; color:#34D399; font-weight:700;">₹70 – ₹80 / kg</div>
+            </div>
+          </div>
+          <div onclick="selectSecretFabric('upload_02')" style="background:#1e293b; border:1px solid #334155; border-radius:8px; padding:0.6rem; cursor:pointer; display:flex; gap:0.65rem; align-items:center; transition:border-color 0.2s;" onmouseover="this.style.borderColor='#34D399'" onmouseout="this.style.borderColor='#334155'">
+            <img src="images/user_uploads/fabric_02.jpg" style="width:52px; height:52px; object-fit:cover; border-radius:6px;">
+            <div>
+              <div style="font-size:0.83rem; font-weight:600; color:#f8fafc;">#02: Grey Ribbed Knit</div>
+              <div style="font-size:0.72rem; color:#94a3b8;">Wool Knitwear · Clean</div>
+              <div style="font-size:0.78rem; color:#34D399; font-weight:700;">₹88 – ₹102 / kg</div>
+            </div>
+          </div>
+          <div onclick="selectSecretFabric('upload_03')" style="background:#1e293b; border:1px solid #334155; border-radius:8px; padding:0.6rem; cursor:pointer; display:flex; gap:0.65rem; align-items:center; transition:border-color 0.2s;" onmouseover="this.style.borderColor='#34D399'" onmouseout="this.style.borderColor='#334155'">
+            <img src="images/user_uploads/fabric_03.jpg" style="width:52px; height:52px; object-fit:cover; border-radius:6px;">
+            <div>
+              <div style="font-size:0.83rem; font-weight:600; color:#f8fafc;">#03: Bronze Pleated Silk</div>
+              <div style="font-size:0.72rem; color:#94a3b8;">Mulberry Silk · Deadstock</div>
+              <div style="font-size:0.78rem; color:#34D399; font-weight:700;">₹115 – ₹130 / kg</div>
+            </div>
+          </div>
+          <div onclick="selectSecretFabric('upload_04')" style="background:#1e293b; border:1px solid #334155; border-radius:8px; padding:0.6rem; cursor:pointer; display:flex; gap:0.65rem; align-items:center; transition:border-color 0.2s;" onmouseover="this.style.borderColor='#34D399'" onmouseout="this.style.borderColor='#334155'">
+            <img src="images/user_uploads/fabric_04.jpg" style="width:52px; height:52px; object-fit:cover; border-radius:6px;">
+            <div>
+              <div style="font-size:0.83rem; font-weight:600; color:#f8fafc;">#04: Silver Fluid Silk</div>
+              <div style="font-size:0.72rem; color:#94a3b8;">Liquid Drape · Deadstock</div>
+              <div style="font-size:0.78rem; color:#34D399; font-weight:700;">₹110 – ₹125 / kg</div>
+            </div>
+          </div>
+          <div onclick="selectSecretFabric('upload_05')" style="background:#1e293b; border:1px solid #334155; border-radius:8px; padding:0.6rem; cursor:pointer; display:flex; gap:0.65rem; align-items:center; transition:border-color 0.2s;" onmouseover="this.style.borderColor='#34D399'" onmouseout="this.style.borderColor='#334155'">
+            <img src="images/user_uploads/fabric_05.jpg" style="width:52px; height:52px; object-fit:cover; border-radius:6px;">
+            <div>
+              <div style="font-size:0.83rem; font-weight:600; color:#f8fafc;">#05: Chunky Wool Knit</div>
+              <div style="font-size:0.72rem; color:#94a3b8;">Cable Knit · Clean</div>
+              <div style="font-size:0.78rem; color:#34D399; font-weight:700;">₹85 – ₹98 / kg</div>
+            </div>
+          </div>
+          <div onclick="selectSecretFabric('upload_06')" style="background:#1e293b; border:1px solid #334155; border-radius:8px; padding:0.6rem; cursor:pointer; display:flex; gap:0.65rem; align-items:center; transition:border-color 0.2s;" onmouseover="this.style.borderColor='#34D399'" onmouseout="this.style.borderColor='#334155'">
+            <img src="images/user_uploads/fabric_06.jpg" style="width:52px; height:52px; object-fit:cover; border-radius:6px;">
+            <div>
+              <div style="font-size:0.83rem; font-weight:600; color:#f8fafc;">#06: Crimson Dyed Linen</div>
+              <div style="font-size:0.72rem; color:#94a3b8;">Reactive Dye · Clean</div>
+              <div style="font-size:0.78rem; color:#34D399; font-weight:700;">₹65 – ₹75 / kg</div>
+            </div>
+          </div>
+          <div onclick="selectSecretFabric('upload_07')" style="background:#1e293b; border:1px solid #334155; border-radius:8px; padding:0.6rem; cursor:pointer; display:flex; gap:0.65rem; align-items:center; transition:border-color 0.2s;" onmouseover="this.style.borderColor='#34D399'" onmouseout="this.style.borderColor='#334155'">
+            <img src="images/user_uploads/fabric_07.jpg" style="width:52px; height:52px; object-fit:cover; border-radius:6px;">
+            <div>
+              <div style="font-size:0.83rem; font-weight:600; color:#f8fafc;">#07: Indigo Denim Twill</div>
+              <div style="font-size:0.72rem; color:#94a3b8;">Pure Cotton 95% · Clean</div>
+              <div style="font-size:0.78rem; color:#34D399; font-weight:700;">₹58 – ₹68 / kg</div>
+            </div>
+          </div>
+          <div onclick="selectSecretFabric('upload_08')" style="background:#1e293b; border:1px solid #334155; border-radius:8px; padding:0.6rem; cursor:pointer; display:flex; gap:0.65rem; align-items:center; transition:border-color 0.2s;" onmouseover="this.style.borderColor='#34D399'" onmouseout="this.style.borderColor='#334155'">
+            <img src="images/user_uploads/fabric_08.jpg" style="width:52px; height:52px; object-fit:cover; border-radius:6px;">
+            <div>
+              <div style="font-size:0.83rem; font-weight:600; color:#f8fafc;">#08: Tan Tweed Burlap</div>
+              <div style="font-size:0.72rem; color:#94a3b8;">Wool/Linen Weave · Clean</div>
+              <div style="font-size:0.78rem; color:#34D399; font-weight:700;">₹78 – ₹88 / kg</div>
+            </div>
+          </div>
+          <div onclick="selectSecretFabric('upload_09')" style="background:#1e293b; border:1px solid #334155; border-radius:8px; padding:0.6rem; cursor:pointer; display:flex; gap:0.65rem; align-items:center; transition:border-color 0.2s;" onmouseover="this.style.borderColor='#34D399'" onmouseout="this.style.borderColor='#334155'">
+            <img src="images/user_uploads/fabric_09.jpg" style="width:52px; height:52px; object-fit:cover; border-radius:6px;">
+            <div>
+              <div style="font-size:0.83rem; font-weight:600; color:#f8fafc;">#09: Taupe Hemp/Linen</div>
+              <div style="font-size:0.72rem; color:#94a3b8;">Rough Weave · Clean</div>
+              <div style="font-size:0.78rem; color:#34D399; font-weight:700;">₹68 – ₹78 / kg</div>
+            </div>
+          </div>
+          <div onclick="selectSecretFabric('upload_10')" style="background:#1e293b; border:1px solid #EF4444; border-radius:8px; padding:0.6rem; cursor:pointer; display:flex; gap:0.65rem; align-items:center; transition:background 0.2s;" onmouseover="this.style.background='#2d1f2d'" onmouseout="this.style.background='#1e293b'">
+            <img src="images/user_uploads/fabric_10.jpg" style="width:52px; height:52px; object-fit:cover; border-radius:6px;">
+            <div>
+              <div style="font-size:0.83rem; font-weight:600; color:#F87171;">#10: Weathered Canvas</div>
+              <div style="font-size:0.72rem; color:#FCA5A5;">⚠️ Stains & Watermark Flaw</div>
+              <div style="font-size:0.78rem; color:#F87171; font-weight:700;">₹32 – ₹38 / kg (Flawed)</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Standard Samples -->
+      <div style="border-top:1px solid #334155; padding-top:0.75rem; display:flex; gap:0.4rem; flex-wrap:wrap; justify-content:center;">
+        <button type="button" class="btn btn-outline btn-sm" onclick="selectSecretFabric('cotton')">🌿 Clean Cotton</button>
+        <button type="button" class="btn btn-outline btn-sm" onclick="selectSecretFabric('denim')">👖 Clean Denim</button>
+        <button type="button" class="btn btn-outline btn-sm" style="border-color:#EF4444; color:#EF4444;" onclick="selectSecretFabric('denim_frayed')">⚠️ Torn Denim</button>
+        <button type="button" class="btn btn-outline btn-sm" style="border-color:#F59E0B; color:#F59E0B;" onclick="selectSecretFabric('coffee_stain')">☕ Stained Fabric</button>
       </div>
     </div>
   </div>

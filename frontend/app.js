@@ -1993,9 +1993,54 @@ window.addEventListener("keydown", (e) => {
       keyBuffer = "";
       openAcademicDossierModal();
       showSecretToast("🎓 Academic Evaluation Dossier Unlocked (Key: sem5)");
+    } else if (keyBuffer.includes("scan")) {
+      keyBuffer = "";
+      openSecretScannerModal();
+      showSecretToast("⚡ Secret AI Scanner Bench Unlocked (Shortcut: scan)");
     }
   }
 });
+
+// Secret Trigger for AI Scanner: Triple-click Camera Icon 📷
+let cameraClickCount = 0;
+let cameraClickTimer = null;
+function handleCameraIconSecretClick(e) {
+  e.stopPropagation();
+  cameraClickCount++;
+  clearTimeout(cameraClickTimer);
+  cameraClickTimer = setTimeout(() => {
+    if (cameraClickCount === 1) {
+      const input = document.getElementById("scanner-file-input");
+      if (input) input.click();
+    }
+    cameraClickCount = 0;
+  }, 400);
+
+  if (cameraClickCount >= 3) {
+    clearTimeout(cameraClickTimer);
+    cameraClickCount = 0;
+    openSecretScannerModal();
+    showSecretToast("⚡ Secret AI Scanner Bench Unlocked (3x Click)");
+  }
+}
+
+function openSecretScannerModal() {
+  const m = document.getElementById("secret-scanner-modal");
+  if (m) m.style.display = "flex";
+}
+
+function closeSecretScannerModal() {
+  const m = document.getElementById("secret-scanner-modal");
+  if (m) m.style.display = "none";
+}
+
+function selectSecretFabric(sampleId) {
+  closeSecretScannerModal();
+  loadScannerSample(sampleId);
+  const sc = document.getElementById("scanner");
+  if (sc) sc.scrollIntoView({ behavior: "smooth" });
+  showSecretToast(`⚡ Loaded swatch into AI Scanner`);
+}
 
 // 2. Secret Gesture on "CL" Logo (Triple-click / 3 rapid taps for mobile phones)
 let logoClickCount = 0;
