@@ -26,6 +26,25 @@ app.include_router(defect_router)
 app.include_router(price_router)
 app.include_router(demand_router)
 
+# Mount CUTLOOP Circular Data Science & Machine Learning Service
+try:
+    import os
+    import sys
+    DS_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", "cutloop_ds"))
+    if DS_ROOT not in sys.path:
+        sys.path.insert(0, DS_ROOT)
+    from api.routes.material_routes import router as ds_material_router
+    from api.routes.vision_routes import router as ds_vision_router
+    from api.routes.analytics_routes import router as ds_analytics_router
+
+    app.include_router(ds_material_router, prefix="/api/ai/ds")
+    app.include_router(ds_vision_router, prefix="/api/ai/ds")
+    app.include_router(ds_analytics_router, prefix="/api/ai/ds")
+    print("[*] Successfully integrated CUTLOOP Circular Data Science routes at /api/ai/ds")
+except Exception as e:
+    print(f"[!] Warning integrating cutloop_ds routes: {e}")
+
+
 @app.get("/api/ai/health", tags=["Health"])
 def health():
     """

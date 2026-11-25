@@ -1,0 +1,89 @@
+{
+  "model_name": "Model B \u2014 TexSortML Deep Vision Classifier",
+  "architecture": "MobileNetV2 Transfer Learning",
+  "test_accuracy": 0.8639,
+  "test_f1_macro": 0.8015,
+  "test_f1_weighted": 0.8604,
+  "num_classes": 11,
+  "classification_report": {
+    "dress": {
+      "precision": 0.8214285714285714,
+      "recall": 0.92,
+      "f1-score": 0.8679245283018868,
+      "support": 25.0
+    },
+    "jacket": {
+      "precision": 1.0,
+      "recall": 0.8604651162790697,
+      "f1-score": 0.925,
+      "support": 43.0
+    },
+    "jacket-zipper": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 8.0
+    },
+    "jeans": {
+      "precision": 0.9375,
+      "recall": 0.8823529411764706,
+      "f1-score": 0.9090909090909091,
+      "support": 17.0
+    },
+    "poloshirt": {
+      "precision": 0.9122807017543859,
+      "recall": 0.9629629629629629,
+      "f1-score": 0.9369369369369369,
+      "support": 54.0
+    },
+    "shirt": {
+      "precision": 0.8648648648648649,
+      "recall": 0.8888888888888888,
+      "f1-score": 0.8767123287671232,
+      "support": 36.0
+    },
+    "short": {
+      "precision": 1.0,
+      "recall": 0.8913043478260869,
+      "f1-score": 0.9425287356321839,
+      "support": 46.0
+    },
+    "sweatshirt": {
+      "precision": 0.7924528301886793,
+      "recall": 0.7924528301886793,
+      "f1-score": 0.7924528301886793,
+      "support": 53.0
+    },
+    "top": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 13.0
+    },
+    "trouser": {
+      "precision": 0.875,
+      "recall": 0.7777777777777778,
+      "f1-score": 0.8235294117647058,
+      "support": 18.0
+    },
+    "tshirt": {
+      "precision": 0.6216216216216216,
+      "recall": 0.92,
+      "f1-score": 0.7419354838709677,
+      "support": 25.0
+    },
+    "accuracy": 0.863905325443787,
+    "macro avg": {
+      "precision": 0.8022862354416475,
+      "recall": 0.8087458968272668,
+      "f1-score": 0.8014646513230358,
+      "support": 338.0
+    },
+    "weighted avg": {
+      "precision": 0.8643847569707893,
+      "recall": 0.863905325443787,
+      "f1-score": 0.8603909332542102,
+      "support": 338.0
+    }
+  }
+}

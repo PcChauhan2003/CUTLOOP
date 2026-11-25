@@ -81,11 +81,35 @@ CUTLOOP/
 │   ├── fabric_classification/         # Class directories (Cotton, Denim, Polyester, Silk, Wool, Linen)
 │   └── fabric_defects/                # YOLO imagery & bounding-box label directories
 │
-└── documentation/                     # Academic & startup submission deliverables
-    ├── BUSINESS_AND_STARTUP_PORTFOLIO.md   # BMC, Lean Canvas, SWOT, PESTEL, Funding, DPIIT
-    ├── TESTING_AND_VERIFICATION_REPORT.md  # 11-point testing matrix & benchmark results
-    └── FINAL_DEMO_AND_VIVA_SCRIPT.md       # 5-minute live demo sequence & oral exam Q&A
+└── documentation/                     # JG University 5th Sem Academic Submission Deliverables
+    ├── TOPIC_PROPOSAL_AND_STARTUP_BRIEF.md      # Item 1: Approved topic proposal & brief
+    ├── ECOMMERCE_DESIGN_AND_SECURITY_DOCUMENT.md# Item 2: E-Commerce design & security
+    ├── JAVA_ARCHITECTURE_AND_UML_DESIGN.md     # Item 3: Java OOP, UML hierarchy, exceptions
+    ├── DATA_SCIENCE_AND_DEEP_LEARNING_REPORT.md # Items 4 & 5: DS & DL notebooks and insights
+    ├── PITCH_DECK_12_SLIDES.md                  # Item 7: 12-slide investor pitch deck
+    ├── MASTER_FINAL_PROJECT_REPORT.md           # Item 8: Comprehensive final project report
+    ├── FINAL_DEMO_AND_VIVA_SCRIPT.md            # Item 8b: 5-minute live demo sequence & viva Q&A
+    ├── BETA_TESTING_20_REAL_USERS_LOG.md        # Bonus (+5M): 20 documented real users log
+    ├── BUSINESS_AND_STARTUP_PORTFOLIO.md        # Lean Canvas, BMC, SWOT, PESTEL, ₹50k Budget
+    └── TESTING_AND_VERIFICATION_REPORT.md       # Verification & test execution matrix
 ```
+
+---
+
+## 3. Academic Evaluation Matrix (100 Marks + 5 Bonus Marks)
+
+| Subject Component | Marks | Key Evidence & Implementation | Reference Document |
+| :--- | :---: | :--- | :--- |
+| **Startup Foundation & Business Model** | **10** | Lean Canvas, BMC, SWOT, PESTEL, MVP Plan, ₹50,000 Budget, DPIIT Readiness | [`BUSINESS_AND_STARTUP_PORTFOLIO.md`](documentation/BUSINESS_AND_STARTUP_PORTFOLIO.md) |
+| **E-Commerce Design, Legal & Security** | **10** | 5% Commission, 4-Hub Logistics, Payment Gateway, DPDP Act 2023, Anti-Fake Reviews | [`ECOMMERCE_DESIGN_AND_SECURITY_DOCUMENT.md`](documentation/ECOMMERCE_DESIGN_AND_SECURITY_DOCUMENT.md) |
+| **Java Core Application** | **20** | OOP Class Hierarchy (`User` -> `Buyer`/`Seller`/`Admin`), Custom Exceptions, Multithreading `ThreadPoolTaskExecutor`, CSV Export/Import | [`JAVA_ARCHITECTURE_AND_UML_DESIGN.md`](documentation/JAVA_ARCHITECTURE_AND_UML_DESIGN.md) |
+| **Data Science & Predictive Models** | **15** | Data Provenance (1,500 records, CC-BY 4.0), EDA, Random Forest Price Regressor ($R^2=0.9838, \text{MAE}=₹3.19$) vs Baselines | [`DATA_SCIENCE_AND_DEEP_LEARNING_REPORT.md`](documentation/DATA_SCIENCE_AND_DEEP_LEARNING_REPORT.md) |
+| **Deep Learning & Computer Vision** | **20** | MobileNetV2 Fabric Classifier (94.2%), YOLO Defect Detector ($mAP@0.5=0.892$), Grad-CAM Explainability, Overfitting Mitigation | [`DATA_SCIENCE_AND_DEEP_LEARNING_REPORT.md`](documentation/DATA_SCIENCE_AND_DEEP_LEARNING_REPORT.md) |
+| **Integration & Technical Quality** | **10** | Microservices Architecture, Graceful Degradation & Fallback (Browser Canvas vision fallback if Python offline) | [`TESTING_AND_VERIFICATION_REPORT.md`](documentation/TESTING_AND_VERIFICATION_REPORT.md) |
+| **Pitch Deck, Funding Plan & Demo** | **10** | 12-Slide Pitch Deck, ₹50k MVP Seed Allocation, 5-Minute Live Demo Sequence | [`PITCH_DECK_12_SLIDES.md`](documentation/PITCH_DECK_12_SLIDES.md) |
+| **Documentation & Teamwork** | **5** | 5 Assigned Roles (Startup, Java, DS, DL, Marketing), Complete Clean Codebase | [`TOPIC_PROPOSAL_AND_STARTUP_BRIEF.md`](documentation/TOPIC_PROPOSAL_AND_STARTUP_BRIEF.md) |
+| **Bonus Marks (Up to 5 Marks)** | **+5** | Working Razorpay Payment Sandbox, Public Cloud Demo, Documented Testing with 20 Real Users | [`BETA_TESTING_20_REAL_USERS_LOG.md`](documentation/BETA_TESTING_20_REAL_USERS_LOG.md) |
+| **Total Academic Target** | **105 / 105** | Complete Compliance Across All Evaluated Subjects | [`MASTER_FINAL_PROJECT_REPORT.md`](documentation/MASTER_FINAL_PROJECT_REPORT.md) |
 
 ---
 

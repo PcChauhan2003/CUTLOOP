@@ -1,0 +1,77 @@
+{
+  "model_name": "Model C \u2014 Material Composition Clustering",
+  "algorithm": "K-Means",
+  "n_clusters": 5,
+  "silhouette_score": 0.6657,
+  "inertia": 42192584.76,
+  "archetypes": {
+    "cluster_0": {
+      "cluster_id": 0,
+      "archetype_name": "Synthetic Technical / Sportswear",
+      "centroid_composition_pct": {
+        "polyamide": 84.2,
+        "elastane": 12.6
+      },
+      "garment_count": 3173,
+      "garment_pct": 6.68,
+      "recycling_pathway": "High thermo-mechanical & chemical pellet recycling potential"
+    },
+    "cluster_1": {
+      "cluster_id": 1,
+      "archetype_name": "Pure Cotton Mono-Material",
+      "centroid_composition_pct": {
+        "cotton": 89.5,
+        "polyester": 6.1
+      },
+      "garment_count": 23686,
+      "garment_pct": 49.84,
+      "recycling_pathway": "Ideal for mechanical shredding, yarn re-spinning & composting"
+    },
+    "cluster_2": {
+      "cluster_id": 2,
+      "archetype_name": "Regenerated Cellulosic (Rayon/Viscose)",
+      "centroid_composition_pct": {
+        "viscose": 71.9,
+        "polyamide": 9.7,
+        "linen": 6.5,
+        "polyester": 6.3,
+        "cotton": 3.7
+      },
+      "garment_count": 3689,
+      "garment_pct": 7.76,
+      "recycling_pathway": "Chemical dissolving pulp recycling & closed-loop lyocell recovery"
+    },
+    "cluster_3": {
+      "cluster_id": 3,
+      "archetype_name": "Wool / Luxury Blend Archetype",
+      "centroid_composition_pct": {
+        "wool": 23.2,
+        "acrylic": 12.6,
+        "linen": 12.5,
+        "lyocell": 10.4,
+        "polyester": 8.1,
+        "cotton": 6.7,
+        "polyamide": 4.7,
+        "viscose": 2.3,
+        "elastane": 2.1
+      },
+      "garment_count": 3962,
+      "garment_pct": 8.34,
+      "recycling_pathway": "Premium garnetting, post-consumer shoddy & carded yarn spinning"
+    },
+    "cluster_4": {
+      "cluster_id": 4,
+      "archetype_name": "Synthetic Technical / Sportswear",
+      "centroid_composition_pct": {
+        "polyester": 82.8,
+        "viscose": 4.6,
+        "elastane": 3.8,
+        "acrylic": 3.0,
+        "cotton": 2.5
+      },
+      "garment_count": 13012,
+      "garment_pct": 27.38,
+      "recycling_pathway": "High thermo-mechanical & chemical pellet recycling potential"
+    }
+  }
+}

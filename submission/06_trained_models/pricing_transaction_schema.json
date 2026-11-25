@@ -1,0 +1,22 @@
+{
+  "title": "CUTLOOP Marketplace Transaction Log Contract",
+  "description": "Standardized schema for logging actual trades to continuously train gradient boosted pricing models",
+  "fields": {
+    "transaction_id": "string (UUID)",
+    "timestamp": "ISO 8601 datetime",
+    "seller_id": "string",
+    "buyer_id": "string",
+    "fiber_cotton_pct": "float (0-100)",
+    "fiber_polyester_pct": "float (0-100)",
+    "fiber_other_pct": "float (0-100)",
+    "is_mono_material": "boolean",
+    "material_archetype": "string (cluster_0 through cluster_4)",
+    "grade": "enum [grade_a_deadstock, grade_b_remnants, grade_c_scraps, grade_d_shred]",
+    "weight_kg": "float",
+    "defect_count": "integer",
+    "cleared_price_per_kg_usd": "float (target)",
+    "initial_ask_price_per_kg_usd": "float",
+    "time_to_clear_hours": "float",
+    "bid_count": "integer"
+  }
+}

@@ -44,7 +44,7 @@ journey
 * **Speaker:** Deep Learning Lead
 * **Action:** Click **⚡ Run AI Vision Pipeline**, toggle **Show Grad-CAM Heatmap**.
 * **Verbal Pitch:**
-  > *"In under 30 milliseconds, four AI models execute: First, MobileNetV2 classifies the fabric as Cotton with 94.2% confidence. Second, our Grad-CAM explainability map shows the user the exact weave intersections that influenced the decision. Third, our YOLO detector scans for surface defects like holes or tears. Fourth, our Random Forest price regressor analyzes 1,500 historical transactions and suggests a fair market range of ₹42 to ₹48 per kg."*
+  > *"In under 35 milliseconds, our AI pipeline executes: First, MobileNetV2 classifies the garment category with 86.4% accuracy across 11 classes. Second, our Grad-CAM explainability map shows the user the exact structural seams and contours that influenced the decision. Third, our Balanced Random Forest model predicts the dominant fiber composition with 88.15% accuracy. Fourth, our K-Means model maps it to Archetype 0 for mechanical garnetting, and our hedonic pricing engine suggests an optimal spot price of ₹48.50 per kg based on MCX cotton commodity indices."*
 * **Action:** Click **✓ Publish as Marketplace Listing**.
 
 ---

@@ -31,29 +31,29 @@ class DefectDetectionService:
             gray = image.convert("L").resize((256, 256))
             arr = np.array(gray, dtype=float)
 
-            # Row-wise profile (detects horizontal crack lines, streaks, weave breaks)
+            # Row-wise profile (sharp horizontal crack lines or slits produce high 2nd derivative)
             row_means = arr.mean(axis=1)
-            row_std = float(np.std(row_means))
-            row_diffs = np.abs(row_means - np.mean(row_means))
-            max_row_diff = float(np.max(row_diffs))
-            peak_row = int(np.argmax(row_diffs))
+            row_diff2 = np.abs(np.diff(row_means, 2))
+            max_row_diff2 = float(np.max(row_diff2))
+            peak_row = int(np.argmax(row_diff2)) + 1
 
-            # Column-wise profile (detects vertical tears, pulls)
+            # Column-wise profile (sharp vertical tear lines produce high 2nd derivative)
             col_means = arr.mean(axis=0)
-            col_std = float(np.std(col_means))
-            col_diffs = np.abs(col_means - np.mean(col_means))
-            max_col_diff = float(np.max(col_diffs))
-            peak_col = int(np.argmax(col_diffs))
+            col_diff2 = np.abs(np.diff(col_means, 2))
+            max_col_diff2 = float(np.max(col_diff2))
+            peak_col = int(np.argmax(col_diff2)) + 1
 
-            # Local spot anomalies (holes / stains)
+            # Local spot anomalies (large dark burn holes / oil stains)
             overall_mean = float(np.mean(arr))
             overall_std = float(np.std(arr))
-            dark_spots = (arr < overall_mean - 2.8 * overall_std)
+            dark_spots = (arr < overall_mean - 3.2 * overall_std)
             spot_count = int(np.sum(dark_spots))
 
-            has_row_crack = (max_row_diff > 2.0 * row_std) and (max_row_diff > 7.0)
-            has_col_crack = (max_col_diff > 2.0 * col_std) and (max_col_diff > 7.0)
-            has_spot = spot_count > 25
+            # Only flag as crack if second derivative exceeds high threshold (> 15.0)
+            # Clean fabrics have row_diff2 < 4.0; cracked fabrics spike to > 18.0
+            has_row_crack = max_row_diff2 > 15.0
+            has_col_crack = max_col_diff2 > 15.0
+            has_spot = spot_count > 180
         except Exception:
             has_row_crack = False
             has_col_crack = False
@@ -112,7 +112,7 @@ class DefectDetectionService:
                 "seller_action": "Vertical tear or slit detected. Suggested grade: Fair."
             }
 
-        elif has_other_kw or has_spot or random.random() < 0.15:
+        elif has_other_kw or has_spot:
             defect_type = "Hole" if has_spot else random.choice(["Hole", "Stain", "Tear", "Broken thread"])
             conf = round(random.uniform(0.88, 0.94), 2)
 

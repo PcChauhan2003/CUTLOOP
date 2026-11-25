@@ -1,0 +1,87 @@
+{
+  "model_name": "Model A \u2014 Tabular Dominant Fiber Classifier (Leak-Free)",
+  "best_model": "Random Forest",
+  "target_leakage_status": "Verified Eliminated (circularity_score and component counts removed)",
+  "decision_tree": {
+    "accuracy": 0.7809,
+    "f1_macro": 0.7036
+  },
+  "random_forest": {
+    "accuracy": 0.8815,
+    "f1_macro": 0.8257,
+    "f1_weighted": 0.8837
+  },
+  "classification_report": {
+    "acrylic": {
+      "precision": 0.7727272727272727,
+      "recall": 0.8095238095238095,
+      "f1-score": 0.7906976744186046,
+      "support": 147.0
+    },
+    "cotton": {
+      "precision": 0.982413178984862,
+      "recall": 0.9199499687304565,
+      "f1-score": 0.9501560986112606,
+      "support": 4797.0
+    },
+    "linen": {
+      "precision": 0.8918918918918919,
+      "recall": 0.9361702127659575,
+      "f1-score": 0.9134948096885813,
+      "support": 141.0
+    },
+    "other": {
+      "precision": 0.7235772357723578,
+      "recall": 0.6953125,
+      "f1-score": 0.7091633466135459,
+      "support": 256.0
+    },
+    "polyamide": {
+      "precision": 0.8367346938775511,
+      "recall": 0.8003003003003003,
+      "f1-score": 0.8181120491174213,
+      "support": 666.0
+    },
+    "polyester": {
+      "precision": 0.8107818636201357,
+      "recall": 0.8618595825426945,
+      "f1-score": 0.8355408388520972,
+      "support": 2635.0
+    },
+    "viscose": {
+      "precision": 0.7118193891102258,
+      "recall": 0.808446455505279,
+      "f1-score": 0.7570621468926554,
+      "support": 663.0
+    },
+    "wool": {
+      "precision": 0.718978102189781,
+      "recall": 0.985,
+      "f1-score": 0.8312236286919831,
+      "support": 200.0
+    },
+    "accuracy": 0.8815360336664914,
+    "macro avg": {
+      "precision": 0.8061154535217597,
+      "recall": 0.8520703536710621,
+      "f1-score": 0.8256813241107687,
+      "support": 9505.0
+    },
+    "weighted avg": {
+      "precision": 0.8886509047843572,
+      "recall": 0.8815360336664914,
+      "f1-score": 0.8836580339076923,
+      "support": 9505.0
+    }
+  },
+  "classes": [
+    "acrylic",
+    "cotton",
+    "linen",
+    "other",
+    "polyamide",
+    "polyester",
+    "viscose",
+    "wool"
+  ]
+}

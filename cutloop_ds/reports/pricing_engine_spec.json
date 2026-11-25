@@ -1,0 +1,41 @@
+{
+  "sample_valuation": {
+    "estimated_price_per_kg_usd": 1.68,
+    "estimated_lot_total_usd": 201.6,
+    "weight_kg": 120.0,
+    "grade": "grade_b_remnants",
+    "demand_liquidity_score": 87.6,
+    "demand_category": "High Market Liquidity",
+    "expected_days_to_sell": "3 - 7 days",
+    "recycling_readiness": "Excellent (Mono-material)",
+    "factors": {
+      "base_commodity_rate_usd": 2.38,
+      "grade_multiplier": 0.55,
+      "circularity_multiplier": 1.25,
+      "defect_multiplier": 1.0,
+      "volume_multiplier": 1.03
+    }
+  },
+  "schema": {
+    "title": "CUTLOOP Marketplace Transaction Log Contract",
+    "description": "Standardized schema for logging actual trades to continuously train gradient boosted pricing models",
+    "fields": {
+      "transaction_id": "string (UUID)",
+      "timestamp": "ISO 8601 datetime",
+      "seller_id": "string",
+      "buyer_id": "string",
+      "fiber_cotton_pct": "float (0-100)",
+      "fiber_polyester_pct": "float (0-100)",
+      "fiber_other_pct": "float (0-100)",
+      "is_mono_material": "boolean",
+      "material_archetype": "string (cluster_0 through cluster_4)",
+      "grade": "enum [grade_a_deadstock, grade_b_remnants, grade_c_scraps, grade_d_shred]",
+      "weight_kg": "float",
+      "defect_count": "integer",
+      "cleared_price_per_kg_usd": "float (target)",
+      "initial_ask_price_per_kg_usd": "float",
+      "time_to_clear_hours": "float",
+      "bid_count": "integer"
+    }
+  }
+}

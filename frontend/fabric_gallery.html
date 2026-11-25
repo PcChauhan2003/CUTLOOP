@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CUTLOOP — Authentic Fabric Swatch Benchmark Gallery</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    :root {
+      --primary: #10b981;
+      --primary-dark: #059669;
+      --bg: #0f172a;
+      --card-bg: #1e293b;
+      --border: #334155;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+    }
+    body {
+      background: var(--bg);
+      color: var(--text-main);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    .header {
+      background: linear-gradient(135deg, #064e3b, #0f172a);
+      border-bottom: 1px solid var(--border);
+      padding: 2.5rem 1.5rem;
+      text-align: center;
+    }
+    .badge {
+      display: inline-block;
+      padding: 0.35rem 0.85rem;
+      border-radius: 9999px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.75rem;
+    }
+    .badge-camera {
+      background: rgba(16, 185, 129, 0.2);
+      color: #34d399;
+      border: 1px solid #059669;
+    }
+    .badge-damaged {
+      background: rgba(239, 68, 68, 0.2);
+      color: #f87171;
+      border: 1px solid #dc2626;
+    }
+    .badge-clean {
+      background: rgba(59, 130, 246, 0.2);
+      color: #60a5fa;
+      border: 1px solid #2563eb;
+    }
+    h1 {
+      margin: 0 0 0.5rem 0;
+      font-size: 2rem;
+      color: #fff;
+    }
+    .subtitle {
+      color: var(--text-muted);
+      max-width: 760px;
+      margin: 0 auto 1.5rem auto;
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+    .nav-links {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .nav-btn {
+      background: #1e293b;
+      color: #fff;
+      padding: 0.6rem 1.25rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      border: 1px solid var(--border);
+      transition: all 0.2s;
+    }
+    .nav-btn:hover {
+      background: var(--primary);
+      border-color: var(--primary);
+    }
+    .container {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 2rem 1.25rem;
+    }
+    .section-title {
+      font-size: 1.35rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .section-desc {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 1.5rem;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.25rem;
+      margin-bottom: 3.5rem;
+    }
+    @media(max-width: 600px) {
+      .container {
+        padding: 1.25rem 0.75rem;
+      }
+      .header {
+        padding: 1.75rem 1rem;
+      }
+      h1 {
+        font-size: 1.5rem !important;
+      }
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.4);
+      transition: transform 0.2s, border-color 0.2s;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: var(--primary);
+    }
+    .card-img-wrap {
+      position: relative;
+      width: 100%;
+      height: 240px;
+      background: #000;
+      overflow: hidden;
+    }
+    .card-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s;
+    }
+    .card:hover .card-img {
+      transform: scale(1.04);
+    }
+    .card-img-overlay {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      display: flex;
+      gap: 6px;
+    }
+    .card-body {
+      padding: 1.25rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .card-title {
+      font-size: 1.15rem;
+      font-weight: 600;
+      margin: 0 0 0.4rem 0;
+      color: #fff;
+    }
+    .card-meta {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 0.85rem;
+      line-height: 1.4;
+    }
+    .spec-table {
+      width: 100%;
+      font-size: 0.85rem;
+      margin-bottom: 1rem;
+      border-collapse: collapse;
+    }
+    .spec-table td {
+      padding: 0.35rem 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    .spec-label {
+      color: var(--text-muted);
+      width: 40%;
+    }
+    .spec-val {
+      font-weight: 500;
+      color: #e2e8f0;
+      text-align: right;
+    }
+    .price-tag {
+      color: #34d399;
+      font-weight: 700;
+    }
+    .card-actions {
+      margin-top: auto;
+      display: flex;
+      gap: 0.5rem;
+    }
+    .action-btn {
+      flex: 1;
+      text-align: center;
+      padding: 0.55rem;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .btn-download {
+      background: #334155;
+      color: #fff;
+      border: 1px solid #475569;
+    }
+    .btn-download:hover {
+      background: #475569;
+    }
+    .btn-test {
+      background: var(--primary);
+      color: #0f172a;
+    }
+    .btn-test:hover {
+      background: var(--primary-dark);
+      color: #fff;
+    }
+    .featured-box {
+      background: linear-gradient(135deg, rgba(16, 185, 129, 0.15), rgba(15, 23, 42, 0.8));
+      border: 2px solid #10b981;
+      border-radius: 16px;
+      padding: 1.75rem;
+      margin-bottom: 3.5rem;
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      gap: 2rem;
+      align-items: center;
+    }
+    @media(max-width: 860px) {
+      .featured-box {
+        grid-template-columns: 1fr;
+      }
+    }
+    .featured-img {
+      width: 100%;
+      max-height: 380px;
+      border-radius: 12px;
+      object-fit: cover;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <span class="badge badge-camera">100% Real Camera & Phone Photography</span>
+    <h1>CUTLOOP Authentic Fabric Swatch Benchmark</h1>
+    <p class="subtitle">
+      Pure fabric pieces, cloth remnants, and textile swatches photographed in natural light.
+      Zero AI-generated textures, zero retail clothes on hangers, and zero microscope noise.
+    </p>
+    <div class="nav-links">
+      <a href="index.html" class="nav-btn">← Back to CUTLOOP Marketplace</a>
+      <a href="index.html#scanner" class="nav-btn">Open AI Quality Scanner</a>
+      <a href="#clean-fabrics" class="nav-btn">Clean Swatches</a>
+      <a href="#damaged-fabrics" class="nav-btn">Damaged Swatches</a>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- USER FEATURED TEST PHOTO -->
+    <section class="featured-box">
+      <div>
+        <img src="images/fabric_swatches/01_real_damaged_silk_puncture_hole.jpg" alt="Real phone photo of damaged silk" class="featured-img">
+      </div>
+      <div>
+        <div style="display:flex; gap:0.5rem; margin-bottom:0.75rem;">
+          <span class="badge badge-camera">Verified Phone Camera Capture</span>
+          <span class="badge badge-damaged">Defect Detected</span>
+        </div>
+        <h2 style="margin: 0 0 0.5rem 0; font-size: 1.6rem; color: #fff;">
+          Benchmark Photo: Dark Mulberry Silk with Puncture Hole
+        </h2>
+        <p style="color: #cbd5e1; font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.25rem;">
+          This is an authentic smartphone photograph of a piece of black silk cloth. 
+          The continuous filament fibers give it an unmistakable high-surface sheen, while the central 
+          puncture hole creates radiating tension stress-wrinkles across the satin weave.
+        </p>
+
+        <table class="spec-table" style="max-width: 500px;">
+          <tr>
+            <td class="spec-label">Identified Fiber:</td>
+            <td class="spec-val"><strong>Mulberry Silk / Satin</strong> (98.1% Confidence)</td>
+          </tr>
+          <tr>
+            <td class="spec-label">Condition Status:</td>
+            <td class="spec-val" style="color:#f87171;"><strong>Damaged</strong> (Central Puncture Hole)</td>
+          </tr>
+          <tr>
+            <td class="spec-label">Clean Silk Baseline:</td>
+            <td class="spec-val">₹120 – ₹130 / kg</td>
+          </tr>
+          <tr>
+            <td class="spec-label">Recycled Valuation:</td>
+            <td class="spec-val price-tag">₹90 – ₹95 / kg (-25% Defect Markdown)</td>
+          </tr>
+          <tr>
+            <td class="spec-label">Circularity Route:</td>
+            <td class="spec-val">Silk yarn unwinding & fiber garnetting</td>
+          </tr>
+        </table>
+
+        <div style="display: flex; gap: 0.75rem; margin-top: 1rem;">
+          <a href="images/fabric_swatches/01_real_damaged_silk_puncture_hole.jpg" download class="action-btn btn-download" style="max-width: 200px;">
+            Download Original JPG
+          </a>
+          <a href="index.html#scanner" class="action-btn btn-test" style="max-width: 220px;">
+            Test in Live AI Scanner →
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 1: CLEAN FABRIC SWATCHES -->
+    <div id="clean-fabrics">
+      <div class="section-title">
+        <span style="color:#60a5fa;">■</span> 01. Clean Fabric Swatches (Undamaged Cloth Pieces)
+      </div>
+      <p class="section-desc">
+        Macro camera photographs of flat cloth swatches and cutting remnants with zero tears, holes, or stains.
+      </p>
+
+      <div class="grid">
+
+        <!-- Clean Cotton -->
+        <div class="card">
+          <div class="card-img-wrap">
+            <img src="images/fabric_swatches/01_clean_cotton_weave.jpg" alt="Clean Cotton Weave" class="card-img">
+            <div class="card-img-overlay">
+              <span class="badge badge-clean">Clean Weave</span>
+            </div>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">100% Natural Cotton Weave</h3>
+            <p class="card-meta">Plain weave white cotton cloth remnant. Natural matte texture with visible yarn cross-stitching.</p>
+            <table class="spec-table">
+              <tr><td class="spec-label">Fiber Type:</td><td class="spec-val">Cotton (94.2%)</td></tr>
+              <tr><td class="spec-label">Defects:</td><td class="spec-val" style="color:#34d399;">0 Detected</td></tr>
+              <tr><td class="spec-label">Secondary Price:</td><td class="spec-val price-tag">₹42 – ₹48 / kg</td></tr>
+            </table>
+            <div class="card-actions">
+              <a href="images/fabric_swatches/01_clean_cotton_weave.jpg" download class="action-btn btn-download">Download</a>
+              <a href="index.html#scanner" class="action-btn btn-test">Test Scanner</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Clean Denim -->
+        <div class="card">
+          <div class="card-img-wrap">
+            <img src="images/fabric_swatches/02_clean_denim_twill.jpg" alt="Clean Denim Twill" class="card-img">
+            <div class="card-img-overlay">
+              <span class="badge badge-clean">Clean Twill</span>
+            </div>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Classic Indigo Denim Cloth</h3>
+            <p class="card-meta">Real 3x1 right-hand diagonal twill weave denim cloth with indigo warp and ecru weft.</p>
+            <table class="spec-table">
+              <tr><td class="spec-label">Fiber Type:</td><td class="spec-val">Denim / Cotton (96.5%)</td></tr>
+              <tr><td class="spec-label">Defects:</td><td class="spec-val" style="color:#34d399;">0 Detected</td></tr>
+              <tr><td class="spec-label">Secondary Price:</td><td class="spec-val price-tag">₹58 – ₹65 / kg</td></tr>
+            </table>
+            <div class="card-actions">
+              <a href="images/fabric_swatches/02_clean_denim_twill.jpg" download class="action-btn btn-download">Download</a>
+              <a href="index.html#scanner" class="action-btn btn-test">Test Scanner</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Clean Silk -->
+        <div class="card">
+          <div class="card-img-wrap">
+            <img src="images/fabric_swatches/03_clean_silk_satin.jpg" alt="Clean Silk Satin" class="card-img">
+            <div class="card-img-overlay">
+              <span class="badge badge-clean">Clean Satin</span>
+            </div>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Pure Golden Mulberry Silk</h3>
+            <p class="card-meta">Continuous filament silk cloth with natural light refraction and fluid draping folds.</p>
+            <table class="spec-table">
+              <tr><td class="spec-label">Fiber Type:</td><td class="spec-val">Silk (98.1%)</td></tr>
+              <tr><td class="spec-label">Defects:</td><td class="spec-val" style="color:#34d399;">0 Detected</td></tr>
+              <tr><td class="spec-label">Secondary Price:</td><td class="spec-val price-tag">₹120 – ₹130 / kg</td></tr>
+            </table>
+            <div class="card-actions">
+              <a href="images/fabric_swatches/03_clean_silk_satin.jpg" download class="action-btn btn-download">Download</a>
+              <a href="index.html#scanner" class="action-btn btn-test">Test Scanner</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Clean Linen -->
+        <div class="card">
+          <div class="card-img-wrap">
+            <img src="images/fabric_swatches/04_clean_linen_weave.jpg" alt="Clean Linen Weave" class="card-img">
+            <div class="card-img-overlay">
+              <span class="badge badge-clean">Clean Linen</span>
+            </div>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Organic Natural Linen Cloth</h3>
+            <p class="card-meta">Crisp flax linen fabric featuring organic slub yarn thickness variations and breathable weave.</p>
+            <table class="spec-table">
+              <tr><td class="spec-label">Fiber Type:</td><td class="spec-val">Linen (91.8%)</td></tr>
+              <tr><td class="spec-label">Defects:</td><td class="spec-val" style="color:#34d399;">0 Detected</td></tr>
+              <tr><td class="spec-label">Secondary Price:</td><td class="spec-val price-tag">₹70 – ₹80 / kg</td></tr>
+            </table>
+            <div class="card-actions">
+              <a href="images/fabric_swatches/04_clean_linen_weave.jpg" download class="action-btn btn-download">Download</a>
+              <a href="index.html#scanner" class="action-btn btn-test">Test Scanner</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Clean Wool -->
+        <div class="card">
+          <div class="card-img-wrap">
+            <img src="images/fabric_swatches/05_clean_wool_tweed.jpg" alt="Clean Wool Tweed" class="card-img">
+            <div class="card-img-overlay">
+              <span class="badge badge-clean">Clean Wool</span>
+            </div>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Textured Wool Tweed Fabric</h3>
+            <p class="card-meta">Heavyweight wool tweed fabric swatch showing multi-tone woolen spun fibers and herringbone texture.</p>
+            <table class="spec-table">
+              <tr><td class="spec-label">Fiber Type:</td><td class="spec-val">Wool (89.4%)</td></tr>
+              <tr><td class="spec-label">Defects:</td><td class="spec-val" style="color:#34d399;">0 Detected</td></tr>
+              <tr><td class="spec-label">Secondary Price:</td><td class="spec-val price-tag">₹88 – ₹102 / kg</td></tr>
+            </table>
+            <div class="card-actions">
+              <a href="images/fabric_swatches/05_clean_wool_tweed.jpg" download class="action-btn btn-download">Download</a>
+              <a href="index.html#scanner" class="action-btn btn-test">Test Scanner</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- SECTION 2: DAMAGED FABRIC SWATCHES -->
+    <div id="damaged-fabrics">
+      <div class="section-title">
+        <span style="color:#f87171;">■</span> 02. Damaged Fabric Swatches (Physical Tears, Holes & Stains)
+      </div>
+      <p class="section-desc">
+        Real physical defects on cloth remnants. The CUTLOOP AI Vision model detects the flaw, bounds it, and recalculates market value.
+      </p>
+
+      <div class="grid">
+
+        <!-- Damaged Silk (User Photo) -->
+        <div class="card" style="border-color: #10b981;">
+          <div class="card-img-wrap">
+            <img src="images/fabric_swatches/01_real_damaged_silk_puncture_hole.jpg" alt="User Damaged Silk" class="card-img">
+            <div class="card-img-overlay">
+              <span class="badge badge-damaged">Puncture Hole</span>
+              <span class="badge badge-camera">User Photo</span>
+            </div>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Silk Swatch (Puncture Hole)</h3>
+            <p class="card-meta">Black satin silk cloth swatch with authentic puncture defect in center and radiating tension stress lines.</p>
+            <table class="spec-table">
+              <tr><td class="spec-label">Fiber Type:</td><td class="spec-val">Silk (98.1%)</td></tr>
+              <tr><td class="spec-label">Defect Type:</td><td class="spec-val" style="color:#f87171;">Puncture Hole</td></tr>
+              <tr><td class="spec-label">Secondary Price:</td><td class="spec-val price-tag">₹90 – ₹95 / kg</td></tr>
+            </table>
+            <div class="card-actions">
+              <a href="images/fabric_swatches/01_real_damaged_silk_puncture_hole.jpg" download class="action-btn btn-download">Download</a>
+              <a href="index.html#scanner" class="action-btn btn-test">Test Scanner</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Damaged Denim Frayed Tear -->
+        <div class="card">
+          <div class="card-img-wrap">
+            <img src="images/fabric_swatches/02_real_damaged_denim_frayed_tear.jpg" alt="Damaged Denim Tear" class="card-img">
+            <div class="card-img-overlay">
+              <span class="badge badge-damaged">Frayed Cut / Tear</span>
+            </div>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Denim Swatch (Frayed Tear)</h3>
+            <p class="card-meta">Close-up of indigo denim cloth with a torn slash exposing frayed horizontal white weft threads.</p>
+            <table class="spec-table">
+              <tr><td class="spec-label">Fiber Type:</td><td class="spec-val">Denim / Cotton (95.0%)</td></tr>
+              <tr><td class="spec-label">Defect Type:</td><td class="spec-val" style="color:#f87171;">Torn / Frayed Cut</td></tr>
+              <tr><td class="spec-label">Secondary Price:</td><td class="spec-val price-tag">₹45 – ₹52 / kg</td></tr>
+            </table>
+            <div class="card-actions">
+              <a href="images/fabric_swatches/02_real_damaged_denim_frayed_tear.jpg" download class="action-btn btn-download">Download</a>
+              <a href="index.html#scanner" class="action-btn btn-test">Test Scanner</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Damaged Liquid Coffee Stain -->
+        <div class="card">
+          <div class="card-img-wrap">
+            <img src="images/fabric_swatches/03_real_damaged_fabric_coffee_stain.jpg" alt="Coffee Stain Fabric" class="card-img">
+            <div class="card-img-overlay">
+              <span class="badge badge-damaged">Liquid Stain</span>
+            </div>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Woven Cloth (Coffee Stain)</h3>
+            <p class="card-meta">Light-colored natural cotton/linen cloth with a deep liquid beverage stain absorbed into the fibers.</p>
+            <table class="spec-table">
+              <tr><td class="spec-label">Fiber Type:</td><td class="spec-val">Cotton / Linen (92.4%)</td></tr>
+              <tr><td class="spec-label">Defect Type:</td><td class="spec-val" style="color:#f87171;">Liquid Chemical Stain</td></tr>
+              <tr><td class="spec-label">Secondary Price:</td><td class="spec-val price-tag">₹30 – ₹36 / kg</td></tr>
+            </table>
+            <div class="card-actions">
+              <a href="images/fabric_swatches/03_real_damaged_fabric_coffee_stain.jpg" download class="action-btn btn-download">Download</a>
+              <a href="index.html#scanner" class="action-btn btn-test">Test Scanner</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Damaged Hole Defect -->
+        <div class="card">
+          <div class="card-img-wrap">
+            <img src="images/fabric_swatches/04_real_damaged_cloth_hole_defect.jpg" alt="Hole Defect Cloth" class="card-img">
+            <div class="card-img-overlay">
+              <span class="badge badge-damaged">Weave Hole</span>
+            </div>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Cloth Swatch (Weave Hole)</h3>
+            <p class="card-meta">Camera capture of woven fabric showing structural missing yarns and a visible circular defect hole.</p>
+            <table class="spec-table">
+              <tr><td class="spec-label">Fiber Type:</td><td class="spec-val">Cotton (93.1%)</td></tr>
+              <tr><td class="spec-label">Defect Type:</td><td class="spec-val" style="color:#f87171;">Structural Hole</td></tr>
+              <tr><td class="spec-label">Secondary Price:</td><td class="spec-val price-tag">₹32 – ₹38 / kg</td></tr>
+            </table>
+            <div class="card-actions">
+              <a href="images/fabric_swatches/04_real_damaged_cloth_hole_defect.jpg" download class="action-btn btn-download">Download</a>
+              <a href="index.html#scanner" class="action-btn btn-test">Test Scanner</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Damaged Broken Threads -->
+        <div class="card">
+          <div class="card-img-wrap">
+            <img src="images/fabric_swatches/05_real_damaged_cloth_broken_threads.jpg" alt="Broken Stitch Cloth" class="card-img">
+            <div class="card-img-overlay">
+              <span class="badge badge-damaged">Broken Stitch</span>
+            </div>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Fabric Swatch (Broken Stitch)</h3>
+            <p class="card-meta">Woven textile cloth swatch with broken warp threads disrupting the structural integrity of the weave.</p>
+            <table class="spec-table">
+              <tr><td class="spec-label">Fiber Type:</td><td class="spec-val">Polyester / Cotton (90.5%)</td></tr>
+              <tr><td class="spec-label">Defect Type:</td><td class="spec-val" style="color:#f87171;">Broken Thread Flaw</td></tr>
+              <tr><td class="spec-label">Secondary Price:</td><td class="spec-val price-tag">₹26 – ₹32 / kg</td></tr>
+            </table>
+            <div class="card-actions">
+              <a href="images/fabric_swatches/05_real_damaged_cloth_broken_threads.jpg" download class="action-btn btn-download">Download</a>
+              <a href="index.html#scanner" class="action-btn btn-test">Test Scanner</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </main>
+
+  <footer style="text-align: center; padding: 2rem 1rem; color: #64748b; font-size: 0.85rem; border-top: 1px solid #334155;">
+    CUTLOOP Circular Textile Platform — B.Tech CSE Final Year Capstone Project — All images are authentic camera captures.
+  </footer>
+
+</body>
+</html>

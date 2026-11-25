@@ -1,0 +1,41 @@
+{
+  "categories": [
+    "dress",
+    "jacket",
+    "jacket-zipper",
+    "jeans",
+    "poloshirt",
+    "shirt",
+    "short",
+    "sweatshirt",
+    "top",
+    "trouser",
+    "tshirt"
+  ],
+  "cat_to_idx": {
+    "dress": 0,
+    "jacket": 1,
+    "jacket-zipper": 2,
+    "jeans": 3,
+    "poloshirt": 4,
+    "shirt": 5,
+    "short": 6,
+    "sweatshirt": 7,
+    "top": 8,
+    "trouser": 9,
+    "tshirt": 10
+  },
+  "idx_to_cat": {
+    "0": "dress",
+    "1": "jacket",
+    "2": "jacket-zipper",
+    "3": "jeans",
+    "4": "poloshirt",
+    "5": "shirt",
+    "6": "short",
+    "7": "sweatshirt",
+    "8": "top",
+    "9": "trouser",
+    "10": "tshirt"
+  }
+}
